@@ -47,7 +47,7 @@ public final class TracingUtil {
   /**
    * @deprecated see {@link #copyWithTrace(List)}
    */
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public static SNode copyWithTrace(SNode node) {
     if (node == null) {
       return null;
@@ -60,7 +60,7 @@ public final class TracingUtil {
    *             Replace with a node copy facility/mechanism of your choice, combined with {@link #deriveOriginalNode(SNode, Collection, boolean)}
    *
    */
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public static List<SNode> copyWithTrace(List<SNode> nodes) {
     // FIXME warn deprecation once mbeddr templates using this method get fixed
     // Logger.getLogger(TracingUtil.class).warnDeprecatedUse("scheduled for removal");
@@ -107,7 +107,7 @@ public final class TracingUtil {
   /**
    * @deprecated code branching done with boolean flag.
    */
-  @Deprecated(since = "2018.2", forRemoval = true)
+  @Deprecated
   public static void fillOriginalNode(@NotNull SNode inputNode, @NotNull SNode outputNode, boolean originalInput) {
     // keep for couple of releases from now (2025.2, where reduce_TraceMacro has been fixed not to use one), and drop then
     deriveOriginalNode(inputNode, outputNode);

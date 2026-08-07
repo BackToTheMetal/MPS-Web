@@ -36,7 +36,7 @@ public final class Dependency implements Copyable<Dependency> {
   /**
    * @deprecated use the other constructors instead
    */
-@Deprecated(since = "0", forRemoval = true)
+@Deprecated
   public Dependency() {
   }
 

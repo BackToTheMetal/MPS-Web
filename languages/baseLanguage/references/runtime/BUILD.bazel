@@ -1,0 +1,12 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "references-runtime-j2cl",
+    srcs = glob([
+        "source/jetbrains/mps/references/*.java",
+    ]),
+)

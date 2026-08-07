@@ -44,7 +44,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  *
  * @deprecated since typeof(node.ABCprop) eventually become enum member
  */
-@Deprecated(since = "19.2", forRemoval = true)
+@Deprecated
 public class InvalidEnumerationLiteral implements SEnumerationLiteral {
 
   @NotNull

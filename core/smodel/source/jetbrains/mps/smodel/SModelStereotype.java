@@ -54,7 +54,7 @@ public class SModelStereotype {
   /**
    * @deprecated use {@link #isStubModel(SModel)} instead, plain strings instead of objects are just bad design
    */
-@Deprecated(since = "2018.2", forRemoval = true)
+@Deprecated
   public static boolean isStubModelStereotype(String stereotype) {
     // there's 1 use in mbeddr
     return stereotype.endsWith(STUB_SUFFIX);
@@ -89,7 +89,7 @@ public class SModelStereotype {
    * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName#getStereotype()}
    */
   @NotNull
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   public static String getStereotype(String modelName) {
     int atIndex = modelName.lastIndexOf('@');
     if (atIndex == -1) {

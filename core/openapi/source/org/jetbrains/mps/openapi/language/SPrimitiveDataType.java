@@ -21,6 +21,6 @@ package org.jetbrains.mps.openapi.language;
  *
  * @deprecated Use one of SPrimitiveTypes
  */
-@Deprecated(since = "2018.3", forRemoval = true)
+@Deprecated
 public interface SPrimitiveDataType extends SDataType {
 }

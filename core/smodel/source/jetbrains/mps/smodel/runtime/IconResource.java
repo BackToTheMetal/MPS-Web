@@ -33,7 +33,7 @@ public final class IconResource {
    * @deprecated use {@link #IconResource(String, String, Class)} instead.
    *             Keep for a year to support old code generated with uses of this cons and then drop
    */
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public IconResource(@NotNull String iconResId, @NotNull Class<?> resourceProvider) {
     myIconResId = asQualifiedResourcePath(iconResId, resourceProvider);
     myIconResId_newUI = myIconResId;
@@ -76,7 +76,7 @@ public final class IconResource {
    * indicates IconResource generated w/o @ResourceModule annotation, with relative resource id that keeps reference to Class to load actual bytes.
    */
   @Internal
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public boolean isLegacy() {
     return myResourceProvider != null;
   }
@@ -87,7 +87,7 @@ public final class IconResource {
    *
    * The only use of this method has been copied into BaseIconManager and would cease once isLegacy branch is history
    */
-  @Deprecated(since = "3.5", forRemoval = true)
+  @Deprecated
   public boolean isAlreadyReloaded() {
     // it's safe to say "yes" - even if there's use, suggest icon needs reloading
     return true;
@@ -115,7 +115,7 @@ public final class IconResource {
    * @deprecated discouraged use; perhaps shall survive if there are scenarios when we use IconResource in hand-written code
    *             and can't use {@code ResourceModule} annotation
    */
-  @Deprecated(since = "2024.2", forRemoval = true)
+  @Deprecated
   @Nullable
   public Class getProvider() {
     return myResourceProvider == null ? null : myResourceProvider.get();

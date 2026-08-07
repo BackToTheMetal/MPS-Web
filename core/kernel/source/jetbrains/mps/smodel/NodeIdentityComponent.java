@@ -28,7 +28,7 @@ public final class NodeIdentityComponent implements NodeIdentitySupplier, CoreCo
    *
    * @deprecated Prototype code, not to deal with ComponentHost lookup in different places we create/initialize node
    */
-  @Deprecated(since = "0", forRemoval = true)
+  @Deprecated
   public static NodeIdentitySupplier getInstance() {
     return ourInstance;
   }

@@ -254,7 +254,7 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @see ModuleClassNotFoundException
    */
-@Deprecated(since = "3.2", forRemoval = true)
+@Deprecated
   @Nullable
   public Class<?> getClass(@NotNull SModule module, String classFqName) {
     try {
@@ -328,7 +328,7 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * no events are triggered, classloaders do not change during this section
    */
-  @Deprecated(since = "201", forRemoval = true)
+  @Deprecated
   @Internal
   public void runNonReloadableSection(@NotNull Runnable runnable) {
     myRepositoryListener.pause();

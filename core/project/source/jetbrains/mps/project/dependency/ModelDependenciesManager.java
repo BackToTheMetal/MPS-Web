@@ -65,7 +65,7 @@ import java.util.Set;
  * @deprecated no reason to keep, at least repository watching part (could end up quite ineffective, see MPS-29623)
  * FIXME perhaps, worth moving to subpackage of j.m.smodel, as it's pure model functionality, unrelated to project
  */
-@Deprecated(since = "2019.3", forRemoval = true)
+@Deprecated
 public class ModelDependenciesManager {
   private SModel myModel;
 

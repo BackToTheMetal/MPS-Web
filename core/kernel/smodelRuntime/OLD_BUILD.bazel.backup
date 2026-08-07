@@ -1,0 +1,28 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "kernel-smodelruntime-j2cl",
+    srcs = glob([
+        "source_gen/**/*.java",
+    ]),
+    deps = [
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/util:util-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/smodel:smodel-j2cl",
+        "//core/aspects/behavior/behavior-api:behavior-api-j2cl",
+        "//core/aspects/behavior/behavior-runtime:behavior-runtime-j2cl",
+
+        "//languages/baseLanguage/closures/runtime:closures-runtime-j2cl",
+        "//languages/baseLanguage/collections/runtime:collections-runtime-j2cl",
+        "//languages/baseLanguage/references/runtime:references-runtime-j2cl",
+        "//languages/baseLanguage/tuples/runtime:tuples-runtime-j2cl",
+
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -74,7 +74,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
  *             for its CL purposes, keeping SModule hierarchy (Solution, Language, Generator, etc) independent.
  *             <br/>Required change: If you need to access SModule, don't assume this class extends {@code SModule}, get one using {@link #getModule()}
  */
-@Deprecated(forRemoval = false, since = "2023.3")
+@Deprecated
 public interface ReloadableModule extends SModule {
   /**
    * @return a class which can be obtained by calling #getclass from

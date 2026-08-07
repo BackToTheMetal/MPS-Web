@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
  * @author Artem Tikhomirov
  */
 @SuppressWarnings("RedundantMethodOverride")
-@Deprecated(since = "2025.1", forRemoval = true)
+@Deprecated
 public abstract class SNodeChangeListenerAdapter implements SNodeChangeListener {
   @Override
   public void propertyChanged(@NotNull SPropertyChangeEvent event) {

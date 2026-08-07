@@ -356,7 +356,7 @@ public interface SNode {
   /**
    * @deprecated use hasProperty(SProperty), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default boolean hasProperty(String propertyName) {
     // no-op, just to facilitate removal of overrides
     return false;
@@ -365,7 +365,7 @@ public interface SNode {
   /**
    * @deprecated use getProperty(SProperty), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default String getProperty(String propertyName) {
     // no-op, just to facilitate removal of overrides
     return null;
@@ -374,7 +374,7 @@ public interface SNode {
   /**
    * @deprecated use setProperty(SProperty), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default void setProperty(String propertyName, String propertyValue) {
     // no-op, just to facilitate removal of overrides
   }
@@ -391,7 +391,7 @@ public interface SNode {
   /**
    * @deprecated use setReferenceTarget(SReferenceLink, SNode), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default void setReferenceTarget(String role, @Nullable SNode target) {
     // no-op, just to facilitate removal of overrides
     // FWIW, there's override in mps-extensions and no uses in mbeddr
@@ -400,7 +400,7 @@ public interface SNode {
   /**
    * @deprecated use getReferenceTarget(SReferenceLink), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default SNode getReferenceTarget(String role) {
     // no-op, just to facilitate removal of overrides
     return null;
@@ -411,7 +411,7 @@ public interface SNode {
   /**
    * @deprecated use getReference(SReferenceLink), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default SReference getReference(String role) {
     // no-op, just to facilitate removal of overrides
     // FWIW, there's override in mps-extensions and no uses in mbeddr
@@ -421,7 +421,7 @@ public interface SNode {
   /**
    * @deprecated use setReference(SReferenceLink, SReference), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default void setReference(String role, SReference reference) {
     // no-op, just to facilitate removal of overrides
     // FWIW, there's override in mps-extensions and no uses in mbeddr
@@ -430,7 +430,7 @@ public interface SNode {
   /**
    * @deprecated use insertChildBefore(SContainmentLink, SNode, SNode), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default void insertChildBefore(String role, SNode child, @Nullable SNode anchor) {
     // no-op, just to facilitate removal of overrides
   }
@@ -438,7 +438,7 @@ public interface SNode {
   /**
    * @deprecated use addChild(SContainmentLink, SNode), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default void addChild(String role, SNode child) {
     // no-op, just to facilitate removal of overrides
   }
@@ -446,7 +446,7 @@ public interface SNode {
   /**
    * @deprecated use getChildren(SContainmentLink), or {@code jetbrains.mps.smodel.SNodeLegacy} for compatibility code
    */
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   default Iterable<? extends SNode> getChildren(String role) {
     // no-op, just to facilitate removal of overrides
     return null;

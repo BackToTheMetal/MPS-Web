@@ -76,7 +76,7 @@ public class ConceptDescriptorBuilder2 {
    *             besides, I'd like to get rid of qualified name as means of identification
    * invoked [0..1] times
    */
-  @Deprecated(since = "2021.3", forRemoval = true)
+  @Deprecated
   public ConceptDescriptorBuilder2 super_(String conceptQualifiedName, long langIdHigh, long langIdLow, long conceptId) {
     // no need to specify name of superconcept (conceptQualifiedName), it's not in use
     // we may supply a short name only, just as a hint

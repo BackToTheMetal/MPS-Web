@@ -38,7 +38,7 @@ public interface CachingFile extends IFile {
   @Override
   CachingFile getParent();
 
-@Deprecated(since = "2019.2", forRemoval = true)
+@Deprecated
   @NotNull
   @Override
   CachingFile getDescendant(@NotNull String suffix);

@@ -30,6 +30,6 @@ import org.jetbrains.mps.annotations.Internal;
  * @deprecated Everything one needs is in {@link  SModuleFacet}. Will be removed in the next release.
  */
 @Internal
-@Deprecated(since = "2024.2", forRemoval = true)
+@Deprecated
 public interface DetachableFacet {
 }

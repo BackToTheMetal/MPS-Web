@@ -139,7 +139,7 @@ public class NodePresentationUtil {
    *
    * @deprecated use {@link #matchingText(SAbstractConcept)}  instead.
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String matchingText(SAbstractConcept concept, boolean referentPresentation) {
     return matchingText(concept);
   }
@@ -149,7 +149,7 @@ public class NodePresentationUtil {
    * @deprecated This method provides a visible matching text instead of real matching text, that might be confusing.
    *             Should be replaced with {@link #visibleMatchingText(SNode, SNode)}.
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String matchingText(SNode node) {
     return visibleMatchingText(node, null);
   }
@@ -159,7 +159,7 @@ public class NodePresentationUtil {
    * @deprecated This method provides a visible matching text instead of real matching text, that might be confusing.
    *             Should be replaced with {@link #visibleMatchingText(SNode, SNode)}.
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String matchingText(SNode node, boolean referent_presentation) {
     return visibleMatchingText(node, null);
   }
@@ -168,7 +168,7 @@ public class NodePresentationUtil {
    *
    * @deprecated use {@link #matchingText(SNode, SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String matchingText(SNode node, boolean referent_presentation, boolean visible) {
     return matchingText(node, null, visible);
   }
@@ -213,7 +213,7 @@ public class NodePresentationUtil {
   /**
    * @deprecated use {@link #descriptionText(SAbstractConcept)} instead
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String descriptionText(SAbstractConcept concept, boolean referentPresentation) {
     return descriptionText(concept);
   }
@@ -225,7 +225,7 @@ public class NodePresentationUtil {
   /**
    * @deprecated use {@link #descriptionText(SNode)} instead.
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   public static String descriptionText(SNode node, boolean referent_presentation) {
     return descriptionText(node, null);
   }
@@ -266,7 +266,7 @@ public class NodePresentationUtil {
   /**
    * @deprecated single use for deprecated property override doesn't justify existence of this odd logic
    */
-  @Deprecated(since = "2023.1", forRemoval = true)
+  @Deprecated
   public static String getAliasOrConceptName(SNode node) {
     final SConcept c = node.getConcept();
     String alias = c.getConceptAlias();
@@ -279,7 +279,7 @@ public class NodePresentationUtil {
   /**
    * @deprecated single use doesn't justify existence of this odd logic
    */
-  @Deprecated(since = "2023.1", forRemoval = true)
+  @Deprecated
   public static String getRoleInParentOrConceptName(SNode node) {
     SContainmentLink role = node.getContainmentLink();
     if (role != null) {

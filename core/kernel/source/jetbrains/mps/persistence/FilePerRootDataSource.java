@@ -29,9 +29,9 @@ import java.util.Objects;
  * evgeny, 6/3/13
  */
 public final class FilePerRootDataSource extends FolderDataSource {
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public static final String HEADER_FILE = MPSExtentions.DOT_MODEL_HEADER;
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public static final String ROOT_EXTENSION = MPSExtentions.MODEL_ROOT;
 
   public FilePerRootDataSource(@NotNull IFile folder) {

@@ -56,7 +56,7 @@ public abstract class ModelAccess extends AbstractModelAccess implements org.jet
    * @deprecated
    * @since 3.1
    */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   public static ModelAccess instance() {
     return ourInstance;
   }

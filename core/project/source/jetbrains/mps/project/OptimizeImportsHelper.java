@@ -55,7 +55,7 @@ public class OptimizeImportsHelper {
    * @param repository -- is a context repository which contains the modules/models the client want to resolve
    * @deprecated
    */
-@Deprecated(since = "2020.1", forRemoval = true)
+@Deprecated
   public OptimizeImportsHelper(@NotNull SRepository repository) {
     myRepository = repository;
     myAutoImports = null;
@@ -81,7 +81,7 @@ public class OptimizeImportsHelper {
    * Optimizes project imports. Might take some time.
    * @deprecated use {@link #optimizeProjectImports(Project, ProgressMonitor)} instead
    */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   public String optimizeProjectImports(Project p) {
     return optimizeProjectImports(p, new EmptyProgressMonitor());
   }
@@ -105,7 +105,7 @@ public class OptimizeImportsHelper {
    * Optimizes imports for a list of models. Might take some time, so please pass the monitor parameter
    * @deprecated use {@link #optimizeModelsImports(List, ProgressMonitor)}
    */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   @NotNull
   public String optimizeModelsImports(List<SModel> modelsToOptimize) {
     return optimizeModelsImports(modelsToOptimize, new EmptyProgressMonitor());

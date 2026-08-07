@@ -102,7 +102,7 @@ public interface ModelRoot {
    * @deprecated use the one with SModelName as parameter
    * @param modelName -- the same as in the {@link #createModel(String)}
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   default boolean canCreateModel(@NotNull String modelName) {
     // there are uses of the method in mbeddr; not sure about overrides.
     // Perhaps, have to mark final in a release prior to removal

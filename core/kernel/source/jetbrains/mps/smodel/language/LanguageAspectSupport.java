@@ -91,7 +91,7 @@ public class LanguageAspectSupport {
    * @deprecated use {@link #getDefaultDevkit(SModel)} and process as you need, w/o hidden assumptions of this implementation
    */
   @NotNull
-  @Deprecated(since = "2023.1", forRemoval = true)
+  @Deprecated
   public static Collection<SLanguage> getDefaultDevkitLanguages(SModel model) {
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect == null) {
@@ -111,7 +111,7 @@ public class LanguageAspectSupport {
   /**
    * @deprecated respective SimpleLanguageAspectDescriptor.mainLanguages has been deprecated since 2018.1
    */
-  @Deprecated(since = "2022.2", forRemoval = true)
+  @Deprecated
   public static Collection<SLanguage> getMainLanguages(SModel model) {
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     return  newAspect != null ? newAspect.getMainLanguages() : Collections.emptyList();
@@ -133,7 +133,7 @@ public class LanguageAspectSupport {
   }
 
   @Nullable
-  @Deprecated(since = "3.3", forRemoval = true)
+  @Deprecated
   //for internal use only
   public static LanguageAspectDescriptor getNewAspect(SModel model) {
     // JFYI, there's BaseIconManager that needs this method to be public

@@ -507,7 +507,7 @@ public class SNodeOperations {
    * 
    * @deprecated used in generator of deprecated concept only
    */
-  @Deprecated(since = "3.5", forRemoval = true)
+  @Deprecated
   public static SNode getConceptDeclaration(SNode node) {
     if (node == null) {
       return null;
@@ -606,7 +606,7 @@ public class SNodeOperations {
    * 
    * @deprecated 
    */
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   public static SNode asConcept(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;

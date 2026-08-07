@@ -39,7 +39,7 @@ public interface SModelData {
    *             (there's SModelReference.getModuleReference() and we can't assume SModelData is only for UUID models),
    *             therefore it's odd to expect SModelReference for an SModelData.
    */
-@Deprecated(since = "2018.2", forRemoval = true)
+@Deprecated
   SModelReference getReference();
 
   Iterable<SNode> getRootNodes();

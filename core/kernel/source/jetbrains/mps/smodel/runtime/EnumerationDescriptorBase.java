@@ -22,7 +22,7 @@ public abstract class EnumerationDescriptorBase extends NamedElementDescriptorBa
   /**
    * @deprecated there are no more templates that use this cons. Keep for 1-2 releases (for code generated with old MPS versions) and drop.
    */
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public EnumerationDescriptorBase(long langIdHigh, long langIdLow, long id, String name, String srcNode, PrimitiveTypeId ignoredMemberRawType) {
     this(langIdHigh, langIdLow, id, name, srcNode);
   }
@@ -34,7 +34,7 @@ public abstract class EnumerationDescriptorBase extends NamedElementDescriptorBa
   }
 
   // doesn't need EnumerationDescriptorBase instance; keep for compatibility with legacy code for 1-2 releases.
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   protected class MembersList extends MembersList0 {
     public MembersList(EnumerationLiteralsIndex index, MemberDescriptor ... descriptors) {
       super(index, descriptors);

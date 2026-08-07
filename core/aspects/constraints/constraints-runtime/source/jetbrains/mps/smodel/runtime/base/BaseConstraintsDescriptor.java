@@ -68,7 +68,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDescriptor {
    *             However, shall keep for at least a year or two, as there could be old CAD, generated to instantiate BCD
    *             using this cons (as well as old CDs subclassing this one, with super(concept) call).
    */
-  @Deprecated(since = "2025.2", forRemoval = true)
+  @Deprecated
   public BaseConstraintsDescriptor(@NotNull final SAbstractConcept concept) {
     //noinspection removal
     this(concept, new BasicInitContext());
@@ -119,13 +119,13 @@ public class BaseConstraintsDescriptor implements ConstraintsDescriptor {
     return getCanBeAncestorConstraint() != null && myCanBeAncestorIsDefined;
   }
 
-  @Deprecated(forRemoval = true, since = "2025.2")
+  @Deprecated
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     // this method is invoked for legacy CD implementations only. CD from 2025.2 use record() method from cons
     return Collections.emptyMap();
   }
 
-  @Deprecated(forRemoval = true, since = "2025.2")
+  @Deprecated
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     // this method is invoked for legacy CD implementations only. CD from 2025.2 use record() method from cons
     return Collections.emptyMap();

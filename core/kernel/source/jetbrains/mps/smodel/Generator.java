@@ -189,7 +189,7 @@ public class Generator extends AbstractModule implements ReloadableModule {
    *             XXX what's the contract of the method, is it supposed to give source language of a generator that is part of a language or
    *             for it shall give Language for standalone generator as well?
    */
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
   @Nullable
   public Language getSourceLanguage() {
     // 1 use in com.mbeddr.mpsutil.make

@@ -676,7 +676,7 @@ public class SModel implements SModelData, UpdateModeSupport {
   /**
    * @deprecated model can't guess which exact version of a used language it shall record, use {@link #addLanguage(SLanguage, int)} instead
    */
-  @Deprecated(since = "2026.1", forRemoval = true)
+  @Deprecated
   public boolean addLanguage(@NotNull SLanguage language) {
     LOG.warnDeprecatedUse("Don't use implementation-level SModel.addLanguage()");
     return addLanguage(language, -1);
@@ -935,7 +935,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     /**
      * @deprecated not in use, to become no-op and fade away
      */
-    @Deprecated(since = "2026.1", forRemoval = true)
+    @Deprecated
     public void setModelReference(SModelReference modelReference) {
       LOG.warnDeprecatedUse("Stop using SModel.ImportElement#setModelReference()!");
       myModelReference = modelReference;
@@ -944,7 +944,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     /**
      * @deprecated not in use except for legacy code. once last use gone, remove
      */
-    @Deprecated(since = "2026.1", forRemoval = true)
+    @Deprecated
     public int getReferenceID() {
       return myReferenceID;
     }
@@ -952,7 +952,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     /**
      * @deprecated not in use except for legacy code. once last use gone, remove
      */
-    @Deprecated(since = "2026.1", forRemoval = true)
+    @Deprecated
     public int getUsedVersion() {
       LOG.warnDeprecatedUse("Stop using SModel.ImportElement#getUsedVersion()!");
       return myUsedVersion;

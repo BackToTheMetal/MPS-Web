@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.module.SModule;
  *  getComponent method should be replaced by {@link jetbrains.mps.project.Project} method getComponent for now.
  *  Later it needs to be replaced with a corresponding static method call getInstance of the component class {T}.
  */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
 public interface IOperationContext {
 
   Project getProject();

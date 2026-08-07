@@ -469,7 +469,7 @@ public class FileUtil {
     return false;
   }
 
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
   @NotNull
   public static String getUnixPath(@NotNull String path) {
     return path.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);

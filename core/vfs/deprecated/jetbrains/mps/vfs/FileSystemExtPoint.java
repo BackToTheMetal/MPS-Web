@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @deprecated Use VFSManager
  */
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
 public final class FileSystemExtPoint {
   private static FileSystem ourFS;
 

@@ -36,7 +36,7 @@ public interface SProperty extends SConceptFeature {
   //left for compatibility with "interpreting" code
   //use SProperty in code instead
   @Nullable
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   default SNode getDeclarationNode() {
     return null;
   }

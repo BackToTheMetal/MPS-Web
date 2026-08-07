@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * @deprecated With default methods in the interface, there's no longer need for this class, implement {@link SModelListener} directlu.
  */
 @SuppressWarnings({"RedundantMethodOverride", "DeprecatedIsStillUsed"})
-@Deprecated(since = "2025.1")
+@Deprecated
 public abstract class SModelListenerBase implements SModelListener {
   @Override
   public void modelLoaded(SModel model, boolean partially) {

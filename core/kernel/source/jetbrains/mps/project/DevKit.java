@@ -88,7 +88,7 @@ public class DevKit extends AbstractModule {
    * Once there are no uses, rename getAllExportedLanguageIds to this method and deprecate the former. And, please, stop using Iterable when there's Collection.
    * It's plain stupid to write for() just to add all elements of the iterable to another collection (and don't get me started about IterableUtil.asCollection)
    */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   public List<Language> getAllExportedLanguages() {
     List<Language> result = new ArrayList<>();
     for (DevKit dk : getAllExtendedDevkits()) {

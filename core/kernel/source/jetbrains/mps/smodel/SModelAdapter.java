@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.SModelListener.DependencyChange;
  *             Besides, naming is awfully misguiding, the class is worth deletion just for that.
  * @author Kostik
  */
-@Deprecated(since = "2025.1", forRemoval = true)
+@Deprecated
 public class SModelAdapter implements SModelListener {
   private final SModelListenerPriority myPriority;
 

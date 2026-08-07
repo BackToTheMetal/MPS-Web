@@ -70,7 +70,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory associated with the given file extension.
    * @deprecated use {@link PersistenceFacade#getModelFactory(ModelFactoryType)} instead
    */
-@Deprecated(since = "181", forRemoval = true)
+@Deprecated
   public abstract ModelFactory getModelFactory(@Nullable String extension);
 
   /**
@@ -90,7 +90,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory for default MPS storage format (xml-based).
    * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)} + <code>PreinstalledModelFactoryTypes.PLAIN_XML</code>
    */
-@Deprecated(since = "181", forRemoval = true)
+@Deprecated
   public abstract ModelFactory getDefaultModelFactory();
 
   /**
@@ -286,19 +286,19 @@ public abstract class PersistenceFacade {
    * see {@link NavigationParticipant}
    * @deprecated No reason to keep this in PersistenceComponent, NavigationParticipant API is cumbersome. Need a replacement API.
    */
-  @Deprecated(since = "2020.3", forRemoval = true)
+  @Deprecated
   public abstract Set<NavigationParticipant> getNavigationParticipants();
 
   /**
    * @deprecated see {@link #getNavigationParticipants()}
    */
-  @Deprecated(since = "2020.3", forRemoval = true)
+  @Deprecated
   public abstract void addNavigationParticipant(NavigationParticipant participant);
 
   /**
    * @deprecated see {@link #getNavigationParticipants()}
    */
-  @Deprecated(since = "2020.3", forRemoval = true)
+  @Deprecated
   public abstract void removeNavigationParticipant(NavigationParticipant participant);
 
   public static final class IncorrectModelReferenceFormatException extends IllegalArgumentException {

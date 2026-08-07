@@ -1,0 +1,53 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "util-j2cl",
+    srcs = glob(
+        ["source/**/*.java"],
+         exclude = [
+                 # Unsupported concurrent collections
+                 "**/SimpleLRUCache.java",
+
+                 # Depends on ModelAccess
+                 "**/ModelComputeRunnable.java",
+
+                 # Uses runtime Class.isInstance/Class.cast
+                 "**/CollectionUtil.java",
+
+                 # Trove dependencies
+                 "**/ObjectIdentityHashingStrategy.java",
+                 "**/StatefulUpdate.java",
+                 "**/BidirectionalMap.java",
+                 "**/ManyToManyMap.java",
+
+                 # WeakHashMap
+                 "**/WeakSet.java",
+
+                 # Unsupported Arrays.copyOf overload
+                 "**/ArrayWrapper.java",
+
+                 # Deprecated annotation attributes
+                 "**/AbstractComputeRunnable.java",
+                 "**/ComputeRunnable.java",
+
+                 # Others
+                 "**/Interner.java",
+                 "**/ListMap.java",
+                 "**/StringUtil.java",
+                 "**/NameUtil.java",
+                 "**/PerformanceTracer.java",
+             ],
+     ) + glob(
+               ["j2cl_src/**/*.java"],
+               allow_empty = True,
+           ),
+    deps = [
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

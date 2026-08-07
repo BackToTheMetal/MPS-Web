@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
  * @since 29/12/16
  * @deprecated implementation class, shall not be part of `extapi` nor referenced directly by clients
  */
-@Deprecated(forRemoval = true, since = "2025.2")
+@Deprecated
 @Immutable
 public enum PreinstalledPathDataSourceFactories {
   FILE_OR_FOLDER;

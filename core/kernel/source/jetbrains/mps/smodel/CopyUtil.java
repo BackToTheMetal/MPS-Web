@@ -44,7 +44,7 @@ public final class CopyUtil {
   /**
    * @deprecated use appropriately configure {@link NodeDuplicator}, instead
    */
-  @Deprecated(since = "2024.1", forRemoval = true)
+  @Deprecated
   public static void copyModelContentAndUpdateCrossRootReferences(SModel from, SModel to) {
     // copy content and update references for targets in the same model to point to copied counterparts
     new NodeDuplicator().keepNodeId(false).duplicate(from, to);

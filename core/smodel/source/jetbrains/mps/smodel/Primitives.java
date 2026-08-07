@@ -22,7 +22,7 @@ package jetbrains.mps.smodel;
  *
  * @deprecated Use {@code jetbrains.mps.smodel.adapter.structure.types.SPrimitiveTypes} instead
  */
-@Deprecated(since = "2018.3", forRemoval = true)
+@Deprecated
 public class Primitives {
   public static final String STRING_TYPE = "string";
   public static final String INTEGER_TYPE = "integer";

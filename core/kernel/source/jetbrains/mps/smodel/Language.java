@@ -64,7 +64,7 @@ public class Language extends AbstractModule implements ReloadableModule {
   /**
    * @deprecated Use of default value to detect aspect source root or to check module existence is wrong.
    */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   public static final String LEGACY_LANGUAGE_MODELS = "languageModels";
 
   @NotNull private LanguageDescriptor myLanguageDescriptor;
@@ -313,7 +313,7 @@ public class Language extends AbstractModule implements ReloadableModule {
    *            Then, we could decide whether we truly need access to language's concept nodes this way, or shall use
    *            LanguageAspects instead.
    */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   public List<SNode> getConceptDeclarations() {
     // FIXME there are uses in mbeddr
     SModel structureModel = getStructureModelDescriptor();
@@ -396,7 +396,7 @@ public class Language extends AbstractModule implements ReloadableModule {
     return getModuleName() + " [language]";
   }
 
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   //no full equivalent to this method, use appropriate method from LanguageAspectSupport
   private LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
@@ -411,7 +411,7 @@ public class Language extends AbstractModule implements ReloadableModule {
     return getLanguageFor(modelDescriptor);
   }
 
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   //no full equivalent to this method, use appropriate method from LanguageAspectSupport
   //no usages in MPS, 4 uses in mbeddr
   @Nullable

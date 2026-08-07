@@ -80,7 +80,7 @@ public abstract class SNodeAccessUtil {
   /**
    * @deprecated Methods that take SReference are deprecated, use counterparts with SNode or SNodeReference
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public static void setReference(SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     // was in use from SLinkOperations prior to 2022.3
     myInstance.setReferenceImpl(node, referenceLink, reference);

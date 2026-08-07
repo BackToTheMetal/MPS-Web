@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @deprecated access instance through VFSManager.getFileSystem()
  */
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
 public class IoFileSystem implements FileSystem {
   private static final Logger LOG = Logger.getLogger(IoFileSystem.class);
 
@@ -45,7 +45,7 @@ public class IoFileSystem implements FileSystem {
 
   @NotNull
   @Override
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
   //use either JarIoFS or LocalIoFS
   public IFile getFile(@NotNull String path) {
     path = FileUtil.getCanonicalPath(path);

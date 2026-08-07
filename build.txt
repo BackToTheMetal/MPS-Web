@@ -1,1 +1,6 @@
 262.8665.SNAPSHOT
+
+./scripts/find_error_folders.sh \
+  errors.txt \
+  /Users/hulsc04/Projects/MPS-Web/core/project \
+  erroneous-file-paths2.txt

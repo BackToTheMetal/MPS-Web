@@ -1,0 +1,44 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "vfs-j2cl",
+
+    srcs = glob(
+        ["source/**/*.java"],
+        exclude = [
+            "**/FileUtil.java",
+            "**/LocalFile.java",
+            "**/JarFileData.java",
+            "**/IFile.java",
+            "**/IFileUtil.java",
+            "**/IFileSystem.java",
+            "**/PathFormatChecker.java",
+            "**/QualifiedPath.java",
+            "**/Path.java",
+            "**/vfs/util/PathUtil.java",
+            "**/PathFormats.java",
+            "**/PathSpec.java",
+            "**/MacroHelper.java",
+            "**/VFSManager.java",
+            "source/jetbrains/mps/vfs/iofs/**/*.java",
+        ],
+    ) + glob(
+        ["deprecated/**/*.java"],
+        exclude = [
+            "**/*.java",
+    ], allow_empty = True) + glob(
+        ["j2cl_src/**/*.java"]
+    ),
+    deps = [
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "//core/util:util-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/components:components-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -1,0 +1,11 @@
+{"error":"java.lang.NullPointerException: TypeError: Cannot read properties of null (reading 'm_getEditorComponent__jetbrains_mps_openapi_editor_EditorComponent')
+java.lang.NullPointerException: TypeError: Cannot read properties of null (reading 'm_getEditorComponent__jetbrains_mps_openapi_editor_EditorComponent')\n	at .TypeError: Cannot read properties of null
+reading 'm_getEditorComponent__jetbrains_mps_openapi_editor_EditorComponent')(Unknown Source)\n	at .
+ at Warehouse__EditorBuilder__a.m_getUpdateSession__jetbrains_mps_openapi_editor_update_UpdateSession (http://localhost:6006/furniture-test_dev.js:191914:97)(Unknown Source)\n	at .
+   at Warehouse__EditorBuilder__a.m_getCellFactory__jetbrains_mps_openapi_editor_cells_EditorCellFactory (http://localhost:6006/furniture-test_dev.js:191910:15)(Unknown Source)\n	at .
+     at Warehouse__EditorBuilder__a.m_setCellContext__jetbrains_mps_openapi_editor_cells_EditorCell__jetbrains_mps_openapi_editor_cells_EditorCell (http://localhost:6006/furniture-test_dev.js:191932:91)(Unknown Source)\n
+     at .    at Warehouse__EditorBuilder__a.m_createCollection_0__jetbrains_mps_openapi_editor_cells_EditorCell_$p_Furniture_editor_Warehouse_EditorBuilder_a (http://localhost:6006/furniture-test_dev.js:192431:8)(Unknown Source)\n
+     	at .    at Warehouse__EditorBuilder__a.m_createCell__jetbrains_mps_openapi_editor_cells_EditorCell_$pp_Furniture_editor (http://localhost:6006/furniture-test_dev.js:192424:15)(Unknown Source)\n
+     	at .    at Warehouse__Editor.m_createEditorCell__jetbrains_mps_openapi_editor_EditorContext__org_jetbrains_mps_openapi_model_SNode__jetbrains_mps_openapi_editor_cells_EditorCell (http://localhost:6006/furniture-test_dev.js:192554:150)(Unknown Source)\n
+     	at .    at FurnitureEditorDemo2.createWarehouseEditorJson (http://localhost:6006/furniture-test_dev.js:205307:49)(Unknown Source)\n	at .
+     	  at HTMLButtonElement.<anonymous> (http://localhost:6006/furniture-test_dev.js:205408:34)(Unknown Source)\n"}

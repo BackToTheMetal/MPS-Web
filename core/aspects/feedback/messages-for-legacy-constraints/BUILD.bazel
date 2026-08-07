@@ -1,0 +1,20 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "messages-for-legacy-constraints-j2cl",
+
+    srcs = glob(
+        ["source/**/*.java"],
+    ),
+    deps = [
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/aspects/feedback/context:context-j2cl",
+        "//core/aspects/feedback/problem:problem-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

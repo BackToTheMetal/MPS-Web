@@ -56,7 +56,7 @@ public class SModelOperations {
    * @see jetbrains.mps.project.facets.TestsFacet
    */
   @Nullable
-  @Deprecated(since = "2023.1", forRemoval = true)
+  @Deprecated
   public static IFile getOutputLocation(@NotNull SModel model) {
     // there are 15 uses in mbeddr
     assert model.getModule() != null;
@@ -83,7 +83,7 @@ public class SModelOperations {
    * PROVISIONAL CODE. Same considerations as for {@link #getOutputLocation(SModel)} apply.
    */
   @Nullable
-  @Deprecated(since = "2023.1", forRemoval = true)
+  @Deprecated
   public static IFile getOutputCacheLocation(@NotNull SModel model) {
     // there are no uses in MPS, nor in mps-extensions/mbeddr
     assert model.getModule() != null;
@@ -142,7 +142,7 @@ public class SModelOperations {
    * @return set of languages imported by the model, either directly or through devkit
    * @since 3.3
    */
-@Deprecated(since = "2018.3", forRemoval = true)
+@Deprecated
   @NotNull
   public static Set<SLanguage> getAllLanguageImports(@NotNull SModel model) {
     // there are ~10 uses in mbeddr
@@ -155,7 +155,7 @@ public class SModelOperations {
   /**
    * @deprecated use {@link ModelDependencyResolver} instead
    */
-@Deprecated(since = "2018.3", forRemoval = true)
+@Deprecated
   public static List<SModel> allImportedModels(@NotNull SModel model) {
     // no uses in mbeddr
     SRepository repo = model.getRepository();

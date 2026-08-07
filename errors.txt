@@ -1,0 +1,53 @@
+Error:Component_Editor.java:10: Furniture.editor.Component_Editor is not abstract and does not override abstract method createInspectedCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode) in jetbrains.mps.openapi.editor.descriptor.ConceptEditor
+Error:Garage_Project_Editor.java:10: Furniture.editor.Garage_Project_Editor is not abstract and does not override abstract method createInspectedCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode) in jetbrains.mps.openapi.editor.descriptor.ConceptEditor
+Error:Garage_Project_EditorBuilder_a.java:144: cannot find symbol
+  symbol:   variable gray
+  location: class jetbrains.mps.nodeEditor.MPSColors
+Error:Project_Component_Editor.java:10: Furniture.editor.Project_Component_Editor is not abstract and does not override abstract method createInspectedCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode) in jetbrains.mps.openapi.editor.descriptor.ConceptEditor
+Error:Project_Component_EditorBuilder_a.java:101: incompatible types: @org.jetbrains.annotations.NotNull org.jetbrains.mps.openapi.model.SNode cannot be converted to jetbrains.mps.openapi.editor.EditorContext
+Error:Project_Component_EditorBuilder_a.java:104: cannot find symbol
+  symbol:   method setupIDeprecatableStyles(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.cells.EditorCell)
+  location: class jetbrains.mps.editor.runtime.impl.CellUtil
+Error:Project_Component_EditorBuilder_a.java:110: createErrorCell(java.lang.String) in <anonymous Furniture.editor.Project_Component_EditorBuilder_a$1> cannot override createErrorCell(java.lang.String) in jetbrains.mps.lang.editor.cellProviders.SReferenceCellProvider
+  attempting to assign weaker access privileges; was public
+Error:Project_Component_EditorBuilder_a.java:101: cannot find symbol
+  symbol: constructor (@org.jetbrains.annotations.NotNull org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink,jetbrains.mps.openapi.editor.EditorContext)
+Error:Project_Component_EditorBuilder_a.java:118: cannot find symbol
+  symbol:   method setNoTargetText(java.lang.String)
+  location: variable provider of type jetbrains.mps.lang.editor.cellProviders.SReferenceCellProvider
+Error:Project_Component_EditorBuilder_a.java:119: cannot find symbol
+  symbol:   method createCell()
+  location: variable provider of type jetbrains.mps.lang.editor.cellProviders.SReferenceCellProvider
+Error:Project_Component_EditorBuilder_a.java:125: constructor SReferenceSubstituteInfoSmartReferenceDecorator in class jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfoSmartReferenceDecorator cannot be applied to given types;
+  required: jetbrains.mps.openapi.editor.cells.SubstituteInfo,org.jetbrains.mps.openapi.language.SAbstractConcept
+  found:    jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo
+  reason: actual and formal argument lists differ in length
+Error:Project_Component_EditorBuilder_a.java:127: cannot find symbol
+  symbol:   variable getLink_id1avfQ4BEFo6
+  location: class jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor
+Error:Project_Component_SubstituteMenu.java:25: Furniture.editor.Project_Component_SubstituteMenu is not abstract and does not override abstract method isContribution() in jetbrains.mps.openapi.editor.descriptor.Menu
+Error:Project_Component_SubstituteMenu.java:27: constructor SubstituteMenuBase in class jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase cannot be applied to given types;
+  required: no arguments
+  found:    boolean,jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase
+  reason: actual and formal argument lists differ in length
+Error:Project_Component_SubstituteMenu.java:41: constructor ReferenceScopeSubstituteMenuPart in class jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart cannot be applied to given types;
+  required: no arguments
+  found:    org.jetbrains.mps.openapi.language.SConcept,org.jetbrains.mps.openapi.language.SReferenceLink,jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase
+  reason: actual and formal argument lists differ in length
+Error:Project_Component_SubstituteMenu.java:47: constructor ConceptMenusPart in class jetbrains.mps.lang.editor.menus.ConceptMenusPart<ItemT,ContextT> cannot be applied to given types;
+  required: no arguments
+  found:    jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase
+  reason: actual and formal argument lists differ in length
+Error:Project_Component_SubstituteMenu.java:52: incompatible types: java.util.Collection<capture#1 of ? extends org.jetbrains.mps.openapi.language.SAbstractConcept> cannot be converted to java.util.Collection<org.jetbrains.mps.openapi.language.SAbstractConcept>
+Error:Project_Component_TransformationMenu.java:27: Furniture.editor.Project_Component_TransformationMenu is not abstract and does not override abstract method isContribution() in jetbrains.mps.openapi.editor.descriptor.Menu
+Error:Project_Component_TransformationMenu.java:29: constructor TransformationMenuBase in class jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase cannot be applied to given types;
+  required: no arguments
+  found:    boolean,jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase,java.util.List<java.lang.String>
+  reason: actual and formal argument lists differ in length
+Error:Project_Component_TransformationMenu.java:58: incompatible types: jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase cannot be converted to jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor
+Error:Project_Component_TransformationMenu.java:98: method does not override or implement a method from a supertype
+Error:Project_Component_TransformationMenu.java:102: method does not override or implement a method from a supertype
+Error:Project_Component_TransformationMenu.java:140: method does not override or implement a method from a supertype
+Error:Project_Component_TransformationMenu.java:144: method does not override or implement a method from a supertype
+Error:Text_Line_Editor.java:10: Furniture.editor.Text_Line_Editor is not abstract and does not override abstract method createInspectedCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode) in jetbrains.mps.openapi.editor.descriptor.ConceptEditor
+Error:Warehouse_Editor.java:10: Furniture.editor.Warehouse_Editor is not abstract and does not override abstract method createInspectedCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode) in jetbrains.mps.openapi.editor.descriptor.ConceptEditor

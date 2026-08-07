@@ -31,7 +31,7 @@ public final class ProjectManager implements CoreComponent {
   private static ProjectManager INSTANCE;
   private final List<ProjectManagerListener> myListeners = new CopyOnWriteArrayList<>();
 
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public static ProjectManager getInstance() {
     Logger.getLogger(ProjectManager.class).warnDeprecatedUse("ProjectManager is CoreComponent, use ComponentHost to access its instance");
     return INSTANCE;

@@ -27,8 +27,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathSpec;
 import jetbrains.mps.util.PathSpecBundle;
 import jetbrains.mps.util.annotation.Hack;
@@ -246,121 +244,12 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   }
 
   /*package*/ static boolean isBlank(Memento memento) {
-    return memento.getType() == null && !memento.getKeys().iterator().hasNext() && !memento.getChildren().iterator().hasNext();
+    return false;
   }
 
   @Override
   public void load(@NotNull Memento memento, @NotNull ModulePersistenceContext context) {
-    super.load(memento, context);
-    // FIXME seems that I need dedicated 'initNew/Default' API method, as blank JMF might be a legitimate scenario
-    //       when I don't need any location. OTOH, can at least provide compile/load/ext flags in this case?
-    if (isBlank(memento)) {
-      // some reasonable defaults for scenario when a new facet is added and immediately loaded with blank Memento.
-      // FIXME in fact, JavaModuleFacetTab does the same, but only for Solution, while I need this to happen for every module with a new JMF.
-      //       Merge these two approaches into 1 place.
-      myGeneratedClassesLocation = new PathSpec(MacrosFactory.MODULE + '/' + AbstractModule.CLASSES_GEN);
-      // FIXME this code ^^^ is wrong for Generator (src dir == lang src dir), there's a defect in YT (MPS-35607)
-      // FIXME Once there's myOutputRoot, need to decide about its default value. On one hand, seems reasonable to do the same as
-      //       for myGeneratedClassesLocation. However, there was none and code that creates JMF seems to care about
-      //       source output explicitly (producers). Nevertheless, shall unify approach -
-      //       whether it's here we set defaults or external code does (and whether it uses JMF API or FacetDescriptor memento)
-      // the rest of the fields get their defaults ok
-      if (getModule() instanceof Language) {
-        // this is the only setting different in L/G/D/S defaults
-        myLoadExtensions = LoadExtensions.Plugin;
-      }
-      return;
-    }
-    String languageLevel = memento.get(JAVA_LANGUAGE_LEVEL);
-    if (languageLevel != null && !languageLevel.isEmpty()) {
-      myJavaLanguageLevel = JavaLanguageLevel.valueOf(languageLevel);
-    }
-
-    ArrayList<PathSpec> libraries = new ArrayList<>();
-    final ModuleDescriptor moduleDescriptor = getAbstractModule().getModuleDescriptor();
-    if (isAtDeployedModule()) {
-      // XXX generally, deployed modules shall have different JMF implementation; for the time being we share the one and
-      //     have to respect deployed module scenario here by ignoring classes_gen, even if explicitly specified in source MD
-      myGeneratedClassesLocation = null;
-      if (moduleDescriptor != null) {
-        final DeploymentDescriptor dd = moduleDescriptor.getDeploymentDescriptor();
-        if (dd != null) {
-          dd.getLibrariesResolved().stream().map(PathSpec::new).forEach(libraries::add);
-        } else {
-          // account for isPackaged() == true w/o DD scenario. However, I don't think it's something we shall strive to keep,
-          // instead, shall force use of DD for packaged/deployed scenarios
-          // Nevertheless, there are scenarios in MPS itself, e.g. MPS.Core and other pure stub modules that get packaged in mps-stubs.jar
-          // in their source form (w/o any DD whatsoever)
-          for (Memento m : memento.getChildren(LIBRARY_KEY)) {
-            // FIXME duplicating code with "source" code branch, below
-            final String p = m.get(LOCATION_KEY);
-            if (p != null) {
-              // generally, I expect paths in this scenario to limit macro use to general platform_lib and mps_home,
-              // as ${module} is not that unambiguous for modules inside an archive
-              libraries.add(new PathSpec(p));
-            }
-          }
-        }
-      }
-    } else {
-      // JFTR, intentionally pretty much the same logic is below in classGenPath
-      // FYI, pure stub modules that claim to be 'java' but don't have any generated classes are fine with
-      //      null default for myGeneratedClassesLocation (now that legacy 'classes_gen' default is no longer here)
-      for (Memento m : memento.getChildren(CLASSES_KEY)) {
-        if (Boolean.parseBoolean(m.get(GENERATED_KEY))) {
-          final String v = m.get(PATH_KEY);
-          myGeneratedClassesLocation = v == null ? null : new PathSpec(v);
-          break;
-        }
-      }
-      for (Memento m : memento.getChildren(LIBRARY_KEY)) {
-        final String p = m.get(LOCATION_KEY);
-        if (p != null) {
-          libraries.add(new PathSpec(p));
-        }
-        // XXX shall I warn about bad value here or in persistence? Latter seems to be generic and shall not care about mandatory attributes.
-        // Perhaps, makes sense to keep some sort of 'invalid' path specification?
-      }
-    }
-    // extract sources regardless the fact we are not going to use them for deployed modules. Just for the sake of
-    // completeness (user can see original values in module properties)
-    ArrayList<PathSpec> sources = new ArrayList<>();
-    for (Memento m : memento.getChildren(SOURCE_KEY)) {
-      final String p = m.get(LOCATION_KEY);
-      if (p != null) {
-        sources.add(new PathSpec(p));
-      }
-    }
-    // resolve PathSpec instances
-    // XXX I wonder if one more FS#getFile(String path, Nullable MacroHelper) is better than separate expandPath()?
-    final Function<String, IFile> tr = PersistenceContextImpl.pathResolveFunction(context);
-    // don't re-resolve PathSpec that were instantiated with IFile (e.g. for libraries of deployed modules)
-    final Predicate<PathSpec> resolved = PathSpec::resolved;
-    if (!libraries.isEmpty()) {
-      libraries.stream().filter(resolved.negate()).forEach(l -> l.resolve(tr));
-      myLibraryBundle = new PathSpecBundle(libraries);
-    }
-    if (!sources.isEmpty()) {
-      sources.stream().filter(resolved.negate()).forEach(s -> s.resolve(tr));
-      myAdditionalSources = new PathSpecBundle(sources);
-    }
-    if (myGeneratedClassesLocation != null) {
-      myGeneratedClassesLocation.resolve(tr);
-    }
-
-    // we used to configure defaults for transition (detect from MD), but as persisted values are out there for quite some time, just use serialized values
-    final String compileValue = memento.get(KEY_COMPILE);
-    if (compileValue != null) {
-      myCompile = Compile.fromPersistenceValue(compileValue, Compile.None);
-    }
-    final String clValue = memento.get(KEY_CLASSLOADER);
-    if (clValue != null) {
-      myLoadClasses = LoadClasses.fromPersistenceValue(clValue, LoadClasses.NotAvailable);
-    }
-    final String extValue = memento.get(KEY_EXTENSION);
-    if (extValue != null) {
-      myLoadExtensions = LoadExtensions.fromPersistenceValue(extValue, LoadExtensions.NotAvailable);
-    }
+    throw new UnsupportedOperationException("j2cl");
   }
 
   @NotNull
@@ -472,7 +361,6 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     if (compile == Compile.MPS) {
       final Memento ck = rv.getMemento().createChild(CLASSES_KEY);
       ck.put(GENERATED_KEY, Boolean.toString(true));
-      ck.put(PATH_KEY, MacrosFactory.MODULE + '/' + AbstractModule.CLASSES_GEN);
     }
     rv.getMemento().put(KEY_COMPILE, compile.toPersistenceValue());
     rv.getMemento().put(KEY_CLASSLOADER, loadClasses.toPersistenceValue());

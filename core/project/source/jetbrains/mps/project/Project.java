@@ -53,7 +53,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
   /**
    * @deprecated this is an ugly way to pass Project instance into ProjectRepository cons
    */
-@Deprecated(since = "2018.3", forRemoval = true)
+@Deprecated
   protected Project(String name, @NotNull Function<Project, ProjectRepository> repoFactory) {
     myName = name;
     myRepository = repoFactory.apply(this);
@@ -165,7 +165,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
    * @return set of models limited to {@link org.jetbrains.mps.openapi.project.Project#getProjectModules()}, without template
    *         models from language-owned generators
    */
-  @Deprecated(since = "2021.3", forRemoval = true)
+  @Deprecated
   public final Iterable<SModel> getProjectModels() {
     // uses in mbeddr! - NOT ANYMORE. Just need to fix few last uses in MPS itself!
     List<SModel> result = new ArrayList<>();

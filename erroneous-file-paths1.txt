@@ -1,0 +1,356 @@
+ERROR SOURCE FOLDER REPORT
+==========================
+
+Error log:   errors.txt
+Search root: /Users/hulsc04/Projects/MPS-Web/core/kernel
+
+Java filenames in error log: 92
+Java filenames found:        64
+Unique source folders:       41
+Java filenames not found:    28
+
+UNIQUE MATCHING FOLDERS
+-----------------------
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/errors/item
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/model
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/module
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/model
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/adapter/structure/types
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language
+/Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/runtime
+/Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/checkers
+/Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/kernel/model
+/Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/progress
+/Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/smodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/util
+/Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/errors
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/errors/item
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/model
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/module
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/messages
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/module
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/model
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/ids
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/language
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/types
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/constraints
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/loading
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/presentation
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/references
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/illegal
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/structure
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/tempmodel
+/Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/util
+
+FILE TO PATH MAPPING
+--------------------
+AbstractModule.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/AbstractModule.java
+AbstractModule.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/AbstractModule.java
+AggregatingChecker.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/checkers/AggregatingChecker.java
+BaseExtensionRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/BaseExtensionRegistry.java
+BaseFastNodeFinder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/BaseFastNodeFinder.java
+BaseQuickFixProvider.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/errors/BaseQuickFixProvider.java
+BasicAspectRootConfiguration.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/BasicAspectRootConfiguration.java
+ConceptRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/ConceptRegistry.java
+ConceptSwitchIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/ConceptSwitchIndex.java
+ConceptSwitchIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/ConceptSwitchIndex.java
+ConceptSwitchIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/ConceptSwitchIndexBuilder.java
+ConceptSwitchIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/ConceptSwitchIndexBuilder.java
+DefaultTaskScheduler.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/progress/DefaultTaskScheduler.java
+Dependency.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/Dependency.java
+Dependency.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/Dependency.java
+DeploymentNotificationImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/DeploymentNotificationImpl.java
+DeploymentNotificationImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/DeploymentNotificationImpl.java
+DynamicReference.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/DynamicReference.java
+EmptyList.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/EmptyList.java
+EnumerationLiteralsIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/EnumerationLiteralsIndex.java
+EnumerationLiteralsIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/EnumerationLiteralsIndex.java
+ExtensionPoint.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/structure/ExtensionPoint.java
+FlavouredItem.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/errors/item/FlavouredItem.java
+FlavouredItem.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/errors/item/FlavouredItem.java
+GeneralModuleFactory.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/GeneralModuleFactory.java
+GeneratorDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/GeneratorDescriptor.java
+GeneratorDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/GeneratorDescriptor.java
+IAbstractChecker.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/checkers/IAbstractChecker.java
+IAttributeDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor.java
+IllegalConceptDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/illegal/IllegalConceptDescriptor.java
+ImmatureReferences.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/references/ImmatureReferences.java
+Language.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/Language.java
+Language.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/Language.java
+LanguageConceptIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/LanguageConceptIndexBuilder.java
+LanguageConceptIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/LanguageConceptIndexBuilder.java
+LanguageDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/LanguageDescriptor.java
+LanguageDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/LanguageDescriptor.java
+LanguageExtensionRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/LanguageExtensionRegistry.java
+LanguageRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/LanguageRuntime.java
+LanguageRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/LanguageRuntime.java
+LoadedClassIsNullException.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/module/LoadedClassIsNullException.java
+Message.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/messages/Message.java
+MetaIdByDeclaration.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/ids/MetaIdByDeclaration.java
+ModelCheckerBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/checkers/ModelCheckerBuilder.java
+ModelRootDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/model/ModelRootDescriptor.java
+ModelRootDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/model/ModelRootDescriptor.java
+ModuleRepositoryFacade.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/ModuleRepositoryFacade.java
+ModuleRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/runtime/ModuleRuntime.java
+ModuleRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/ModuleRuntime.java
+MPSModuleRepository.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/smodel/MPSModuleRepository.java
+MPSModuleRepository.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/MPSModuleRepository.java
+NaiveJavaModuleFacet.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/tempmodel/NaiveJavaModuleFacet.java
+NamedThreadFactory.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/util/NamedThreadFactory.java
+NodePresentationUtil.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/presentation/NodePresentationUtil.java
+PartialModelUpdateFacility.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/loading/PartialModelUpdateFacility.java
+PersistenceContextImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/module/PersistenceContextImpl.java
+ReferenceDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/constraints/ReferenceDescriptor.java
+ReferenceDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/ReferenceDescriptor.java
+Repo.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/smodel/Repo.java
+RepositoryFacade.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/smodel/RepositoryFacade.java
+SConstrainedStringDatatypeAdapter.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/adapter/structure/types/SConstrainedStringDatatypeAdapter.java
+SConstrainedStringDatatypeAdapter.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/types/SConstrainedStringDatatypeAdapter.java
+ScopeOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/ScopeOperations.java
+SLanguageAdapterById.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/language/SLanguageAdapterById.java
+SLanguageHierarchy.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SLanguageHierarchy.java
+SmartAliasHelper.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/presentation/SmartAliasHelper.java
+SModel.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/SModel.java
+SModel.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SModel.java
+SModelDescriptorStub.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/model/SModelDescriptorStub.java
+SModelDescriptorStub.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/model/SModelDescriptorStub.java
+SModelLegacy.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SModelLegacy.java
+SModelReference.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SModelReference.java
+SModelRepository.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SModelRepository.java
+SModelUtil.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/kernel/model/SModelUtil.java
+SModuleBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/module/SModuleBase.java
+SModuleBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/module/SModuleBase.java
+SModuleOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SModuleOperations.java
+SNodeAccessUtilImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SNodeAccessUtilImpl.java
+SNodeOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/util/SNodeOperations.java
+SNodeOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SNodeOperations.java
+SPropertyOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SPropertyOperations.java
+SRepositoryEventsDispatcher.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/module/SRepositoryEventsDispatcher.java
+SRepositoryEventsDispatcher.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/module/SRepositoryEventsDispatcher.java
+StructureRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/StructureRegistry.java
+StructureRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/StructureRegistry.java
+TemporaryModels.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/tempmodel/TemporaryModels.java
+TypeRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/types/TypeRegistry.java
+
+AMBIGUOUS FILENAMES
+-------------------
+AbstractModule.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/AbstractModule.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/AbstractModule.java
+
+ConceptSwitchIndex.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/ConceptSwitchIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/ConceptSwitchIndex.java
+
+ConceptSwitchIndexBuilder.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/ConceptSwitchIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/ConceptSwitchIndexBuilder.java
+
+Dependency.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/Dependency.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/Dependency.java
+
+DeploymentNotificationImpl.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/DeploymentNotificationImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/DeploymentNotificationImpl.java
+
+EnumerationLiteralsIndex.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/EnumerationLiteralsIndex.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/EnumerationLiteralsIndex.java
+
+FlavouredItem.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/errors/item/FlavouredItem.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/errors/item/FlavouredItem.java
+
+GeneratorDescriptor.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/GeneratorDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/GeneratorDescriptor.java
+
+Language.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/Language.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/Language.java
+
+LanguageConceptIndexBuilder.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/lang/smodel/LanguageConceptIndexBuilder.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/lang/smodel/LanguageConceptIndexBuilder.java
+
+LanguageDescriptor.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/modules/LanguageDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/modules/LanguageDescriptor.java
+
+LanguageRuntime.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/LanguageRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/LanguageRuntime.java
+
+ModelRootDescriptor.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/project/structure/model/ModelRootDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/project/structure/model/ModelRootDescriptor.java
+
+ModuleRuntime.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/runtime/ModuleRuntime.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/ModuleRuntime.java
+
+MPSModuleRepository.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/smodel/MPSModuleRepository.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/MPSModuleRepository.java
+
+ReferenceDescriptor.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/constraints/ReferenceDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/runtime/ReferenceDescriptor.java
+
+SConstrainedStringDatatypeAdapter.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/adapter/structure/types/SConstrainedStringDatatypeAdapter.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/adapter/structure/types/SConstrainedStringDatatypeAdapter.java
+
+SModel.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/SModel.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/SModel.java
+
+SModelDescriptorStub.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/model/SModelDescriptorStub.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/model/SModelDescriptorStub.java
+
+SModuleBase.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/module/SModuleBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/module/SModuleBase.java
+
+SNodeOperations.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/kernelSolution/source_gen/jetbrains/mps/util/SNodeOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SNodeOperations.java
+
+SRepositoryEventsDispatcher.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/extapi/module/SRepositoryEventsDispatcher.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/extapi/module/SRepositoryEventsDispatcher.java
+
+StructureRegistry.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/j2cl_src/jetbrains/mps/smodel/language/StructureRegistry.java
+  /Users/hulsc04/Projects/MPS-Web/core/kernel/source/jetbrains/mps/smodel/language/StructureRegistry.java
+
+FILES NOT FOUND
+---------------
+BaseConstraintsDescriptor.java
+BasicInitContext.java
+ConceptMissingError.java
+ConstraintsRegistry.java
+DescriptorIO.java
+DescriptorIOFacade.java
+DescriptorModelComponent.java
+DocumentationFacet.java
+FileBasedProject.java
+GeneratorDescriptorModelProvider.java
+JavaModuleFacet.java
+JavaModuleFacetImpl.java
+JavaModuleOperations.java
+LanguageDescriptorModelProvider.java
+LegacyAndRulesConstraintsDescriptor.java
+LibraryContributor.java
+LibraryInitializer.java
+ModulePath.java
+PlainTextTargetFacet.java
+PostingWarningsErrorHandler.java
+PredefinedRuleKinds.java
+Project.java
+ProjectBase.java
+ProjectDescriptor.java
+ProjectManager.java
+ReferenceUpdater.java
+SLibrary.java
+TestsFacet.java

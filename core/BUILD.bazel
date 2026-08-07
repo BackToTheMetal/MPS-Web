@@ -1,0 +1,263 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "kernel-j2cl",
+    srcs = glob([
+        "kernel/source/**/*.java",
+    ],  exclude = [
+       "kernel/source/jetbrains/mps/classloading/*.java",
+       "kernel/source/jetbrains/mps/core/platform/*.java",
+       "kernel/source/jetbrains/mps/generator/**/*.java",
+       "kernel/source/jetbrains/mps/generator/*.java",
+       "kernel/source/jetbrains/mps/reloading/*.java",
+       "kernel/source/jetbrains/mps/util/io/*.java",
+       "kernel/source/jetbrains/mps/persistence/CopyFileBasedModelRootHelper.java",
+       "kernel/source/jetbrains/mps/persistence/DefaultModelRoot.java",
+       "kernel/source/jetbrains/mps/persistence/DataSourceFactoryBridge.java",
+       "kernel/source/jetbrains/mps/persistence/NoSourceRootsInModelRootException.java",
+       "kernel/source/jetbrains/mps/persistence/FilePerRootDataSource.java",
+       "kernel/source/jetbrains/mps/persistence/FilePerRootDataSourceFactory.java",
+
+       "kernel/source/jetbrains/mps/persistence/MementoUtil.java",
+       "kernel/source/jetbrains/mps/persistence/ParametersCalculator.java",
+       "kernel/source/jetbrains/mps/persistence/PersistenceUtil.java",
+       "kernel/source/jetbrains/mps/persistence/RegularFileDataSourceFactory.java",
+       "kernel/source/jetbrains/mps/persistence/CopyFileBasedModelRootHelper.java",
+       "kernel/source/jetbrains/mps/persistence/ModelNameCalculator.java",
+       "kernel/source/jetbrains/mps/persistence/ModelSourceRootWalker.java",
+       "kernel/source/jetbrains/mps/persistence/CopyDefaultModelRootHelper.java",
+       "kernel/source/jetbrains/mps/persistence/DataSourceTypeIsNullForModelFactoryException.java",
+       "kernel/source/jetbrains/mps/persistence/FactoryCannotCreateModelException.java",
+       "kernel/source/jetbrains/mps/persistence/ModelNameCalculator.java",
+       "kernel/source/jetbrains/mps/persistence/ModelSourceRootWalker.java",
+       "kernel/source/jetbrains/mps/persistence/SourceRootDoesNotExistException.java",
+       "kernel/source/jetbrains/mps/persistence/PersistenceRegistry.java",
+
+       "kernel/source/jetbrains/mps/extapi/persistence/ModelFactoryService.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/DefaultSourceRoot.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/SourcePaths.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FileKindIsNotAllowedException.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/ModelRootBase.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FileBasedModelRoot.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FolderDataSource.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FolderSetDataSource.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FileWithBackupDataSource.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/FileDataSource.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/InvalidFile.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/SourceRootKinds.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/datasource/PreinstalledPathDataSourceFactories.java",
+       "kernel/source/jetbrains/mps/extapi/persistence/datasource/DataSourceFactoryFromPath.java",
+       "kernel/source/jetbrains/mps/datatransfer/SNodeClip.java",
+       "kernel/source/jetbrains/mps/util/io/*.java",
+       "**/LanguageRegistry.java",
+       "**/Language.java",
+       "**/MappingPriorityRule.java",
+       "**/Dependency.java",
+       "**/DeploymentDescriptor.java",
+       "**/DevkitDescriptor.java",
+       "**/GeneratorDescriptor.java",
+       "**/LanguageDescriptor.java",
+       "**/ModuleDescriptor.java",
+       "**/ModuleFacetDescriptor.java",
+       "**/SolutionDescriptor.java",
+       "**/MappingConfig_AbstractRef.java",
+       "**/ModelRootDescriptor.java",
+       "**/FlavouredItem.java",
+       "**/ReloadableModule.java",
+       "**/MetaAdapterFactory.java",
+       "**/CancellableReadsManager.java",
+       "**/SModelFileTracker.java",
+       "**/DeploymentNotificationImpl.java",
+       "**/AbstractModule.java",
+       "**/ModuleRuntime.java",
+       "**/SModuleBase.java",
+       "**/SModel.java",
+       "**/SModelDescriptorStub.java",
+       "**/SConstrainedStringDatatypeAdapter.java",
+       "**/StructureRegistry.java",
+       "**/SRepositoryExt.java",
+       "**/JavaNameUtil.java",
+       "**/RuleIdFlavouredItem.java",
+       "**/SRepositoryEventsDispatcher.java",
+       "**/lang/smodel/*.java",
+       "**/SNode.java",
+       "**/MPSModuleRepository.java",
+       "**/LanguageRuntime.java",
+       "**/Solution.java",
+       "**/DevKit.java",
+       "**/Generator.java",
+
+       # uses a lot of persistency related things.
+       "**/EditableSModelBase.java",
+       "**/PathManager.java",
+       "**/MacrosFactory.java",
+       "**/MacroHelperImpl.java",
+       "**/Macros.java",
+       # uses classloading
+       "**/ExtensionRegistry.java",
+       # uses drawing features
+       "**/IconCreationUtil.java",
+       # uses dom utilities
+       "**/JDOMUtil.java",
+       # uses reflection
+        "**/QueryMethods.java",
+        # uses system utilities
+        "**/UnzipUtil.java",
+        "**/WindowsUtil.java",
+        # futures
+        "**/StorageMemoryConflictResolver.java",
+        "**/DefaultTaskScheduler.java",
+        # threads
+        "**/NameThreadFactory.java",
+        #regex
+        "**/ConstrainedStringDatatypeDescriptor.java",
+        "**/ConstrainedStringDatatypeDescriptorImpl.java",
+
+        "kernel/source/jetbrains/mps/smodel/language/BaseExtensionRegistry.java",
+        "kernel/source/jetbrains/mps/smodel/BaseFastNodeFinder.java",
+        "kernel/source/jetbrains/mps/errors/BaseQuickFixProvider.java",
+        "kernel/source/jetbrains/mps/smodel/language/BasicAspectRootConfiguration.java",
+        "kernel/source/jetbrains/mps/smodel/language/ConceptRegistry.java",
+        "kernel/source/jetbrains/mps/smodel/DynamicReference.java",
+        "kernel/source/jetbrains/mps/smodel/structure/ExtensionPoint.java",
+        "kernel/source/jetbrains/mps/smodel/GeneralModuleFactory.java",
+        "kernel/source/jetbrains/mps/smodel/runtime/illegal/IllegalConceptDescriptor.java",
+        "kernel/source/jetbrains/mps/smodel/references/ImmatureReferences.java",
+        "kernel/source/jetbrains/mps/smodel/language/LanguageExtensionRegistry.java",
+        "kernel/source/jetbrains/mps/module/LoadedClassIsNullException.java",
+        "kernel/source/jetbrains/mps/messages/Message.java",
+        "kernel/source/jetbrains/mps/smodel/adapter/ids/MetaIdByDeclaration.java",
+        "kernel/source/jetbrains/mps/smodel/ModuleRepositoryFacade.java",
+        "kernel/source/jetbrains/mps/smodel/tempmodel/NaiveJavaModuleFacet.java",
+        "kernel/source/jetbrains/mps/util/NamedThreadFactory.java",
+        "kernel/source/jetbrains/mps/smodel/presentation/NodePresentationUtil.java",
+        "kernel/source/jetbrains/mps/smodel/loading/PartialModelUpdateFacility.java",
+        "kernel/source/jetbrains/mps/module/PersistenceContextImpl.java",
+        "kernel/source/jetbrains/mps/smodel/constraints/ReferenceDescriptor.java",
+        "kernel/source/jetbrains/mps/smodel/runtime/ReferenceDescriptor.java",
+        "kernel/source/jetbrains/mps/smodel/ScopeOperations.java",
+        "kernel/source/jetbrains/mps/smodel/adapter/structure/language/SLanguageAdapterById.java",
+        "kernel/source/jetbrains/mps/smodel/SLanguageHierarchy.java",
+        "kernel/source/jetbrains/mps/smodel/presentation/SmartAliasHelper.java",
+        "kernel/source/jetbrains/mps/smodel/SModelLegacy.java",
+        "kernel/source/jetbrains/mps/smodel/SModelReference.java",
+        "kernel/source/jetbrains/mps/smodel/SModelRepository.java",
+        "kernel/source/jetbrains/mps/smodel/SNodeAccessUtilImpl.java",
+        "kernel/source/jetbrains/mps/smodel/tempmodel/TemporaryModels.java",
+        "kernel/source/jetbrains/mps/smodel/adapter/structure/types/TypeRegistry.java",
+       ])
+       + glob(["kernel/kernelSolution/source_gen/**/*.java"],
+        exclude = [
+           # imports org.jdom.Element
+           "**/XmlUtil.java",
+           "**/ModelDependencies.java",
+           "**/RootDependencies.java",
+           # imports File, IO stuff
+           "**/StringsIO.java",
+           # imports Swing
+            "**/IconResourceBundle.java",
+            # imports Sax
+            "**/BreakParseSAXException.java",
+            "**/XMLSAXHandler.java",
+            #swing
+            "**/ModelAccessNoLimit.java",
+            # Changed:
+            "**/ProgressTask.java",
+            "**/ModuleDependencyVersions.java",
+
+            "kernel/kernelSolution/source_gen/jetbrains/mps/checkers/ModelCheckerBuilder.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/smodel/MPSModuleRepository.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/smodel/Repo.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/smodel/RepositoryFacade.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/kernel/model/SModelUtil.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/checkers/AggregatingChecker.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/progress/DefaultTaskScheduler.java",
+            "kernel/kernelSolution/source_gen/jetbrains/mps/checkers/IAbstractChecker.java",
+        ]
+       )
+       + glob(["kernel/smodelRuntime/source_gen/**/*.java"],
+            exclude = [
+                "kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/EmptyList.java",
+                "kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/IAttributeDescriptor.java",
+                "kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SNodeOperations.java",
+                "kernel/smodelRuntime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter/SPropertyOperations.java",
+            ]
+       )
+
+       + glob(["kernel/j2cl_src/**/*.java"])
+       + glob(["project/source/**/*.java"],
+            exclude = [
+                "project/**/ProjectBase.java",
+                "project/**/ProjectRepository.java",
+                "project/**/ProjectModuleLoader.java",
+                "project/**/PathMacros.java",
+                "project/source/jetbrains/mps/reloading/*.java",
+                "project/source/jetbrains/mps/library/ModulesMiner.java",
+                "project/source/jetbrains/mps/library/LibraryInitializer.java",
+                "project/source/jetbrains/mps/library/ModuleFileTracker.java",
+                "project/source/jetbrains/mps/library/SLibrary.java",
+                "project/source/jetbrains/mps/library/contributor/LibDescriptor.java",
+                "project/source/jetbrains/mps/project/validation/ConceptMissingError.java",
+                "project/source/jetbrains/mps/project/structure/DescriptorModelComponent.java",
+                "project/source/jetbrains/mps/project/facets/DocumentationFacet.java",
+                "project/source/jetbrains/mps/project/FileBasedProject.java",
+                "project/source/jetbrains/mps/project/structure/GeneratorDescriptorModelProvider.java",
+                "project/source/jetbrains/mps/project/facets/JavaModuleFacet.java",
+                "project/source/jetbrains/mps/project/facets/JavaModuleFacetImpl.java",
+                "project/source/jetbrains/mps/project/facets/JavaModuleOperations.java",
+                "project/source/jetbrains/mps/project/structure/LanguageDescriptorModelProvider.java",
+                "project/source/jetbrains/mps/library/contributor/LibraryContributor.java",
+                "project/source/jetbrains/mps/project/structure/project/ModulePath.java",
+                "project/source/jetbrains/mps/project/facets/PlainTextTargetFacet.java",
+                "project/source/jetbrains/mps/project/dependency/PostingWarningsErrorHandler.java",
+                "project/source/jetbrains/mps/project/Project.java",
+                "project/source/jetbrains/mps/project/structure/project/ProjectDescriptor.java",
+                "project/source/jetbrains/mps/project/ProjectManager.java",
+                "project/source/jetbrains/mps/util/ReferenceUpdater.java",
+                "project/source/jetbrains/mps/project/SModuleOperations.java",
+                "project/source/jetbrains/mps/project/facets/TestsFacet.java",
+            ]
+       )
+       + glob(["project/source_gen/**/*.java"],
+            exclude = [
+                "project/source_gen/jetbrains/mps/project/io/StandardDescriptorIOProvider.java",
+                "project/source_gen/jetbrains/mps/project/io/DescriptorIO.java",
+                "project/source_gen/jetbrains/mps/project/io/DescriptorIOFacade.java",
+                "project/source_gen/jetbrains/mps/project/persistence/*.java",
+            ]
+       )
+       + glob(["project/j2cl_src/**/*.java"])
+       + glob(["aspects/constraints/constraints-runtime/source/**/*.java"],
+            exclude = [
+                "**/PredefinedRuleKinds.java",
+                "**/ConstraintsRegistry.java",
+                "**/BaseConstraintsDescriptor.java",
+            ]
+       )
+       + glob(["aspects/constraints/constraints-runtime/j2cl_src/**/*.java"]),
+    deps = [
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/components:components-j2cl",
+        "//core/util:util-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/smodel:smodel-j2cl",
+        "//core/vfs:vfs-j2cl",
+        "//core/mps-messaging:mps-messaging-j2cl",
+        "//core/aspects/behavior/behavior-api:behavior-api-j2cl",
+        "//core/aspects/behavior/behavior-runtime:behavior-runtime-j2cl",
+        "//core/aspects/feedback/context:context-j2cl",
+        "//core/aspects/feedback/messages-for-legacy-constraints:messages-for-legacy-constraints-j2cl",
+
+        "//languages/baseLanguage/closures/runtime:closures-runtime-j2cl",
+        "//languages/baseLanguage/collections/runtime:collections-runtime-j2cl",
+        "//languages/baseLanguage/references/runtime:references-runtime-j2cl",
+        "//languages/baseLanguage/tuples/runtime:tuples-runtime-j2cl",
+
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -47,7 +47,7 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
   /**
    * Use {@link #getCompile()} and {@link Compile#MPS} instead
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   default boolean isCompileInMps() {
     return getCompile() == Compile.MPS;
   }

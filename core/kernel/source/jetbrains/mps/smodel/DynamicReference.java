@@ -74,7 +74,7 @@ public final class DynamicReference extends jetbrains.mps.smodel.SReference {
   /**
    * @deprecated Use {@link SNode#setReference(SReferenceLink, ResolveInfo)} instead, with {@link ResolveInfo#of(String)}
    */
-  @Deprecated(forRemoval = true, since = "2024.1")
+  @Deprecated
   public static DynamicReference createDynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     return new DynamicReference(role, sourceNode, new DynamicPtr(resolveInfo));
   }

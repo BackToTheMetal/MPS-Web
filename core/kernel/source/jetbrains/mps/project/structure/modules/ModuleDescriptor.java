@@ -137,12 +137,12 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
    */
   // FIXME document what's that and what format it is in
   //       ANY REASON TO BE STRING?
-  @Deprecated(since = "2022.3")
+  @Deprecated
   public final String getTimestamp() {
     return myTimestamp;
   }
 
-  @Deprecated(since = "2022.3")
+  @Deprecated
   public final void setTimestamp(String timestamp) {
     myTimestamp = timestamp;
   }

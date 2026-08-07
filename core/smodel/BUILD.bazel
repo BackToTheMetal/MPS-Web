@@ -1,0 +1,77 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "smodel-j2cl",
+
+    srcs = glob(
+        ["source/**/*.java"],
+        exclude = [
+            # java.util.UUID is unavailable
+            "**/SNodeId.java",
+            "**/ModuleId.java",
+            "**/SModelId.java",
+            "**/SElementId.java",
+            "**/MetaIdFactory.java",
+            "**/SLanguageId.java",
+
+            # java.util.regex and String.format
+            "**/ModuleReference.java",
+
+            # JVM threading, locking, reflection and Swing
+            "**/ActionDispatcher.java",
+            "**/DefaultModelAccess.java",
+            "**/AbstractModelAccess.java",
+            "**/ModelAccess.java",
+            "**/ModelAccessBase.java",
+            "**/SharedReadSupport.java",
+            "**/LockRunnable.java",
+            "**/ReadAccessToken.java",
+            "**/CancellableReadAction.java",
+            "**/SharedReadModelAccessImpl.java",
+
+            # CopyOnWriteArrayList
+            "**/BatchChangeEventDispatch.java",
+            "**/ModelEventDispatch.java",
+            "**/ModelListenerDispatch.java",
+
+            # Trove collections
+            "**/RegularNodeIdMap.java",
+            "**/StringBasedNodeIdMap.java",
+            "**/UniversalOptimizedNodeIdMap.java",
+
+            # WeakReference
+            "**/IconResource.java",
+
+            # JVM system properties: Boolean.getBoolean
+            "**/RuntimeFlags.java",
+
+            # String.format / PrintStream.printf
+            "**/SDependencyImpl.java",
+            "**/JavaFriendlyBase64.java",
+            "**/SReference.java",
+            "**/StaticReference.java",
+            "**/StringBasedIdForJavaStubMethods.java",
+        ],
+    ) + glob(
+        ["j2cl_src/**/*.java"],
+    ),
+
+    deps = [
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+
+        "//core/util:util-j2cl",
+        "//core/logging:logging-j2cl",
+
+        "//languages/baseLanguage/closures/runtime:closures-runtime-j2cl",
+        "//languages/baseLanguage/collections/runtime:collections-runtime-j2cl",
+        "//languages/baseLanguage/references/runtime:references-runtime-j2cl",
+        "//languages/baseLanguage/tuples/runtime:tuples-runtime-j2cl",
+
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

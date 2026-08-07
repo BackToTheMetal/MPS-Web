@@ -1,0 +1,25 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "collections-runtime-j2cl",
+    srcs = glob(
+        [
+            "source_gen/jetbrains/mps/internal/collections/runtime/**/*.java",
+        ],
+        exclude = [
+            "source_gen/jetbrains/mps/internal/collections/runtime/ArrayUtils.java",
+            "source_gen/jetbrains/mps/internal/collections/runtime/ClassUtils.java",
+            "source_gen/jetbrains/mps/internal/collections/runtime/AbstractCollectionSequence.java",
+        ],
+    ) + glob([
+        "j2cl_src/jetbrains/mps/internal/collections/runtime/**/*.java",
+    ]),
+    deps = [
+        "//languages/baseLanguage/closures/runtime:closures-runtime-j2cl",
+        "//languages/baseLanguage/references/runtime:references-runtime-j2cl",
+    ],
+)

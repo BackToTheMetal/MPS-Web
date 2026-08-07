@@ -90,7 +90,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
    * @deprecated there's no need to access BehaviorRegistry class through ConceptRegistry.
    */
   @NotNull
-  @Deprecated(since = "2019.3", forRemoval = true)
+  @Deprecated
   public BehaviorRegistry getBehaviorRegistry() {
     return myBehaviorRegistry;
   }
@@ -169,7 +169,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return myConstraintsRegistry.getConstraintsDescriptor(concept);
   }
 
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   //this method is here for compatibility purposes.
   //remove as soon as there's no need in optimizing by-name stuff
   // which is unlikely to happen provided we have support for legacy persistence that needs by-name concepts.

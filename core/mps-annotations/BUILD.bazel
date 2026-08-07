@@ -1,0 +1,21 @@
+load("@rules_java//java:defs.bzl", "java_library")
+load("@j2cl//build_defs:rules.bzl", "j2cl_import")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+java_library(
+    name = "mps-annotations-java",
+    srcs = glob([
+        "source/**/*.java",
+    ]),
+    deps = [
+        "@org_jetbrains_annotations-j2cl//:org_jetbrains_annotations-j2cl-java",
+    ],
+)
+
+j2cl_import(
+    name = "mps-annotations-j2cl",
+    jar = ":mps-annotations-java",
+)

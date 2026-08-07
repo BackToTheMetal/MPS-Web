@@ -88,7 +88,7 @@ public final class ModuleReference implements SModuleReference {
   /**
    * @deprecated prefer {@link PersistenceFacade#createModuleReference(String)} instead (if possible, which is generally the case except for some low-level code)
    */
-  @Deprecated(since = "2024.1", forRemoval = false)
+  @Deprecated
   public static SModuleReference parseReference(@NotNull String text) {
     return parseReference(text, null);
   }

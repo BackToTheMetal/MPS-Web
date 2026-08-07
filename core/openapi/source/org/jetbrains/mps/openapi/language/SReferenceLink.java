@@ -46,7 +46,7 @@ public interface SReferenceLink extends SAbstractLink {
   //left for compatibility with "interpreting" code
   //use SReferenceLink in code instead
   @Nullable
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   default SNode getDeclarationNode() {
     return null;
   }

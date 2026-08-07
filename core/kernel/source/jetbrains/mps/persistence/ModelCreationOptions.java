@@ -109,7 +109,7 @@ public final class ModelCreationOptions {
     /**
      * @deprecated unused
      */
-    @Deprecated(forRemoval = true, since = "2023.2")
+    @Deprecated
     public Builder setContentOnly(boolean contentOnly) {
       myContentOnly = contentOnly;
       return this;

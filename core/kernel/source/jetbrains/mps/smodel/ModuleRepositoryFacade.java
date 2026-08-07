@@ -174,7 +174,7 @@ public final class ModuleRepositoryFacade implements CoreComponent, ModuleInstan
    * @return named model
    */
   @Nullable
-@Deprecated(since = "2017.3", forRemoval = true)
+@Deprecated
   public SModel getModelByName(@Nullable String modelQualifiedName) {
     if (modelQualifiedName == null) {
       return null;
@@ -256,7 +256,7 @@ public final class ModuleRepositoryFacade implements CoreComponent, ModuleInstan
    * @deprecated If there's need for extending language, shall add <code>Language.getDirectlyExtendingLanguage</code>.
    * There's single use in mbeddr.
    */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   public Collection<Language> getAllExtendingLanguages(Language l) {
     final SModuleReference lRef = l.getModuleReference();
     List<Language> result = new LinkedList<>();

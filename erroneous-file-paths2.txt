@@ -1,0 +1,141 @@
+ERROR SOURCE FOLDER REPORT
+==========================
+
+Error log:   errors.txt
+Search root: /Users/hulsc04/Projects/MPS-Web/core/project
+
+Java filenames in error log: 59
+Java filenames found:        24
+Unique source folders:       13
+Java filenames not found:    35
+
+UNIQUE MATCHING FOLDERS
+-----------------------
+/Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/library
+/Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project
+/Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project/io
+/Users/hulsc04/Projects/MPS-Web/core/project/source_gen/jetbrains/mps/project/io
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/contributor
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/dependency
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/project
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/validation
+/Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/util
+
+FILE TO PATH MAPPING
+--------------------
+ConceptMissingError.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/validation/ConceptMissingError.java
+DescriptorIO.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project/io/DescriptorIO.java
+DescriptorIO.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source_gen/jetbrains/mps/project/io/DescriptorIO.java
+DescriptorIOFacade.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source_gen/jetbrains/mps/project/io/DescriptorIOFacade.java
+DescriptorModelComponent.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/DescriptorModelComponent.java
+DocumentationFacet.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/DocumentationFacet.java
+FileBasedProject.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/FileBasedProject.java
+GeneratorDescriptorModelProvider.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/GeneratorDescriptorModelProvider.java
+JavaModuleFacet.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/JavaModuleFacet.java
+JavaModuleFacetImpl.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/JavaModuleFacetImpl.java
+JavaModuleOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/JavaModuleOperations.java
+LanguageDescriptorModelProvider.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/LanguageDescriptorModelProvider.java
+LibraryContributor.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/contributor/LibraryContributor.java
+LibraryInitializer.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/library/LibraryInitializer.java
+LibraryInitializer.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/LibraryInitializer.java
+ModulePath.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/project/ModulePath.java
+PlainTextTargetFacet.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/PlainTextTargetFacet.java
+PostingWarningsErrorHandler.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/dependency/PostingWarningsErrorHandler.java
+Project.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/Project.java
+ProjectBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project/ProjectBase.java
+ProjectBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/ProjectBase.java
+ProjectDescriptor.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/structure/project/ProjectDescriptor.java
+ProjectManager.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/ProjectManager.java
+ReferenceUpdater.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/util/ReferenceUpdater.java
+SLibrary.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/library/SLibrary.java
+SLibrary.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/SLibrary.java
+SModuleOperations.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/SModuleOperations.java
+TestsFacet.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/facets/TestsFacet.java
+
+AMBIGUOUS FILENAMES
+-------------------
+DescriptorIO.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project/io/DescriptorIO.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source_gen/jetbrains/mps/project/io/DescriptorIO.java
+
+LibraryInitializer.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/library/LibraryInitializer.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/LibraryInitializer.java
+
+ProjectBase.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/project/ProjectBase.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/project/ProjectBase.java
+
+SLibrary.java (2 matches)
+  /Users/hulsc04/Projects/MPS-Web/core/project/j2cl_src/jetbrains/mps/library/SLibrary.java
+  /Users/hulsc04/Projects/MPS-Web/core/project/source/jetbrains/mps/library/SLibrary.java
+
+FILES NOT FOUND
+---------------
+AbstractModule.java
+AggregatingChecker.java
+BaseConstraintsDescriptor.java
+BaseQuickFixProvider.java
+BasicInitContext.java
+ConceptSwitchIndex.java
+ConceptSwitchIndexBuilder.java
+ConstraintsRegistry.java
+Dependency.java
+DeploymentNotificationImpl.java
+DynamicReference.java
+EnumerationLiteralsIndex.java
+FlavouredItem.java
+GeneratorDescriptor.java
+Language.java
+LanguageConceptIndexBuilder.java
+LanguageDescriptor.java
+LanguageRuntime.java
+LegacyAndRulesConstraintsDescriptor.java
+MetaIdByDeclaration.java
+ModelCheckerBuilder.java
+ModelRootDescriptor.java
+ModuleRepositoryFacade.java
+ModuleRuntime.java
+PersistenceContextImpl.java
+PredefinedRuleKinds.java
+SConstrainedStringDatatypeAdapter.java
+ScopeOperations.java
+SmartAliasHelper.java
+SModel.java
+SModelDescriptorStub.java
+SModuleBase.java
+SNodeAccessUtilImpl.java
+SRepositoryEventsDispatcher.java
+StructureRegistry.java

@@ -46,7 +46,7 @@ public interface SLanguage {
    *             This method would stay functional for at least another year, and then start issuing warnings and later return empty
    *             collection before being removed completely.
    */
-  @Deprecated(since = "2026.1", forRemoval = true)
+  @Deprecated
   default Iterable<SAbstractConcept> getConcepts() {
     return Collections.emptyList();
   }
@@ -56,7 +56,7 @@ public interface SLanguage {
    * @deprecated Use of this method is discouraged, switch to {@code LanguageRuntime#getDatatypes()}.
    *             This method would return empty collection in the coming releases (no known uses).
    */
-  @Deprecated(since = "2026.1", forRemoval = true)
+  @Deprecated
   @NotNull
   default Iterable<SDataType> getDatatypes() {
     return Collections.emptyList();
@@ -90,7 +90,7 @@ public interface SLanguage {
    *             or {@code Language#getLanguageVersion()} for sources.
    * @return non-negative version of the language, or -1 the version could not be deduced.
    */
-  @Deprecated(forRemoval = true) //normally, one shouldn't have used it. If you had, switch to getting version from LanguageRuntime
+  @Deprecated //normally, one shouldn't have used it. If you had, switch to getting version from LanguageRuntime
   default int getLanguageVersion() {
     // FWIW, no uses in mbeddr, and 1 in MPS itself
     return -1;

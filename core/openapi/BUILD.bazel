@@ -1,0 +1,26 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "mps-openapi-j2cl",
+    srcs = glob(
+        ["source/**/*.java"],
+        exclude = [
+            "source/org/jetbrains/mps/openapi/model/EditableSModel.java",
+            "source/org/jetbrains/mps/openapi/model/SModelName.java",
+            "source/org/jetbrains/mps/openapi/module/ModelAccess.java",
+            "source/org/jetbrains/mps/openapi/module/SModule.java",
+            "source/org/jetbrains/mps/openapi/persistence/DataSourceNotSupportedProblem.java",
+            "source/org/jetbrains/mps/openapi/persistence/ModelFactory.java",
+        ],
+    ) + glob([
+        "j2cl_src/**/*.java",
+    ]),
+    deps = [
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -1,0 +1,21 @@
+# core/aspects/behavior/behavior-api/BUILD.bazel
+
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "behavior-api-j2cl",
+    srcs = glob([
+        "source/**/*.java",
+    ]),
+    deps = [
+        "//core/smodel:smodel-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/components:components-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -25,10 +25,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * To get SLanguage or SConcept/SInterfaceConcept, there's no other alternative at the moment but to use static methods of this class.
  * @deprecated use MetaAdapterFactory instead
  */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
 public class MetaAdapterFactoryByName {
 
-  @Deprecated(since = "3.3", forRemoval = true)
+  @Deprecated
   // no usages in MPS except SNodeFactory.toConcept for legacy persistence purposes
   // 1 usage in com.mbeddr.debugger
   public static SConcept getConcept(String conceptName) {

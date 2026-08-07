@@ -1,0 +1,34 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "editor-api-j2cl",
+    srcs = glob(
+        ["source/**/*.java"],
+        exclude = [
+           "source/**/CellMessagesUtil.java",
+           "source/**/EditorExtensionUtil.java",
+           "source/**/SubMenu.java",
+           "source/**/EditorMenuItemStyle.java",
+           "source/**/SimpleEditorMessage.java",
+           "source/**/StyleRegistry.java",
+           "source/**/EditorComponentSettings.java",
+           "source/**/EditorState.java",
+        ]
+    ) + glob(["j2cl_src/**/*.java"]),
+    deps = [
+        "//core/components:components-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/mps-messaging:mps-messaging-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/smodel:smodel-j2cl",
+        "//core/util:util-j2cl",
+        "//core:kernel-j2cl",
+
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

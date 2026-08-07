@@ -28,7 +28,7 @@ import java.util.List;
  *
  * Created by apyshkin on 11/3/15.
  */
-@Deprecated(forRemoval = true, since = "2022.3")
+@Deprecated
 public interface IProject extends org.jetbrains.mps.openapi.project.Project {
 
   /**

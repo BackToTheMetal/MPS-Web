@@ -127,7 +127,7 @@ public enum LanguageAspect {
    * @deprecated use {@link jetbrains.mps.smodel.language.LanguageAspectDescriptor} alternative.
    *             There are no known uses, the method will be removed after 2025.2
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SModel createNew(Language l) {
     return createNew(l, true);
   }
@@ -136,7 +136,7 @@ public enum LanguageAspect {
    * @deprecated use {@link jetbrains.mps.smodel.language.LanguageAspectDescriptor} alternative.
    *             There are no known uses, the method will be removed after 2025.2
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SModel createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
     Logger.getLogger(LanguageAspect.class).warnDeprecatedUse("Don't use legacy LanguageAspect class to create new aspect models");
@@ -155,7 +155,7 @@ public enum LanguageAspect {
   //not used in MPS
   //use jetbrains.mps.smodel.language.LanguageAspectSupport.getAspectModels()
   // [2025] still 2 uses in mps-extensions
-  @Deprecated(since = "3.3", forRemoval = true)
+  @Deprecated
   public static Collection<SModel> getAspectModels(Language l) {
     Set<SModel> result = new HashSet<>();
     for (LanguageAspect aspect : LanguageAspect.values()) {

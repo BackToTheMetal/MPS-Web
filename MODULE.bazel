@@ -1,0 +1,44 @@
+module(
+    name = "mps_web",
+)
+
+_J2CL_VERSION = "20260402"
+
+bazel_dep(
+    name = "j2cl",
+    version = _J2CL_VERSION,
+)
+bazel_dep(
+    name = "rules_closure",
+    version = "0.16.0",
+)
+bazel_dep(
+    name = "rules_java",
+    version = "8.13.0",
+)
+bazel_dep(
+    name = "rules_jvm_external",
+    version = "6.7",
+)
+
+j2cl_maven_import_external = use_repo_rule(
+    "@j2cl//build_defs:rules.bzl",
+    "j2cl_maven_import_external",
+)
+
+j2cl_maven_import_external(
+    name = "org_jetbrains_annotations-j2cl",
+    annotation_only = True,
+    artifact = "org.jetbrains:annotations:26.0.2",
+    artifact_sha256 = "2037be378980d3ba9333e97955f3b2cde392aa124d04ca73ce2eee6657199297",
+    server_urls = [
+        "https://repo1.maven.org/maven2",
+    ],
+)
+
+# Maven dependencies.
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+# TODO(b/532249785): we need to have an empty maven.install() here due to
+#   https://github.com/bazel-contrib/rules_jvm_external/issues/1438
+maven.install()

@@ -64,7 +64,7 @@ public class SLibrary implements MPSModuleOwner, Comparable<SLibrary> {
                               .notifyOnParentRemoval()
                               .build();
 
-  private final IFile myFile;
+  private final IFile myFile = null;
   private final SRepositoryExt myRepository;
   private final ClassLoader myPluginClassLoader;
   private final DescriptorIOFacade myDescriptorIO;

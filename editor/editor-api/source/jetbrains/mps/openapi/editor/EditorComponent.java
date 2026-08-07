@@ -143,7 +143,7 @@ public interface EditorComponent {
    * @deprecated not part of EditorComponent (swing/ui), rather EditorContext (interaction with user),
    *             use {@link EditorContext#getDeletionApprover()} instead
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   default DeletionApprover getDeletionApprover() {
     return getEditorContext().getDeletionApprover();
   }

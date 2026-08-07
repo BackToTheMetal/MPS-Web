@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  * 
  * @deprecated 
  */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
 @GeneratedClass(nodeId = "5073169472575923460", model = "r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)")
 public class BootstrapLanguages {
   @Deprecated

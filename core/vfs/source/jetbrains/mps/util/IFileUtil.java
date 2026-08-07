@@ -92,7 +92,7 @@ public class IFileUtil {
    *
    * @param jarFile shall be {@link #isJarFile(IFile) java archive file}
    */
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   @NotNull
   public static IFile stepIntoJar(@NotNull IFile jarFile) {
     assert isJarFile(jarFile) : jarFile;

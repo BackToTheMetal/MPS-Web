@@ -1,0 +1,33 @@
+# core/aspects/behavior/behavior-api/BUILD.bazel
+
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "behavior-runtime-j2cl",
+    srcs = glob([
+        "source/**/*.java",
+
+    ],  exclude = [
+                  "**/AccessPrivileges.java",
+                  "**/BaseBHDescriptor.java",
+                  "**/BehaviorChecker.java",
+                  "**/BoxingHelper.java",
+                  "**/SMethodIdV2.java",
+                  "**/SMethodImpl.java",
+              ],)+ glob(
+              ["j2cl_src/**/*.java"],
+          ),
+    deps = [
+        "//core/smodel:smodel-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/components:components-j2cl",
+        "//core/aspects/behavior/behavior-api:behavior-api-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

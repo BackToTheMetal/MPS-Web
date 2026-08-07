@@ -48,7 +48,7 @@ public class ModelDependencies {
    * 
    * @deprecated MPS doesn't produce nor keep per-root/per-class dependencies any more
    */
-  @Deprecated(forRemoval = true, since = "2022.2")
+  @Deprecated
   public void addDependencies(RootDependencies newDependency) {
     Logger.getLogger(getClass()).warnDeprecatedUse("RootDependencies is no-op, don't use");
   }
@@ -56,7 +56,7 @@ public class ModelDependencies {
    * 
    * @deprecated MPS doesn't produce nor keep per-root/per-class dependencies any more
    */
-  @Deprecated(forRemoval = true, since = "2022.2")
+  @Deprecated
   public Iterable<RootDependencies> getDependencies() {
     return Collections.emptyList();
   }
@@ -64,7 +64,7 @@ public class ModelDependencies {
    * 
    * @deprecated MPS doesn't produce nor keep per-root/per-class dependencies any more
    */
-  @Deprecated(forRemoval = true, since = "2022.2")
+  @Deprecated
   public RootDependencies getDependency(String className) {
     return null;
   }
@@ -72,7 +72,7 @@ public class ModelDependencies {
    * 
    * @deprecated 
    */
-  @Deprecated(forRemoval = true, since = "2022.2")
+  @Deprecated
   public void replaceRoot(RootDependencies rootDependencies) {
     Logger.getLogger(getClass()).warnDeprecatedUse("RootDependencies is no-op, don't use");
   }

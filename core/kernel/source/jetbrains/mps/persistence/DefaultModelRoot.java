@@ -115,7 +115,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    * JpsTestModelsEnvironment.createModelRoot relied on DMR, which is wrong, although used to work)
    *
    */
-  @Deprecated(since = "0", forRemoval = true)
+  @Deprecated
   private DefaultModelRoot(int ignored) {
     myModelFactoryRegistry = null;
     myDataSourceRegistry = null;

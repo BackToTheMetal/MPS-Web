@@ -57,7 +57,7 @@ import java.util.stream.Stream;
  *
  * @author apyshkin
  */
-@Deprecated(since = "223", forRemoval = true)
+@Deprecated
 public final class LegacyAndRulesConstraintsDescriptor implements RulesConstraintsDescriptor {
 
   @NotNull private final SAbstractConcept myConcept;

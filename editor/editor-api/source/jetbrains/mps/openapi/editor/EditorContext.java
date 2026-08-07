@@ -86,13 +86,13 @@ public interface EditorContext {
   /**
    * @deprecated use {@link EditorComponent#captureState()}
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   EditorComponentState getEditorComponentState();
 
   /**
    * @deprecated use {@link EditorComponent#restoreState(EditorComponentState)}
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   void restoreEditorComponentState(EditorComponentState state);
 
   void runWithContextCell(EditorCell contextCell, Runnable r);

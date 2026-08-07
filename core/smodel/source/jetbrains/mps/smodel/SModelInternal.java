@@ -49,7 +49,7 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
    *            Legacy {@link SModelListener} will become no-op or removed in the next MPS release.
    *            All the uses in MPS have been cleared (there's only 1 for tests left), DO NOT introduce any new.
    */
-  @Deprecated(since = "2025.1", forRemoval = true)
+  @Deprecated
   default void addModelListener(@NotNull SModelListener listener) {
     // in MPS-extensions, there are few uses, most notable SM_RepositoryChangeTranslator, GlobalModelEventCollector and few others.
   }
@@ -57,7 +57,7 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   /**
    * @deprecated see {@link #addModelListener(SModelListener)}, above, for explanation
    */
-  @Deprecated(since = "2025.1", forRemoval = true)
+  @Deprecated
   default void removeModelListener(@NotNull SModelListener listener) {
   }
 

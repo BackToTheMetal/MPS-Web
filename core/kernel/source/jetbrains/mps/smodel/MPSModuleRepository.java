@@ -89,7 +89,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
    * @since 3.2
    * @deprecated
    */
-  @Deprecated(since = "3.4", forRemoval = true)
+  @Deprecated
   public static MPSModuleRepository getInstance() {
     return ourInstance;
   }

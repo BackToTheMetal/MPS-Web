@@ -57,7 +57,7 @@ public interface IFile {
    * Use getFS() instead
    * Note the IFileSystem is per-protocol, in which it differs from FileSystem.
    */
-@Deprecated(since = "2019.1", forRemoval = true)
+@Deprecated
   @NotNull
   FileSystem getFileSystem();
 
@@ -166,7 +166,7 @@ public interface IFile {
   /**
    * @deprecated use {@link #isZipArchive()} or {@link #isInZipArchive()}
    */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   default boolean isPackaged() {
     return isInZipArchive();
   }
@@ -212,7 +212,7 @@ public interface IFile {
    * @return the jar or folder which contains this file
    * @deprecated use {@link #getPath()} and extract the path you need
    */
-@Deprecated(since = "3.4", forRemoval = true)
+@Deprecated
   IFile getBundleHome();
 
   // accessing physical fs
@@ -225,7 +225,7 @@ public interface IFile {
    * @deprecated use findChild() instead.
    * The problem of findDescendant is that it's unclear, can we pass an empty string, string with path separators, string with archive separators
    */
-@Deprecated(since = "2019.2", forRemoval = true)
+@Deprecated
   @NotNull IFile getDescendant(@NotNull String suffix);
 
   /**
@@ -295,7 +295,7 @@ public interface IFile {
    * @return true iff success
    * @deprecated clients do not see IFile as a pointer, but as a real location holder. use {@link #rename1(String)} instead
    */
-@Deprecated(since = "193", forRemoval = true)
+@Deprecated
   boolean rename(@NotNull String newName);
 
   /**
@@ -314,7 +314,7 @@ public interface IFile {
    * @return true iff success
    * @deprecated see #rename
    */
-@Deprecated(since = "193", forRemoval = true)
+@Deprecated
   boolean move(@NotNull IFile newParent);
 
   /**

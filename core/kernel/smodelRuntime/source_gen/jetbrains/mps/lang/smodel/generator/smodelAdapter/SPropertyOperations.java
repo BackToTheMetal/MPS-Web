@@ -85,7 +85,7 @@ public class SPropertyOperations {
    * 
    * @deprecated no uses of the method
    */
-  @Deprecated(forRemoval = true, since = "2024.1")
+  @Deprecated
   public static String getString(String value) {
     Logger.getLogger(SPropertyOperations.class).warnDeprecatedUse("NO-OP method, shall not use one from templates (let alone from hand-written code)");
     return value;
@@ -283,7 +283,7 @@ public class SPropertyOperations {
    * 
    * @deprecated 
    */
-  @Deprecated(since = "19.2", forRemoval = true)
+  @Deprecated
   public static String castEnumString(@Nullable Object value) {
     return castString(getRawValueFromLiteral(value));
   }
@@ -291,7 +291,7 @@ public class SPropertyOperations {
    * 
    * @deprecated 
    */
-  @Deprecated(since = "19.2", forRemoval = true)
+  @Deprecated
   public static boolean castEnumBoolean(@Nullable Object value) {
     return castBoolean(getRawValueFromLiteral(value));
   }
@@ -299,7 +299,7 @@ public class SPropertyOperations {
    * 
    * @deprecated 
    */
-  @Deprecated(since = "19.2", forRemoval = true)
+  @Deprecated
   public static int castEnumInteger(@Nullable Object value) {
     return castInteger(getRawValueFromLiteral(value));
   }

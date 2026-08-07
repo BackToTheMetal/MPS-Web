@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * @deprecated see {@link jetbrains.mps.smodel.IOperationContext}
  */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
 public class ProjectOperationContext extends StandaloneMPSContext {
   private Project myProject;
 

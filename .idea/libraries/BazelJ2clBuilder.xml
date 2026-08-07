@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BazelJ2clBuilder">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bazel-out/darwin_arm64-opt-exec-ST-d57f47055a04/bin/external/j2cl+/transpiler/java/com/google/j2cl/transpiler/BazelJ2clBuilder.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -350,7 +350,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
   }
 
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   protected void updateTimestamp() {
     // protected just in case there's an override in a subclass
     // keep protected for 1 release and make private once 2024.2 is out

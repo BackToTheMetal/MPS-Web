@@ -61,7 +61,7 @@ public final class VisibilityUtil {
   /**
    * @deprecated use alternative instance methods
    */
-  @Deprecated(forRemoval = true, since = "2025.1")
+  @Deprecated
   public static boolean isVisible(SModule from, SModule what) {
     return new VisibilityUtil(from).isVisible(what);
   }
@@ -69,7 +69,7 @@ public final class VisibilityUtil {
   /**
    * @deprecated use alternative instance methods
    */
-  @Deprecated(forRemoval = true, since = "2025.1")
+  @Deprecated
   public static boolean isVisible(SModule from, SModel what) {
     SModule module = what.getModule();
     // XXX no idea why we check module of a model for != null here
@@ -79,7 +79,7 @@ public final class VisibilityUtil {
   /**
    * @deprecated use alternative instance methods
    */
-  @Deprecated(forRemoval = true, since = "2025.1")
+  @Deprecated
   public static boolean isVisible(SModel from, SModel what) {
     SModule fromModule = from.getModule();
     return fromModule != null && isVisible(fromModule, what);

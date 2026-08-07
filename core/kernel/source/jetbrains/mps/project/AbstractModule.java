@@ -108,7 +108,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   /**
    * @deprecated no special meaning for this location in MPS now; single present use is bogus and needs attention
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public static final String CLASSES = "classes";
 
   /**
@@ -146,7 +146,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   /**
    * @deprecated there's no guarantee {@code AbstractModule} is based on a file
    */
-  @Deprecated(forRemoval = true, since = "2025.1")
+  @Deprecated
   public FileSystem getFileSystem() {
     // 2 uses in MPS-extension, 1 in mbeddr
     return myFileSystem;

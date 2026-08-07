@@ -31,7 +31,7 @@ public interface MacroHelper {
   /**
    * @deprecated use {@link #shrinkPath(IFile, String)} or {@link #shrinkPath(String, String)} instead
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   default String shrinkPath(@Nullable String absolutePath) {
     return shrinkPath(absolutePath, null);
   }

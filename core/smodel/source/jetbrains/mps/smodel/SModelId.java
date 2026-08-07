@@ -63,7 +63,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
    * @deprecated this method doesn't support {@link org.jetbrains.mps.openapi.persistence.SModelIdFactory},
    * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelId(String)} instead.
    */
-@Deprecated(since = "3.3", forRemoval = true)
+@Deprecated
   public static SModelId fromString(String id) {
     if (id.startsWith(REGULAR_PREFIX)) {
       String suffix = id.substring(REGULAR_PREFIX.length());

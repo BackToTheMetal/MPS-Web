@@ -26,13 +26,13 @@ public interface MessageTarget {
    * @deprecated {@code MessageTarget} has to vary in implementation rather than exposing dubious 'target' kind.
    *             For transition, may check {@code MessageTarget} instanceof respective subclass.
    */
-@Deprecated(since = "2019.2", forRemoval = true)
+@Deprecated
   MessageTargetEnum getTarget();
 
   /**
    * @deprecated first of all, string meta-objects are legacy; second, {@code MessageTarget} shall hide its implementation inside rather than expose it.
    */
-@Deprecated(since = "2019.2", forRemoval = true)
+@Deprecated
   String getRole();
 
   boolean sameAs(MessageTarget messageTarget);

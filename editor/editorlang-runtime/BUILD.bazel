@@ -1,0 +1,33 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "editorlang-runtime-j2cl",
+    srcs = glob(
+        [
+        "source/**/*.java",
+        "source_gen/**/*.java"
+        ], exclude = [
+           "source/**/SelectionUtil.java",
+           "source/**/StyleAttributes.java",
+        ]
+    ) + glob(
+        ["j2cl_src/**/*.java"]
+    ),
+    deps = [
+        "//core/components:components-j2cl",
+        "//editor/editor-api:editor-api-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/mps-messaging:mps-messaging-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/smodel:smodel-j2cl",
+        "//core/util:util-j2cl",
+        "//core:kernel-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "//languages/baseLanguage/collections/runtime:collections-runtime-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

@@ -93,7 +93,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   /**
    * @deprecated no-op, don't use
    */
-  @Deprecated(since = "2025.1", forRemoval = true)
+  @Deprecated
   public void makeDirect() {
     // no-op by default
   }
@@ -101,7 +101,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   /**
    * @deprecated no-op, don't use
    */
-  @Deprecated(since = "2025.1", forRemoval = true)
+  @Deprecated
   public boolean makeIndirect() {
     return false;
   }

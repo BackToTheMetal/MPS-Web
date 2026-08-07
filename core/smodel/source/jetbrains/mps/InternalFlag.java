@@ -19,7 +19,7 @@ package jetbrains.mps;
 /**
  * @deprecated use {@link RuntimeFlags}
   */
-@Deprecated(since = "2018.2", forRemoval = true)
+@Deprecated
 public class InternalFlag {
 
   public static boolean isInternalMode() {

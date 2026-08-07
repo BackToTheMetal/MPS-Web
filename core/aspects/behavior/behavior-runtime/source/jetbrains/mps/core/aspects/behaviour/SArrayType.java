@@ -54,7 +54,7 @@ public final class SArrayType implements SAbstractType {
    * @deprecated use {@link #getComponentType()}
    */
   @NotNull
-  @Deprecated(since = "2026.1", forRemoval = true)
+  @Deprecated
   public SAbstractType getInternalType() {
     return getComponentType();
   }

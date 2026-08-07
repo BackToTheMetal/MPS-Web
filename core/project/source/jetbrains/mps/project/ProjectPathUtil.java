@@ -23,10 +23,10 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @deprecated no useful methods left
  */
-@Deprecated(forRemoval = true)
+@Deprecated
 public class ProjectPathUtil {
 
-  @Deprecated(since = "0", forRemoval = true)
+  @Deprecated
   public static String _getGeneratorOutputPathPrim(ModuleDescriptor descriptor) {
     // still uses in com.mbeddr.doc and com.mbeddr.doc.self
     Logger.getLogger(ProjectPathUtil.class).warnDeprecatedUse("Don't use ProjectPathUtil to access module's output path. THIS METHOD IS NO OP");
@@ -36,7 +36,7 @@ public class ProjectPathUtil {
   /**
    * Counterpart to {@code #getGeneratorOutputPath(ModuleDescriptor)} to modify path value
    */
-  @Deprecated(since = "2023.3", forRemoval = true)
+  @Deprecated
   public static void setGeneratorOutputPath(@NotNull ModuleDescriptor descriptor, @Nullable String path) {
     // 1 use in com.mbeddr.mpsutil.interpreter.migration, with path == default value, just ignore
     Logger.getLogger(ProjectPathUtil.class).warnDeprecatedUse("Don't use ProjectPathUtil to access module's output path. THIS METHOD IS NO OP");

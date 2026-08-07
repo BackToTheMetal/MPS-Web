@@ -40,7 +40,7 @@ public abstract class NavigationSupport implements CoreComponent {
    * @deprecated use {@link EditorNavigator} or {@link ProjectPaneNavigator} instead.
    *             If utterly necessary, for transition purposes can use {@link #getInstance(Project)}
    */
-  @Deprecated(forRemoval = true, since = "2024.1")
+  @Deprecated
   public static NavigationSupport getInstance() {
     Logger.getLogger(NavigationSupport.class).warnDeprecatedUse("Replace with #getInstance(project) call");
     return INSTANCE;

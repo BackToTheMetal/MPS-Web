@@ -187,7 +187,7 @@ public final class StaticReference extends SReference {
    *             E.g. {@code node<Classifier> jlObj = <ClassifierType: Object>.classifier}
    *             Until this practice is over, we have to deal with global repository
    */
-  @Deprecated(since = "2018.3", forRemoval = true)
+  @Deprecated
   private SModel getTargetSModel(AssociationData d) {
     SModel current = getSourceNode().getModel();
     if (d instanceof LocalNodePtr || (current != null && current.getReference().equals(getTargetSModelReference()))) {

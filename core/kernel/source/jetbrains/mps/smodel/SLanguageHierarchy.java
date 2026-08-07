@@ -72,7 +72,7 @@ public class SLanguageHierarchy {
     myLanguages = languages;
   }
 
-@Deprecated(since = "0", forRemoval = true)
+@Deprecated
   public SLanguageHierarchy(@NotNull Collection<SLanguage> languages) {
     this(LanguageRegistry.getInstance(), languages);
   }

@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * 
  * @deprecated utility of no added value, does pretty much the same what regular `MA.executeCommand(Runnable) does anyway
  */
-@Deprecated(since = "2021.2", forRemoval = true)
+@Deprecated
 @GeneratedClass(nodeId = "63618339873621166", model = "r:79655025-bd36-445f-8b79-189312ab627e(jetbrains.mps.smodel.undo)")
 public abstract class DefaultCommand extends DefaultUndoContext implements Runnable {
   @Deprecated

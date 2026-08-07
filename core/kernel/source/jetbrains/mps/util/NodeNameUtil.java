@@ -23,7 +23,7 @@ public class NodeNameUtil {
   /**
    * @deprecated use {@link NameUtil#shortNameFromLongName(String)}
    */
-  @Deprecated(since = "2023.3", forRemoval = true)
+  @Deprecated
   public static String getName(String fqName) {
     return NameUtil.shortNameFromLongName(fqName);
   }
@@ -31,7 +31,7 @@ public class NodeNameUtil {
   /**
    * @deprecated use {@link NameUtil#namespaceFromLongName(String)}
    */
-  @Deprecated(since = "2023.3", forRemoval = true)
+  @Deprecated
   public static String getNamespace(String fqName) {
     return NameUtil.namespaceFromLongName(fqName);
   }

@@ -23,7 +23,7 @@ public class BasicInitContext implements ConstraintsDescriptorInitContext {
   private final List<ConstraintsDescriptor> myParentDescriptors;
 
   // transitional code, do not use, to be removed once 2025.2 is out
-  @Deprecated(forRemoval = true, since = "0")
+  @Deprecated
   public BasicInitContext() {
     this(ConceptRegistry.getInstance().getConstraintsRegistry(), null, null);
   }

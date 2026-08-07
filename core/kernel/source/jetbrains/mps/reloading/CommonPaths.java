@@ -54,7 +54,7 @@ public final class CommonPaths {
     return getPaths(ClassType.JDK_TOOLS).stream().map(QualifiedPath::getPath).collect(Collectors.toList());
   }
 
-  @Deprecated(since = "2021.3", forRemoval = true)
+  @Deprecated
   public static List<String> getJDKPath() {
     // XXX there's only 1 use of the method, does it justify its existence?
     return getJDKPathInternal().stream()

@@ -43,12 +43,12 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
     return getFile(PathUtil.toSystemIndependent(FileUtil.getCanonicalPath(file.getAbsolutePath())));
   }
 
-  @Deprecated(since = "2019.1", forRemoval = true)
+  @Deprecated
   static FileSystem getInstance() {
     return FileSystemExtPoint.getFS();
   }
 
-  @Deprecated(since = "2019.1", forRemoval = true)
+  @Deprecated
   boolean isFileIgnored(@NotNull String name);
 
   /**
@@ -56,6 +56,6 @@ public interface FileSystem extends jetbrains.mps.vfs.openapi.FileSystem {
    * @param r code to execute within platform write lock
    * @return <code>false</code> if an exception was encountered
    */
-  @Deprecated(since = "2019.1", forRemoval = true)
+  @Deprecated
   boolean runWriteTransaction(@NotNull Runnable r);
 }

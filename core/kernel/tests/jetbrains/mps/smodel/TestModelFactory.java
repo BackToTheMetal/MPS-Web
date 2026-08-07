@@ -209,7 +209,7 @@ final class TestModelFactory {
   // however, at the moment, there are still casts in #clearEditableChanged() and #isEditableChanged and unless we drop these,
   // the class has to be of EditableSModel.
   // UPDATE ^^^: now there's no use of EditableSModelBase, but the story of different test models (editable and not-editable) isn't complete, revisit.
-  @Deprecated(since = "3.3", forRemoval = true)
+  @Deprecated
   private static class TestModelBase extends TrivialModelDescriptor implements EditableSModel {
     private boolean myChanged = false;
 

@@ -52,7 +52,7 @@ public abstract class TempModuleOptions {
    * @deprecated Use {@link #nonReloadableModule(SRepository)} instead. This method was intended for internal use and no external uses are expected.
    *             Remove once 2025.1 is out.
    */
-  @Deprecated(since = "2025.1", forRemoval = true)
+  @Deprecated
   public static TempModuleOptions nonReloadableModule() {
     return nonReloadableModule(MPSModuleRepository.getInstance());
   }
