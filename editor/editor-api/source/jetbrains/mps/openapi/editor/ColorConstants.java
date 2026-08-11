@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import java.awt.Color;
+
 /**
  * User: shatalin
  * Date: 05/05/15
  */
 public interface ColorConstants {
   // Editor message colors
-  int ERROR = 0xFF0000;
-  int WARNING = 0xFFBC05;
-  int WARNING_DARK = 0x8C8C00;
-  int OK = 0xC0C0C0;
+  Color ERROR = new Color(0xFF0000);
+  Color WARNING = new Color(0xFFBC05);
+  Color WARNING_DARK = new Color(0x8C8C00);
+  Color OK = new Color(0xC0C0C0);
 }

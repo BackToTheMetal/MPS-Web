@@ -213,7 +213,8 @@ public class CompletionHelper {
 
   private static int parseProperty(@NotNull String name, int defValue) {
     try {
-      return Integer.parseInt(System.getProperty(name));
+      String value = "mps.completion.delay.millis".equals(name) ? System.getProperty("mps.completion.delay.millis") : null;
+      return Integer.parseInt(value);
     } catch (Exception ignored) {
     }
     return defValue;

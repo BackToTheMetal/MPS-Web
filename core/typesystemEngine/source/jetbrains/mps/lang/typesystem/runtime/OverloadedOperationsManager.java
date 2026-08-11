@@ -43,7 +43,7 @@ public class OverloadedOperationsManager {
     myOperationsToTypeProviders.addRuleSetItem(providers);
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
     return getOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL, TypeChecker.getInstance().getTypeCheckerHelper());
   }

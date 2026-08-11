@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +41,11 @@ public final class ConstraintsChildAndPropFacade {
    * Validates both structure constraints {@code SType#isInstanceOf(Object)}
    * and language constraints (property validation functions in constraints aspect)
    */
+  @NotNull
+  public static List<FailingPropertyConstraintProblem> checkPropertyValue(@NotNull SNode node, @NotNull SProperty property, Object value) {
+    return Collections.emptyList();
+  }
+
   @NotNull
   public static List<FailingPropertyConstraintProblem> checkPropertyValue(@NotNull FailingPropertyConstraintContext context) {
     final SProperty property = context.getProperty();

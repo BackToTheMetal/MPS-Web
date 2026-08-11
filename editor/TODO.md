@@ -1,0 +1,318 @@
+# Files excluded from editor-runtime-j2cl / actions-runtime-j2cl
+
+- actions-runtime/source/jetbrains/mps/smodel/action/AbstractNodeSubstituteAction.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- actions-runtime/source/jetbrains/mps/smodel/action/AbstractSubstituteAction.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- actions-runtime/source/jetbrains/mps/smodel/action/DefaultChildNodeSubstituteAction.java: uses excluded jetbrains.mps.nodeEditor.EditorManager
+- actions-runtime/source/jetbrains/mps/smodel/action/DefaultSimpleSubstituteAction.java: references excluded same-package DefaultChildNodeSubstituteAction
+- actions-runtime/source/jetbrains/mps/smodel/action/ModelActions.java: references excluded same-package ReferentSubstituteActionsHelper
+- actions-runtime/source/jetbrains/mps/smodel/action/ReferentSubstituteActionsHelper.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.ReferenceTransformationMenuItem
+- actions-runtime/source/jetbrains/mps/smodel/action/SPropertySubstituteAction.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/editor/EditorComponentTrackService.java: uses excluded jetbrains.mps.nodeEditor.configuration.EditorConfiguration
+- editor-runtime/source/jetbrains/mps/ide/editor/MPSEditorDataKeys.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/AbstractReferentCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/PropertyCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/RefCellCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/RefNodeListHandler.java: uses excluded jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/RefNodeListHandlerElementKeyMap.java: uses excluded jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/ReferenceCellContext.java: has J2CL-incompatible @Deprecated attributes; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/SReferenceCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/SingleRoleCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source/jetbrains/mps/lang/editor/cellProviders/URLCellProvider.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_Generic_Group.java: uses excluded jetbrains.mps.smodel.action.AbstractNodeSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_Generic_Item.java: uses excluded jetbrains.mps.smodel.action.AbstractNodeSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_PropertyPostfixHints.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_PropertyValues.java: uses excluded jetbrains.mps.smodel.action.SPropertySubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_ReplaceChild_CustomChildConcept.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_ReplaceChild_Group.java: uses excluded jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_ReplaceChild_Item.java: uses excluded jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_ReplaceNode_CustomNodeConcept.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/AbstractCellMenuPart_ReplaceNode_Group.java: uses excluded jetbrains.mps.smodel.action.AbstractNodeSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/PrimaryReferentMenuCellMenuPart.java: uses excluded jetbrains.mps.smodel.action.ModelActions
+- editor-runtime/source/jetbrains/mps/lang/editor/generator/internal/PrimaryReplaceChildMenuCellMenuPart.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/DefaultConceptMenusSubstituteMenuPart.java: references excluded same-package DefaultSubstituteMenuLookup
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/DefaultConceptSubstituteMenuPart.java: references excluded same-package SimpleConceptSubstituteMenuPart
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/DefaultSubstituteMenuItem.java: uses excluded jetbrains.mps.nodeEditor.EditorManager
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/DefaultSubstituteMenuLookup.java: references excluded same-package ImplicitSubstituteMenu
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/ImplicitSubstituteMenu.java: references excluded same-package DefaultConceptSubstituteMenuPart
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuItem.java: references excluded same-package DefaultSubstituteMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/ReferenceScopeSubstituteMenuPart.java: references excluded same-package ReferenceScopeSubstituteMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/SimpleConceptSubstituteMenuPart.java: references excluded same-package DefaultSubstituteMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/substitute/SubstituteMenuItemUtil.java: references excluded same-package ReferenceScopeSubstituteMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/BooleanSPropertyTransformationItemFactory.java: references excluded same-package PropertyTransformationMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/CompletionActionItemUtil.java: references excluded same-package ReferenceTransformationMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/IncludeSubstituteMenuTransformationMenuPart.java: references excluded same-package SubstituteItemsCollector
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/IncludeTransformationMenuTransformationMenuPart.java: uses excluded jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/PropertyMenuTransformationMenuPart.java: uses excluded jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/PropertyTransformationMenuItem.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/ReferenceMenuTransformationMenuPart.java: references excluded same-package ReferenceTransformationMenuItem
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/ReferenceTransformationMenuItem.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/SubstituteActionsCollector.java: uses excluded jetbrains.mps.nodeEditor.cellMenu.CompletionActionItemAsSubstituteAction
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/SubstituteItemsCollector.java: uses excluded jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext
+- editor-runtime/source/jetbrains/mps/lang/editor/menus/transformation/WrapSubstituteMenuTransformationMenuPart.java: references excluded same-package SubstituteItemsCollector
+- editor-runtime/source/jetbrains/mps/nodeEditor/AbstractAdditionalPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/AbstractCellProvider.java: references excluded same-package EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/AbstractDefaultEditor.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/AdditionalPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/AutoValidator.java: references excluded same-package EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/BlockCells.java: references excluded same-package EditorSettings
+- editor-runtime/source/jetbrains/mps/nodeEditor/BracesHighlighter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/CellNavigator.java: references excluded same-package EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/CellTracker.java: references excluded same-package EditorCell_WithComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/CreateFromUsageUtil.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/DefaultEditor.java: references excluded same-package EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/DefaultEditorMessage.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/DefaultNodeEditor.java: references excluded same-package EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorAspectContributionsCache.java: has J2CL-incompatible API; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorCell_WithComponent.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentActions.java: references excluded same-package NodeEditorActions
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentDecoration.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentFocusTracker.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentKeyboardHandler.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentLayoutManager.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponentSettingsImpl.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorContext.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorManager.java: uses excluded jetbrains.mps.nodeEditor.EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessage.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessageIconRenderer.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessagesPanel.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorSettings.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorSettingsUISettingsListener.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EditorTooltipProvider.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/EmptyHighlighter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/ErrorNodeEditor.java: references excluded same-package EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/FocusPolicyUtil.java: uses excluded jetbrains.mps.nodeEditor.cells.CellFinderUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/Highlighter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/HighlighterContribution.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/HighlighterMessage.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/HintPopupController.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/InspectorTool.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/IntelligentInputUtil.java: references excluded same-package EditorContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/IntentionActionsProvider.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/IntentionsSupport.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/KeyboardHandler.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/LanguageRegistryHelper.java: has J2CL-incompatible API; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/nodeEditor/LeftMarginMouseListener.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/MPSColors.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/MPSErrorDialog.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/MPSFonts.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/Memento.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/MementoPersistence.java: uses org.jdom
+- editor-runtime/source/jetbrains/mps/nodeEditor/MessagesGutter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/MyScrollBar.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorActions.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorComponent.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/NodeHighlightManager.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/NodeInformationDialog.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/PlatformEditorEmulation.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/PlatformScrollingModelEmulation.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/PriorityComparator.java: uses excluded jetbrains.mps.nodeEditor.highlighter.EditorCheckerWrapper
+- editor-runtime/source/jetbrains/mps/nodeEditor/ReadOnlyDefaultEditor.java: references excluded same-package DefaultEditor
+- editor-runtime/source/jetbrains/mps/nodeEditor/ReferenceUnderliner.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/ReferencedNodeContext.java: uses excluded jetbrains.mps.nodeEditor.memory.MemoryAnalyzer
+- editor-runtime/source/jetbrains/mps/nodeEditor/SearchHistoryComponent.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/SearchPanel.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/SelectedLinePainter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/SubstituteActionComparator.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/UIEditorComponent.java: uses javax.swing
+- editor-runtime/source/jetbrains/mps/nodeEditor/ViewportState.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/assist/AncestorOrSmallCellContextAssistantFinder.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/assist/DefaultContextAssistantManager.java: uses excluded jetbrains.mps.nodeEditor.EditorSettings
+- editor-runtime/source/jetbrains/mps/nodeEditor/assist/DelayedRunnable.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/assist/EditorContextAssistants.java: references excluded same-package AncestorOrSmallCellContextAssistantFinder
+- editor-runtime/source/jetbrains/mps/nodeEditor/assist/EditorContextAssistantsController.java: references excluded same-package DelayedRunnable
+- editor-runtime/source/jetbrains/mps/nodeEditor/braces/BracesFinder.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/nodeEditor/braces/CollectionBracesFinder.java: references excluded same-package BracesFinder
+- editor-runtime/source/jetbrains/mps/nodeEditor/braces/MatchingLabelBracesFinder.java: uses excluded jetbrains.mps.nodeEditor.cells.CellFinderUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/caret/CaretManager.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_CopyNode.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_CutNode.java: references excluded same-package CellAction_CopyNode
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_DeleteNode.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_InsertIntoCollection.java: uses excluded jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_PasteNode.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_PasteNodeRelative.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_SideTransform.java: uses excluded jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/SideTransformSubstituteInfo.java: uses excluded jetbrains.mps.nodeEditor.cellMenu.TransformationMenuSubstituteInfo
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/AbstractCellLayout.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Flow.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Horizontal.java: references excluded same-package PunctuationUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Indent.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Superscript.java: uses excluded jetbrains.mps.nodeEditor.EditorSettings
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Table.java: references excluded same-package AbstractCellLayout
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/CellLayout_Vertical.java: uses gnu.trove
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellLayout/PunctuationUtil.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/BooleanSPropertySubstituteInfo.java: uses excluded jetbrains.mps.smodel.action.SPropertySubstituteAction
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/CompletionActionItemAsSubstituteAction.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/CompletionCustomizationManager.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/CompletionHelper.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/DefaultSChildSubstituteInfo.java: uses excluded jetbrains.mps.smodel.action.ModelActions
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/DummySubstituteChooserUi.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/EditorMenuItemStyleImpl.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/ISubstituteChooserUi.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeItemCellRenderer.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooser.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserHandler.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserUi.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstitutePatternEditor.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SChildSubstituteInfo.java: references excluded same-package TransformationMenuSubstituteInfo
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SChildSubstituteInfoPartEx.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SEmptyContainmentSubstituteInfo.java: references excluded same-package TransformationMenuSubstituteInfo
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SPropertySubstituteInfo.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.PropertyMenuTransformationMenuPart
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SReferenceSubstituteInfo.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.ReferenceMenuTransformationMenuPart
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/SReferenceSubstituteInfoSmartReferenceDecorator.java: references excluded same-package SReferenceSubstituteInfo
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/TransformationMenuSubstituteInfo.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellProviders/AbstractCellListHandler.java: uses excluded jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal
+- editor-runtime/source/jetbrains/mps/nodeEditor/cellProviders/CellProviderWithRole.java: uses excluded jetbrains.mps.nodeEditor.AbstractCellProvider
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/APICellAdapter.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/AbstractEditorRegistry.java: has J2CL-incompatible API; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/CellConditions.java: references excluded same-package EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/CellFinderUtil.java: references excluded same-package EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/DefaultCellInfo.java: uses org.jdom
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCellFactoryImpl.java: uses excluded jetbrains.mps.nodeEditor.AbstractDefaultEditor
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Basic.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection_Container.java: references excluded same-package EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Component.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_ComponentBase.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Constant.java: uses excluded jetbrains.mps.nodeEditor.MPSFonts
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_ContextAssistantComponent.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Error.java: references excluded same-package EditorCell_Label
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Image.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Indent.java: uses excluded jetbrains.mps.nodeEditor.EditorSettings
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Property.java: references excluded same-package TransactionalPropertyAccessor
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_RefPresentation.java: references excluded same-package EditorCell_Property
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_URL.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorFontMetricsImpl.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/FontRegistry.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/GeometryUtil.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/PropertyAccessor.java: has J2CL-incompatible @Deprecated attributes; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/SelectCellOnFocusGainedFocusListener.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/SynchronizeableEditorCell.java: references excluded same-package EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/TextLine.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/TransactionalPropertyAccessor.java: references excluded same-package EditorCell
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/collections/AbstractContainer.java: has J2CL-incompatible API; j2cl_src variant used
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/AbstractStepComboBoxButton.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantButton.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantButtonItem.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantController.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantPanel.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantSettings.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantView.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/FocusUtil.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/MenuItemListStep.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/OverflowLayout.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/PanelCustomizations.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/StepComboBoxButton.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/SubListStep.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/TopLevelButtonCreatingVisitor.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/WhatsThisActionItem.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/BaseEditorChecker.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/BaseEventProcessingEditorChecker.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/DisposableEditorChecker.java: references excluded same-package EditorChecker
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/EditorChecker.java: uses java.time
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/QuickFixRuntimeEditorWrapper.java: uses excluded jetbrains.mps.nodeEditor.selection.AbstractMultipleSelection
+- editor-runtime/source/jetbrains/mps/nodeEditor/checking/UpdateResult.java: uses excluded jetbrains.mps.nodeEditor.EditorMessage
+- editor-runtime/source/jetbrains/mps/nodeEditor/commands/CommandContextImpl.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/commands/CommandContextWithVF.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/configuration/EditorConfiguration.java: uses excluded jetbrains.mps.nodeEditor.caret.CaretManager
+- editor-runtime/source/jetbrains/mps/nodeEditor/configuration/EditorConfigurationBuilder.java: uses excluded jetbrains.mps.nodeEditor.caret.CaretManager
+- editor-runtime/source/jetbrains/mps/nodeEditor/datatransfer/NodePaster.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Collection
+- editor-runtime/source/jetbrains/mps/nodeEditor/deletionApprover/DeletionApproverImpl.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationEditorPane.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationHtmlUtil.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationManager.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationMarkup.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationScrollPane.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationToolWindowManager.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/PopupMouseListener.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationPopupUI.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationToolWindowUI.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationUI.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/folding/CallAction_ToggleCellFolding.java: uses excluded jetbrains.mps.nodeEditor.cells.CellFinderUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/folding/CellAction_FoldCell.java: uses excluded jetbrains.mps.nodeEditor.cells.CellFinderUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/folding/CellAction_UnfoldCell.java: uses excluded jetbrains.mps.nodeEditor.cells.CellFinderUtil
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/EditorCheckerWrapper.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/EditorComponentCreateListener.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/EditorHighlighter.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterEditorList.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterEditorTracker.java: uses java.time
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterEventCollector.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterUpdateSession.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterUpdateSessionCancellable.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/IHighlighter.java: uses excluded jetbrains.mps.nodeEditor.Highlighter
+- editor-runtime/source/jetbrains/mps/nodeEditor/hintsSettings/ConceptEditorHintSettingsComponent.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/inspector/InspectorEditorComponent.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/inspector/RevealNodeListener.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/keymaps/AWTKeymapHandler.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/keymaps/KeymapHandler.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/AbstractFoldingAreaPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/AbstractHighlighterPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/AbstractLeftColumn.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/BackgroundWithFoldingLinePainter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/BracketsPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/FoldingButton.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/FoldingButtonsPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/HighlighterBracket.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/IconPositionCalculator.java: uses gnu.trove
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/LeftEditorHighlighter.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/SelectedCellAreaPainter.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/memory/MemoryAnalyzer.java: uses java.lang.instrument
+- editor-runtime/source/jetbrains/mps/nodeEditor/menus/substitute/DefaultSubstituteMenuContext.java: uses excluded jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup
+- editor-runtime/source/jetbrains/mps/nodeEditor/menus/substitute/DefaultSubstituteMenuContextBuilder.java: references excluded same-package DefaultSubstituteMenuContext
+- editor-runtime/source/jetbrains/mps/nodeEditor/messageTargets/CellFinder.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/messageTargets/EditorMessageWithTarget.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/AbstractMultipleSelection.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/AbstractSelection.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/EditorCellLabelSelection.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/EditorCellSelection.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/NodeRangeSelection.java: uses java.lang.reflect
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/SelectUpUtil.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Label
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/SelectionInfoImpl.java: uses org.jdom
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/SelectionInternal.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/selection/SelectionManagerImpl.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/selectionRestoring/ChildCellLocator.java: uses excluded jetbrains.mps.nodeEditor.cells.EditorCell_Collection
+- editor-runtime/source/jetbrains/mps/nodeEditor/sidetransform/EditorCell_STHint.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/text/NodeRenderUtil.java: uses excluded jetbrains.mps.editor.runtime.HeadlessEditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/text/TextRenderUtil.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/ui/InputMethodListenerImpl.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/ui/InputMethodRequestsImpl.java: uses java.awt
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ChildAddedSelectionHandler.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ChildRemovedSelectionHandler.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ModelEventsSelectionHandler.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ModelEventsVisitor.java: references excluded same-package ReferenceAddedSelectionHandler
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ReferenceAddedSelectionHandler.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/ReferenceRemovedSelectionHandler.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdateInfoIndex.java: uses gnu.trove
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdateInfoNode.java: uses excluded jetbrains.mps.nodeEditor.memory.MemoryAnalyzer
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdateSessionImpl.java: uses com.intellij
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterImpl.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterModelListener.java: references excluded same-package ModelEventsVisitor
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterModelListenersController.java: references excluded same-package UpdaterRepositoryContentAdapter
+- editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdaterRepositoryContentAdapter.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/AbstractLeftEditorHighlighterMessage.java: uses java.awt
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/DocumentationProvider.java: uses com.intellij
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/EditorCell_Empty.java: uses java.awt
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/EditorUtil.java: uses com.intellij
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/ErrorComponents.java: uses com.intellij
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/HeadlessEditorComponent.java: uses excluded jetbrains.mps.nodeEditor.EditorComponent
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/HighlightUsagesSupport.java: uses com.intellij
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/LanguageEditorChecker.java: uses com.intellij
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/LanguageErrorsComponent.java: uses excluded jetbrains.mps.editor.runtime.LanguageEditorChecker
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/LanguagesKeymapManager.java: has J2CL-incompatible @Deprecated attributes; j2cl_src variant used
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/AbstractCommentAction.java: uses excluded jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_Comment.java: references excluded same-package AbstractCommentAction
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_CommentOrUncomment.java: references excluded same-package CellAction_Comment
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_CommentOrUncommentChild.java: uses excluded jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_CommentOrUncommentCurrentSelectedNode.java: references excluded same-package CellAction_CommentOrUncomment
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_CommentOrUncommentNode.java: references excluded same-package CellAction_CommentOrUncomment
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_CreateChildRangeSelection.java: uses excluded jetbrains.mps.nodeEditor.selection.NodeRangeSelection
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_DeleteEasily.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_DeleteSPropertyOrNode.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_DeleteSimple.java: uses excluded jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CellAction_Uncomment.java: references excluded same-package AbstractCommentAction
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellActions/CommentMultipleNodesAction.java: uses excluded jetbrains.mps.nodeEditor.selection.NodeRangeSelection
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellMenu/EnumSPropertySubstituteInfo.java: uses excluded jetbrains.mps.smodel.action.SPropertySubstituteAction
+- editor-runtime/source_gen/jetbrains/mps/editor/runtime/impl/cellMenu/EnumSPropertyTransformationItemFactory.java: uses excluded jetbrains.mps.lang.editor.menus.transformation.PropertyTransformationMenuItem

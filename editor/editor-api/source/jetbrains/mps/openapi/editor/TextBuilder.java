@@ -49,6 +49,7 @@ public interface TextBuilder {
    * @return TextBuilder instance with the result of this operation
    */
   TextBuilder appendToTheBottom(TextBuilder builder);
+  TextBuilder appendToTheBottom(String text);
 
   /**
    * Append content of the specified TextBuilder to the right of this text builder.

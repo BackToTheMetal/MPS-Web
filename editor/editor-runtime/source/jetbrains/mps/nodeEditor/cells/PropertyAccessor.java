@@ -44,7 +44,7 @@ public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
    * @deprecated use cons w/o EditorContext. The only difference of this constructor is that it respects read-only state of model/context.
    *             However, it's Cell to deal with the context, not ModelAccessor impl.
    */
-  @Deprecated(since = "2023.2", forRemoval = true)
+  @Deprecated
   public PropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     // FWIW, I don't feel it's correct to check model/EC read-only state here. The check has to be part of respective cell
     // however, there are uses of this cons in MPS-extensions

@@ -1,0 +1,15 @@
+package javax.swing.text.html;
+
+public class HTML {
+  public enum Attribute {
+    SIZE, COLOR, STYLE, CLASS, ID, FACE, CLEAR, ALIGN, VALIGN, BORDER, BGCOLOR, WIDTH, HEIGHT, HSPACE, VSPACE, NOSHADE, HREF, TARGET, REL, REV, TITLE, SRC, ALT, NAME, HREFLANG, TYPE, VALUE, START, TYPE2, COMPACT, SPAN;
+  }
+
+  public enum Tag {
+    A, ADDRESS, AREA, B, BASE, BASEFONT, BIG, BLOCKQUOTE, BODY, BR, CAPTION, CENTER, CITE, CODE, DD, DFN, DIR, DIV, DL, DT, EM, FONT, FORM, FRAME, FRAMESET, H1, H2, H3, H4, H5, H6, HEAD, HR, HTML, I, IMG, INPUT, ISINDEX, KBD, LI, LINK, MAP, MENU, META, NOFRAMES, OBJECT, OL, OPTION, P, PARAM, PRE, SAMP, SCRIPT, SELECT, SMALL, SPAN, STRIKE, S, STRONG, STYLE, SUB, SUP, TABLE, TD, TEXTAREA, TH, TITLE, TR, TT, U, UL, VAR, IMPLIED, CONTENT, COMMENT;
+  }
+
+  public HTML() { }
+  public static Tag getTag(String tagName) { return Tag.A; }
+  public static Attribute getAttributeKey(String attrName) { return Attribute.CLASS; }
+}

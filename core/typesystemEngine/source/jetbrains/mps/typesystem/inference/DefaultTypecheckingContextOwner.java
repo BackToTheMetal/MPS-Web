@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * User: fyodor
  * Date: 11/27/12
  */
-@Deprecated(forRemoval = true)
+@Deprecated
 public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
 
   @Override

@@ -102,7 +102,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         result = createCell(node, isInspector, editor);
         assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by " + editor.getClass().getName() + " ConceptEditor.";
         reportSuccess(node);
-      } catch (RuntimeException | AssertionError | LinkageError e) {
+      } catch (RuntimeException | Error e) {
         reportError(node, e);
         LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using default editor", e, node);
       }
@@ -125,7 +125,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   private void reportError(SNode node, Throwable e) {
     SLanguage language = node.getConcept().getLanguage();
-    String text = String.format("Error creating editor cell: Node: %s (%s from %s)", node.getPresentation(), node.getConcept().getName(), language.getQualifiedName());
+    String text = "Error creating editor cell: Node: " + node.getPresentation() + " (" + node.getConcept().getName() + " from " + language.getQualifiedName() + ")";
     Message message = new Message(MessageKind.ERROR, this.getClass(), text);
     message.setException(e);
     message.setHintObject(node.getReference());
@@ -144,7 +144,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     if (editorComponent != null) {
       try {
         result = editorComponent.createEditorCell(myEditorContext, node);
-      } catch (RuntimeException | AssertionError | NoClassDefFoundError e) {
+      } catch (RuntimeException | Error e) {
         LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using editor component: " + editorComponent.getClass(), e,
                     node);
       }

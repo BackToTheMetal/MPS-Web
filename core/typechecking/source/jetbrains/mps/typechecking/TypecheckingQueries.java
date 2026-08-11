@@ -147,7 +147,7 @@ public interface TypecheckingQueries {
    * This method only makes sense if the session has been created with "incremental" flag.
    * @deprecated Please switch to {@link #getCacheState(SNode)}. This API is no longer supported.
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   boolean isCacheUpToDate(SNode root);
 
   /**

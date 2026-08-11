@@ -904,7 +904,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * use {@code getScrollPane().getVerticalScrollBar()} if utterly necessary
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   @NotNull
   public JScrollBar getVerticalScrollBar() {
     return getScrollPane().getVerticalScrollBar();
@@ -1050,7 +1050,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated use {@link #isFocusOwner()}
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   @Override
   public boolean hasFocus() {
     // intentional override of JComponent method to facilitate split of EC and JComponent
@@ -1068,7 +1068,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated don't assume {@code EditorComponent} is {@link JComponent}
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   @Override
   public int getWidth() {
     // intentional override of JComponent method to facilitate split of EC and JComponent
@@ -1078,7 +1078,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated don't assume {@code EditorComponent} is {@link JComponent}
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   @Override
   public int getHeight() {
     // intentional override of JComponent method to facilitate split of EC and JComponent
@@ -1195,7 +1195,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * @deprecated unused, replaced with {@link EditorConfiguration#notifyCreateDispose}.
    *             I'd like to make it final as a heads-up for potential overrides, but can't due to use in mbeddr
    */
-  @Deprecated(forRemoval = true, since = "2022.3")
+  @Deprecated
   protected boolean notifiesCreation() {
     return false;
   }
@@ -1373,7 +1373,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    *             clients shall interact with the search panel through CellActionType.FINDxxx
    */
   @NotNull
-  @Deprecated(since = "2022.3")
+  @Deprecated
   public SearchPanel getSearchPanel() {
     // FIXME seems that need to introduce an abstraction of SearchPanel, like EditorInspector, with no ties to Swing or
     //  [mps-ui].AbstractSearchPanel
@@ -1387,7 +1387,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated just to discourage its uses outside of MPS implementation
    */
-  @Deprecated(since = "2022.3")
+  @Deprecated
   public boolean isSearchPanelVisible() {
     // FIXME there's 1 suspicious use in [mps-workbench], PasteNode_Action.
     //       perhaps, has to be not just isVisible, but also isTextFieldFocused(), i.e. rather "isInSearchPanel" condition.
@@ -1400,7 +1400,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    *             seems to be poorly designed API with single intended usecase (SearchPanel), therefore not actively employed.
    *             there are no uses in MPS or mbeddr, remove once 2022.3 is out.
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public JPanel getUpperPanel() {
     assert hasUI();
     return myContainer.getUpperPanel();
@@ -1409,7 +1409,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated see {@link #getUpperPanel()} for explanation
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public void addUpperComponent(JComponent component) {
     addUpperComponent(component, null);
   }
@@ -1419,7 +1419,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    *             moreover, due to defect in {@link #removeUpperComponent(JComponent)}, there was a memory leak
    *             that never cleared components added with id.
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public void addUpperComponent(JComponent component, String id) {
     assert hasUI();
     myContainer.addTopPanel(component, id);
@@ -1428,7 +1428,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated see {@link #getUpperPanel()} for explanation
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public void removeUpperComponent(JComponent component) {
     assert hasUI();
     myContainer.removeTopPanel(component);
@@ -1437,7 +1437,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated see {@link #getUpperPanel()} for explanation
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public void removeUpperComponent(String id) {
     assert hasUI();
     myContainer.removeTopPanel(id);
@@ -2870,7 +2870,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   /**
    * @deprecated Override uiDataSnapshot(DataSink) instead; keep for 1 release and remove then
    */
-  @Deprecated(since = "2026.1", forRemoval = true)
+  @Deprecated
   public Object getData(String dataId) {
     // a placeholder to get overriding classes to compile, and a hack to address PARENT_PASTE_PROVIDER scenario of BaseConsoleTab
     if (PlatformDataKeys.PASTE_PROVIDER.is(dataId)) {

@@ -34,7 +34,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
   /**
    * @deprecated use cons w/o EditorContext
    */
-  @Deprecated(since = "2023.2", forRemoval = true)
+  @Deprecated
   public TransactionalPropertyAccessor(SNode node, SProperty property, boolean readOnly, boolean allowEmptyText,
                                        EditorContext editorContext) {
     super(node, property, readOnly, allowEmptyText);

@@ -369,7 +369,7 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     return myCommandGroupId;
   }
 
-@Deprecated(since = "2018.2", forRemoval = true)
+@Deprecated
   @Override
   public String getRole() {
     SConceptFeature sRole = getSRole();

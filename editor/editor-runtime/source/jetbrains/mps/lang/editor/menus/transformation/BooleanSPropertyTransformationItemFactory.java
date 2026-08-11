@@ -42,7 +42,7 @@ class BooleanSPropertyTransformationItemFactory {
         transformationMenuContext.getEditorMenuTrace().pushTraceInfo();
         try {
           transformationMenuContext.getEditorMenuTrace()
-                                   .setDescriptor(new EditorMenuDescriptorBase(String.format("boolean action item with the %s value", booleanValue), null));
+                                   .setDescriptor(new EditorMenuDescriptorBase("boolean action item with the " + booleanValue + " value", null));
           result.add(new PropertyTransformationMenuItem(property, booleanValue, transformationMenuContext));
         } finally {
           transformationMenuContext.getEditorMenuTrace().popTraceInfo();

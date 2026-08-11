@@ -81,7 +81,7 @@ public class CellFinder {
     /**
    * @deprecated uses string instead of SProperty to identify meta-object, use {@link jetbrains.mps.openapi.editor.cells.CellConditions.PropertyCellCondition} instead
    */
-@Deprecated(since = "2019.2", forRemoval = true)
+@Deprecated
   static boolean isCellForProperty(@NotNull EditorCell cell, @Nullable SNode node, @NotNull String name) {
     return new LegacyPropertyCellCondition(node, name).met(cell);
   }

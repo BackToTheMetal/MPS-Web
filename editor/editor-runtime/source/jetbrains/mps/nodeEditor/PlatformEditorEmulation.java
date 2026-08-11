@@ -647,7 +647,7 @@ public final class PlatformEditorEmulation implements Editor {
    * This implementation of tooltips has been superseded with the one relying on MPSDocumentationManager
    * @param e
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   private void showToolTip(@NotNull MouseEvent e) {
 
     boolean isGutter = e.getSource() == myEditorComponent.getLeftEditorHighlighter();

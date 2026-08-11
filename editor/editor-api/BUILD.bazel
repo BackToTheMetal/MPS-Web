@@ -17,6 +17,7 @@ j2cl_library(
            "source/**/StyleRegistry.java",
            "source/**/EditorComponentSettings.java",
            "source/**/EditorState.java",
+           "source/**/EditorCell.java",
         ]
     ) + glob(["j2cl_src/**/*.java"]),
     deps = [

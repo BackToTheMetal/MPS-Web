@@ -52,7 +52,7 @@ public abstract class TypeCheckingContext {
   /**
    * @deprecated use {@link #setNonTypesystemComputationMode(NonTypesystemComputationMode)}
    */
-@Deprecated(since = "2020.2", forRemoval = true)
+@Deprecated
   public /*final*/ void setIsNonTypesystemComputation() {
     setNonTypesystemComputationMode(NonTypesystemComputationMode.NORMAL);
   }
@@ -60,7 +60,7 @@ public abstract class TypeCheckingContext {
   /**
    * @deprecated use {@link #setNonTypesystemComputationMode(NonTypesystemComputationMode)}
    */
-@Deprecated(since = "2020.2", forRemoval = true)
+@Deprecated
   public /*final*/ void resetIsNonTypesystemComputation() {
     setNonTypesystemComputationMode(NonTypesystemComputationMode.OFF);
   }

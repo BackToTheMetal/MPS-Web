@@ -66,7 +66,7 @@ import java.util.concurrent.atomic.AtomicReference;
     return new MyCacheState();
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public void setInvalidationWasPerformed(boolean invalidationWasPerformed) {
     // try to keep backward compatibility
     if (!invalidationWasPerformed) {
@@ -133,7 +133,7 @@ import java.util.concurrent.atomic.AtomicReference;
    * @deprecated never true
    * @return
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   protected boolean isCacheWasRebuilt() {
     return myCacheWasRebuilt.get();
   }

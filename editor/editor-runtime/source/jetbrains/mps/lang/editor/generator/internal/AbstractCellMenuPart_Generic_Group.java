@@ -109,7 +109,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
    * [2020.2] can't remove as there are still uses in MPS
    * [2022.2] still there. Seems that SubstituteAction.isReferentPresentation() is the culprit.
    */
-@Deprecated(since = "3.5", forRemoval = true)
+@Deprecated
   protected boolean isReferentPresentation() {
     return true;
   }

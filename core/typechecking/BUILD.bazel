@@ -1,0 +1,41 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "typechecking-j2cl",
+    srcs = glob(
+        ["source/**/*.java"],
+        exclude = [
+            # java.time.Instant; replaced by j2cl_src variant using a tick counter
+            "**/CacheState.java",
+            # reflection: Class.isAssignableFrom; replaced by j2cl_src variant
+            "**/TypecheckingBackend.java",
+            # java.lang.ref.SoftReference; replaced by j2cl_src variant
+            "**/DefaultTypecheckingController.java",
+            # java.lang.ref.ReferenceQueue, Swing; replaced by simplified j2cl_src variant
+            "**/TypecheckingFacadeComponent.java",
+            # java.lang.ref.WeakReference; AWT-specific, not applicable to a browser/JS runtime
+            "**/WorkbenchTypecheckingController.java",
+            # reflection: Class.cast; replaced by j2cl_src variant
+            "**/MPSTypechecking.java",
+            # depends on jetbrains.mps.util.SimpleLRUCache (excluded from util-j2cl); replaced by j2cl_src variant
+            "**/LanguageScopeFactory.java",
+        ],
+    ) + glob(
+        ["j2cl_src/**/*.java"],
+        allow_empty = True,
+    ),
+    deps = [
+        "//core:kernel-j2cl",
+        "//core/patternRuntime:pattern-runtime-j2cl",
+        "//core/components:components-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/util:util-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

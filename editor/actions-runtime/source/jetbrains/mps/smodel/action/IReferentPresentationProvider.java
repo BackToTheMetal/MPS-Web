@@ -54,7 +54,7 @@ public interface IReferentPresentationProvider {
    *         Templates were updated in 2023.2, keep the method for a year or two (to facilitate compiled editor code), then drop.
    *         However, perhaps, it's easier to un-deprecate the method, I don't quite understand why it's bad.
    */
-  @Deprecated(since = "2017.2", forRemoval = true)
+  @Deprecated
   static IReferentPresentationProvider getDefaultPresentation(@NotNull SReferenceLink link) {
     return DEFAULT_PRESENTATION;
   }

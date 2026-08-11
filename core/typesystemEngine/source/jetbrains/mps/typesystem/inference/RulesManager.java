@@ -214,12 +214,12 @@ public class RulesManager extends AbstractLanguageProcessor {
     return result;
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
     return getOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL);
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
     ensureUpToDate();
     return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer, TypeChecker.getInstance()

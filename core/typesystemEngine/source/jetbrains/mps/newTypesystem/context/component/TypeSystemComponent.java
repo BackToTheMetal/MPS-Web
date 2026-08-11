@@ -215,7 +215,7 @@ import java.util.Set;
    * @deprecated never called
    * @param node
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   private void addCacheDependentNodesTypesystem(SNode node) {
     myNodesDependentOnCaches.add(node);
   }

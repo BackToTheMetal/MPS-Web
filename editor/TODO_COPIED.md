@@ -1,0 +1,99 @@
+# Files Copied to j2cl_src
+
+Total: 88 files copied, 2 files skipped (already exist or not found).
+
+## Copied Files
+
+- `editor-runtime/source/jetbrains/mps/ide/editor/MPSEditorDataKeys.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/BracesHighlighter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/CreateFromUsageUtil.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorComponent.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorContext.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessage.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessageIconRenderer.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorMessagesPanel.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorSettings.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorSettingsUISettingsListener.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EditorTooltipProvider.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/EmptyHighlighter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/Highlighter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/HighlighterContribution.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/HighlighterMessage.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/HintPopupController.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/InspectorTool.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/IntentionActionsProvider.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/IntentionsSupport.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/MPSColors.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/MPSErrorDialog.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/MessagesGutter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/MyScrollBar.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorActions.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/NodeEditorComponent.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/NodeHighlightManager.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/NodeInformationDialog.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/PlatformEditorEmulation.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/PlatformScrollingModelEmulation.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/SearchHistoryComponent.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/SearchPanel.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/SelectedLinePainter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/SubstituteActionComparator.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/assist/DelayedRunnable.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellActions/CellAction_PasteNode.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/CompletionHelper.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeItemCellRenderer.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooser.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserHandler.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooserUi.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cellMenu/NodeSubstitutePatternEditor.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Basic.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Collection.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Image.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_URL.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorFontMetricsImpl.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/FontRegistry.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/TextLine.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/AbstractStepComboBoxButton.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantButton.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantButtonItem.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantPanel.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantSettings.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/ContextAssistantView.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/FocusUtil.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/MenuItemListStep.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/OverflowLayout.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/PanelCustomizations.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/StepComboBoxButton.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/SubListStep.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/TopLevelButtonCreatingVisitor.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/contextAssistant/WhatsThisActionItem.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/deletionApprover/DeletionApproverImpl.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationEditorPane.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationHtmlUtil.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationManager.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationMarkup.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationScrollPane.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/MPSDocumentationToolWindowManager.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/PopupMouseListener.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationPopupUI.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationToolWindowUI.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/documentation/ui/MPSDocumentationUI.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/EditorComponentCreateListener.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterEditorList.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterEventCollector.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/highlighter/HighlighterUpdateSession.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/hintsSettings/ConceptEditorHintSettingsComponent.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/keymaps/AWTKeymapHandler.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/BackgroundWithFoldingLinePainter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/FoldingButton.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/leftHighlighter/LeftEditorHighlighter.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/sidetransform/EditorCell_STHint.java`
+- `editor-runtime/source/jetbrains/mps/nodeEditor/updater/UpdateSessionImpl.java`
+- `editor-runtime/source_gen/jetbrains/mps/editor/runtime/DocumentationProvider.java`
+- `editor-runtime/source_gen/jetbrains/mps/editor/runtime/ErrorComponents.java`
+- `editor-runtime/source_gen/jetbrains/mps/editor/runtime/HighlightUsagesSupport.java`
+- `editor-runtime/source_gen/jetbrains/mps/editor/runtime/LanguageEditorChecker.java`
+
+## Skipped Files (already exist in j2cl_src)
+
+- `editor-runtime/source/jetbrains/mps/nodeEditor/cells/EditorCell_Label.java`
+- `editor-runtime/source_gen/jetbrains/mps/editor/runtime/EditorUtil.java`

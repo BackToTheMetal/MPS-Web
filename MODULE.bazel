@@ -20,6 +20,10 @@ bazel_dep(
     name = "rules_jvm_external",
     version = "6.7",
 )
+bazel_dep(
+    name = "elemental2",
+    version = "1.4.0-RC1",
+)
 
 j2cl_maven_import_external = use_repo_rule(
     "@j2cl//build_defs:rules.bzl",

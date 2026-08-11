@@ -1,0 +1,358 @@
+/*
+ * Copyright 2003-2025 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.nodeEditor;
+
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
+import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
+import jetbrains.mps.nodeEditor.deletionApprover.DeletionApproverImpl;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.Clipboard;
+import jetbrains.mps.openapi.editor.DeletionApprover;
+import jetbrains.mps.openapi.editor.EditorComponentState;
+import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.EditorPanelManager;
+import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.project.GlobalOperationContext;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.PerformanceTracer;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+
+import javax.swing.Icon;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * Author: Sergey Dmitriev
+ * Created Sep 14, 2003
+ */
+public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext {
+  private final EditorComponent myNodeEditorComponent;
+  private final SRepository myRepository;
+  private final SModel myModel;
+  private final EditorConfiguration myConfiguration;
+  private EditorManager myEditorManager;
+
+  private EditorCell myContextCell;
+  private IPerformanceTracer myPerformanceTracer = null;
+
+  private Map<String, Icon> myIconCache = new HashMap<>();
+
+  @NotNull
+  private final ContextAssistantManager myContextAssistantManager;
+
+  private DeletionApproverImpl myDeletionApprover;
+
+  public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository) {
+    this(editorComponent, model, repository, EditorConfigurationBuilder.buildDefault(), new DisabledContextAssistantManager());
+  }
+
+  public EditorContext(@NotNull EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository, EditorConfiguration configuration,
+                       @NotNull ContextAssistantManager contextAssistantManager) {
+    myNodeEditorComponent = editorComponent;
+    myModel = model;
+    myRepository = repository;
+    myContextAssistantManager = contextAssistantManager;
+    myConfiguration = configuration;
+  }
+
+  public EditorComponent getNodeEditorComponent() {
+    return myNodeEditorComponent;
+  }
+
+  @NotNull
+  @Override
+  public jetbrains.mps.openapi.editor.EditorComponent getEditorComponent() {
+    return myNodeEditorComponent;
+  }
+
+  @Override
+  public boolean isEditable() {
+    SNode node = myNodeEditorComponent.getRootCell().getSNode();
+    if (node == null) {
+      return false;
+    }
+
+    SModel model = node.getModel();
+    return model instanceof EditableSModel && !model.isReadOnly();
+  }
+
+  @Override
+  public boolean isInspector() {
+    return myNodeEditorComponent instanceof InspectorEditorComponent;
+  }
+
+  @Override
+  public EditorCell getSelectedCell() {
+    return myNodeEditorComponent.getSelectedCell();
+  }
+
+  public String getSelectedCellText() {
+    EditorCell selectedCell = getSelectedCell();
+    if (selectedCell instanceof EditorCell_Label) {
+      return ((EditorCell_Label) selectedCell).getRenderedText();
+    }
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public SRepository getRepository() {
+    return myRepository;
+  }
+
+  @Override
+  public SNode getSelectedNode() {
+    return myNodeEditorComponent.getSelectedNode();
+  }
+
+  @Override
+  public SModel getModel() {
+    return myModel;
+  }
+
+  @Override
+  public IOperationContext getOperationContext() {
+    return new GlobalOperationContext() {
+      @Override
+      public <T> T getComponent(Class<T> clazz) {
+        if (EditorManager.class == clazz) {
+          return (T) getEditorManager();
+        }
+        return super.getComponent(clazz);
+      }
+    };
+  }
+
+  @Override
+  public void flushEvents() {
+    // TODO: replace all usages by updater.flushModelEvents() ?
+    myNodeEditorComponent.getUpdater().flushModelEvents();
+  }
+
+  @Override
+  public EditorComponentState getEditorComponentState() {
+    Logger.getLogger(getClass()).warnDeprecatedUse("This functionality has been replaced with respective methods in EditorComponent");
+    return myNodeEditorComponent.captureState();
+  }
+
+  @Override
+  public void restoreEditorComponentState(EditorComponentState state) {
+    Logger.getLogger(getClass()).warnDeprecatedUse("This functionality has been replaced with respective methods in EditorComponent");
+    if (state != null) {
+      myNodeEditorComponent.restoreState(state);
+    }
+  }
+
+  @Override
+  public void select(final SNode node) {
+    flushEvents();
+
+    getNodeEditorComponent().selectNode(node);
+  }
+
+  @Override
+  public void selectRange(SNode first, SNode last) {
+    flushEvents();
+    SelectionManager selectionManager = getNodeEditorComponent().getSelectionManager();
+    selectionManager.setSelection(selectionManager.createRangeSelection(first, last));
+  }
+
+  @Override
+  public void selectWRTFocusPolicy(final SNode node) {
+    selectWRTFocusPolicy(node, true);
+  }
+
+  @Override
+  public EditorInspector getInspector() {
+    return inspectorTool();
+  }
+
+  @Nullable
+  private InspectorTool inspectorTool() {
+    return null;
+  }
+
+  @Override
+  public void selectWRTFocusPolicy(final SNode node, final boolean force) {
+    flushEvents();
+
+    if (!force && getNodeEditorComponent().getSelectedNode() == node) {
+      return;
+    }
+
+    EditorCell cell = getNodeEditorComponent().findNodeCell(node);
+    if (cell != null) {
+      getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
+    }
+  }
+
+  @Override
+  public void selectWRTFocusPolicy(EditorCell editorCell) {
+    getNodeEditorComponent().changeSelectionWRTFocusPolicy(editorCell);
+  }
+
+  @Override
+  public void openInspector() {
+    // inspector tool not supported in J2CL
+  }
+
+  @Override
+  public EditorCell getContextCell() {
+    if (myContextCell == null) {
+      return getNodeEditorComponent().getSelectedCell();
+    }
+    return myContextCell;
+  }
+
+  @Override
+  public void runWithContextCell(EditorCell contextCell, final Runnable r) {
+    runWithContextCell(contextCell, () -> {
+      r.run();
+      return null;
+    });
+  }
+
+
+  @Override
+  public <T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
+    EditorCell oldContextCell = myContextCell;
+    myContextCell = contextCell;
+    try {
+      return r.compute();
+    } finally {
+      myContextCell = oldContextCell;
+    }
+  }
+
+  @Override
+  public List<SNode> getSelectedNodes() {
+    return myNodeEditorComponent.getSelectedNodes();
+  }
+
+  void startTracing(String name) {
+    assert myPerformanceTracer == null;
+    myPerformanceTracer = new PerformanceTracer(name);
+  }
+
+  String stopTracing() {
+    assert myPerformanceTracer != null;
+    String result = myPerformanceTracer.report();
+    myPerformanceTracer = null;
+    return result;
+  }
+
+  boolean isTracing() {
+    return myPerformanceTracer != null;
+  }
+
+  void pushTracerTask(String message) {
+    if (myPerformanceTracer == null) {
+      return;
+    }
+    myPerformanceTracer.push(message);
+  }
+
+  public void popTracerTask() {
+    if (myPerformanceTracer == null) {
+      return;
+    }
+    myPerformanceTracer.pop();
+  }
+
+  @Override
+  public SelectionManager getSelectionManager() {
+    return myNodeEditorComponent.getSelectionManager();
+  }
+
+  @NotNull
+  @Override
+  public ContextAssistantManager getContextAssistantManager() {
+    return myContextAssistantManager;
+  }
+
+  public EditorManager getEditorManager() {
+    if (myEditorManager == null) {
+      myEditorManager = new EditorManager(this);
+    }
+    return myEditorManager;
+  }
+
+  // FIXME quite an odd exposure of EC internals for the sake of single EditorCell impl. Perhaps,
+  //       EC_Image shall delegate here, and this code may use cache or consult some global icon
+  //       registry?
+  public Map<String, Icon> getIconCache() {
+    return myIconCache;
+  }
+
+  void reset() {
+    myEditorManager = null;
+    if (myDeletionApprover != null) {
+      myDeletionApprover.dispose();
+      myDeletionApprover = null;
+    }
+    myIconCache.clear();
+  }
+
+  @Nullable
+  @Override
+  public EditorPanelManager getEditorPanelManager() {
+    return myConfiguration.editorPanelManager;
+  }
+
+  @Override
+  public DeletionApprover getDeletionApprover() {
+    // impl in EditorComponent was synchronized over EC instance. I don't see a point.
+    // We access editor code mainly in EDT, especially user-interaction code like deletion.
+    if (EditorSettings.getInstance().isUseTwoStepDeletion()) {
+      if (myDeletionApprover == null) {
+        myDeletionApprover = new DeletionApproverImpl(this, myNodeEditorComponent.getHighlightManager());
+        myDeletionApprover.initialize();
+      }
+      return myDeletionApprover;
+    } else {
+      return jetbrains.mps.openapi.editor.EditorContext.super.getDeletionApprover();
+    }
+  }
+
+  @Override
+  public Clipboard getClipboard() {
+    return new Clipboard() {
+      @Override
+      public void put(@NotNull Iterable<SNode> nodes, @NotNull String text, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes) {
+        // clipboard operations not supported in J2CL
+      }
+
+      @Override
+      public void putAsFresh(@NotNull Iterable<SNode> nodes, @NotNull String text, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes) {
+        // clipboard operations not supported in J2CL
+      }
+    };
+  }
+}

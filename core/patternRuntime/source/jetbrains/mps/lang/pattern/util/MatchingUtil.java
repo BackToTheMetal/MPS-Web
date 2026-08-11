@@ -36,7 +36,7 @@ import java.util.function.BiPredicate;
  * @deprecated use {@link jetbrains.mps.smodel.SNodeMatcher} instead
  */
 // FIXME seems to be the only class in patternRuntime to use [kernel], not [openapi]. Perhaps, worth moving into [kernel]?
-@Deprecated(since = "2022.2", forRemoval = true)
+@Deprecated
 public class MatchingUtil {
   // FIXME there are still few uses in mbeddr!
   public static boolean matchNodes(SNode node1, SNode node2) {

@@ -95,7 +95,7 @@ public final class ChildMatcher {
         return false;
       }
     }
-    assert index.isEmpty() : String.format("Children with index %s were expected", index.toArray());
+    assert index.isEmpty() : "Children with index " + index + " were expected";
     return true;
   }
 }

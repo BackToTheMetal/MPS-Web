@@ -272,6 +272,6 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
   @Override
   public String toString() {
-    return String.format("EditorCellLabelSelection{cell=%s, start=%d, end=%d}", getEditorCell(), mySelectionStart, mySelectionEnd);
+    return "EditorCellLabelSelection{cell=" + getEditorCell() + ", start=" + mySelectionStart + ", end=" + mySelectionEnd + "}";
   }
 }

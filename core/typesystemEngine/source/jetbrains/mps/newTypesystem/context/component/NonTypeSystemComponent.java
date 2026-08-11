@@ -277,7 +277,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
   /**
    * @deprecated never called
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   private void addCacheDependentNodesNonTypesystem(SNode node, NonTypesystemRule_Runtime rule) {
     Map<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
     Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);

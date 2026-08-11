@@ -36,7 +36,7 @@ public abstract class CaretManager implements CoreComponent {
   /**
    * @deprecated it's a CoreComponent, access through ComponentHost
    */
-  @Deprecated(since = "2023.3", forRemoval = true)
+  @Deprecated
   public static CaretManager getInstance() {
     if (ourInstance == null) {
       // Default, not blinking caret manager

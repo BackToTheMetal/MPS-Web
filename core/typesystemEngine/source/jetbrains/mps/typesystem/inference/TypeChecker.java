@@ -87,12 +87,12 @@ public class TypeChecker implements CoreComponent {
     return getTypeCheckerHelper().computeWithTrace(c, taskName);
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
     return getTypeCheckerHelper().getInequalitiesForHole(hole, holeIsAType);
   }
 
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext = new InferenceTypecheckingContext(node, getTypeCheckerHelper());
@@ -105,7 +105,7 @@ public class TypeChecker implements CoreComponent {
    *  @deprecated use {@link jetbrains.mps.typechecking.TypecheckingFacade}.
    */
   @Nullable
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public SNode getTypeOf(final SNode node) {
     if (node == null || node.getModel() == null) return null;
     return TypecheckingFacade.getFromContext().getTypeOf(node);

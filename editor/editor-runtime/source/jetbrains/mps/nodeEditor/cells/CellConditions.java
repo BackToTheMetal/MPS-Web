@@ -24,7 +24,7 @@ public final class CellConditions {
   /**
    * @deprecated use {@code jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE} instead
    */
-@Deprecated(since = "2020.2", forRemoval = true)
+@Deprecated
   public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> SELECTABLE = jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE;
 
   public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> ERROR_CONDITION =

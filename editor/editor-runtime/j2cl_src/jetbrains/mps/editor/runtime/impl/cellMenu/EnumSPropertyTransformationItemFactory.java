@@ -1,0 +1,47 @@
+package jetbrains.mps.editor.runtime.impl.cellMenu;
+
+import jetbrains.mps.annotations.GeneratedClass;
+import java.util.List;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import org.jetbrains.mps.openapi.language.SDataType;
+import org.jetbrains.mps.openapi.language.SEnumeration;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.core.aspects.feedback.messages.FailingPropertyConstraintContext;
+import jetbrains.mps.smodel.constraints.ConstraintsChildAndPropFacade;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.lang.editor.menus.transformation.PropertyTransformationMenuItem;
+
+@GeneratedClass(nodeId = "2816844678677465131", model = "r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)")
+public class EnumSPropertyTransformationItemFactory {
+  private EnumSPropertyTransformationItemFactory() {
+  }
+  public static List<TransformationMenuItem> createItems(SProperty property, TransformationMenuContext transformationMenuContext) {
+    SDataType type = property.getType();
+    if (!(type instanceof SEnumeration)) {
+      return Collections.<TransformationMenuItem>emptyList();
+    }
+    SEnumeration enumm = (SEnumeration) type;
+    List<TransformationMenuItem> items = ListSequence.fromList(new ArrayList<TransformationMenuItem>(enumm.getLiterals().size()));
+    for (final SEnumerationLiteral literal : enumm.getLiterals()) {
+      FailingPropertyConstraintContext context = new FailingPropertyConstraintContext(transformationMenuContext.getNode(), property, literal);
+      if (ConstraintsChildAndPropFacade.checkPropertyValue(context).isEmpty()) {
+        transformationMenuContext.getEditorMenuTrace().pushTraceInfo();
+
+        try {
+          transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + literal.getPresentation(), literal.getSourceNode(), true));
+          PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(property, literal, transformationMenuContext);
+          ListSequence.fromList(items).addElement(item);
+        } finally {
+          transformationMenuContext.getEditorMenuTrace().popTraceInfo();
+        }
+      }
+    }
+
+    return items;
+  }
+}

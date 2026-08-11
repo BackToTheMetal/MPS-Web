@@ -251,7 +251,7 @@ public class NodePaster {
     } else {
       final String m = "Can't normalize node %s(%s) to link-accepted %s";
       // XXX is it ok to throw RE here?
-      throw new RuntimeException(String.format(m, pasteNode.getPresentation(), pasteNode.getConcept().getName(), targetConcept.getName()));
+      throw new RuntimeException("Can't normalize node " + pasteNode.getPresentation() + "(" + pasteNode.getConcept().getName() + ") to link-accepted " + targetConcept.getName());
     }
   }
 

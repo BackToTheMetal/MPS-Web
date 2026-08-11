@@ -1,0 +1,6 @@
+package javax.swing.text;
+
+public class BadLocationException extends Exception {
+  public BadLocationException(String s, int offs) { super(s); }
+  public int offsetRequested() { return 0; }
+}

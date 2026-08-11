@@ -65,5 +65,17 @@ public class HtmlTextBuilderImpl extends TextBuilderImpl implements HtmlTextBuil
     return this;
   }
 
+  @Override
+  public HtmlTextBuilder appendToTheRightHtml(String html, boolean insertSpace) {
+    if (!insertSpace && html.isEmpty()) {
+      return this;
+    }
+    String delim = getWidth() != 0 && insertSpace ? "&nbsp;" : "";
+    if (!myLines.isEmpty()) {
+      myLines.get(0).append(delim).append(html);
+    }
+    return this;
+  }
+
 
 }

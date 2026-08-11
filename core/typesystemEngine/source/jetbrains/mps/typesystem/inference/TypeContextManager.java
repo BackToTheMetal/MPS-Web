@@ -27,14 +27,14 @@ import org.jetbrains.mps.openapi.model.SNode;
  * 
  * @deprecated {@link jetbrains.mps.typechecking.TypecheckingFacade} should be used for executing typechecking actions.
  */
-@Deprecated (forRemoval = true)
+@Deprecated
 public class TypeContextManager implements CoreComponent {
 
 
   /**
    * @deprecated use {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} instead.
    */
-  @Deprecated(forRemoval = true)
+  @Deprecated
   public static TypeContextManager getInstance() {
     return new TypeContextManager();
   }

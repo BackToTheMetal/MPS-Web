@@ -1,0 +1,17 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "pattern-runtime-j2cl",
+    srcs = glob(["source/**/*.java"]),
+    deps = [
+        "//core:kernel-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+        "//core/util:util-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

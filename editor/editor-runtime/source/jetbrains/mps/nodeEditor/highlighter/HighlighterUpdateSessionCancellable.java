@@ -59,8 +59,7 @@ class HighlighterUpdateSessionCancellable implements Cancellable {
     if (timeSinceLastCheck > MAX_CHECK_INTERVAL_MS && LOG.isDebugLevel()) {
       Throwable stackTrace = new Throwable();
       stackTrace.fillInStackTrace();
-      LOG.debug(String.format("Checker %s: long time since last cancellation check (%d ms > threshold %d ms). Stack trace:",
-          myCheckerName, timeSinceLastCheck, MAX_CHECK_INTERVAL_MS), stackTrace);
+      LOG.debug("Checker " + myCheckerName + ": long time since last cancellation check (" + timeSinceLastCheck + " ms > threshold " + MAX_CHECK_INTERVAL_MS + " ms). Stack trace:", stackTrace);
     }
     myLastCheckTime += timeSinceLastCheck;
 

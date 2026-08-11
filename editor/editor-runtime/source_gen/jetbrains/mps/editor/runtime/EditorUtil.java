@@ -56,7 +56,7 @@ public class EditorUtil {
    * 
    * @deprecated 
    */
-  @Deprecated(since = "2018.1", forRemoval = true)
+  @Deprecated
   public static JComponent createSelectIconButton(final SNode node, final SProperty property, final EditorContext context, boolean copy) {
     // was used in mbeddr at the moment of 2017.3
     return createSelectImageButton(node, property, context);

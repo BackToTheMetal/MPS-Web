@@ -104,7 +104,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
    * @deprecated Line spacing is set in settings UI, should not be set from code
    */
   @ScheduledForRemoval(inVersion = "2020.3")
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   public void setLineSpacing(double lineSpacing) {
   }
 
@@ -116,7 +116,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
    * @deprecated Editor font is set in settings UI, should not be set from code
    */
   @ScheduledForRemoval(inVersion = "2020.3")
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   public void setDefaultEditorFont(Font newFont) {
   }
 
@@ -133,7 +133,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
    * {@link com.intellij.openapi.editor.colors.EditorColorsScheme#getEditorFontSize}.
    */
   @ScheduledForRemoval(inVersion = "2020.3")
-  @Deprecated(since = "2020.2", forRemoval = true)
+  @Deprecated
   public int getSpecifiedFontSize() {
     return getECM() == null ? getFontSize() : getECM().getGlobalScheme().getEditorFontSize();
   }
@@ -169,7 +169,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   /**
    * @deprecated Use {@link EditorComponentSettings#getRightMargin()} instead
    */
-  @Deprecated(since = "2021.2")
+  @Deprecated
   public int getVerticalBoundWidth() {
     return getSpacesWidth(getVerticalBound());
   }
@@ -349,7 +349,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   /**
    * @deprecated Use {@link EditorComponentSettings#getWidth(char, int)} instead
    */
-  @Deprecated(since = "2021.2")
+  @Deprecated
   public int getSpacesWidth(int size) {
     return getDefaultEditorFontMetrics().getWidth(' ', size);
   }
@@ -398,18 +398,18 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   // FIXME once 2022.3 is out, remove fields denoted with @Transient
   @SuppressWarnings("WeakerAccess")
   public static class MyState {
-    @Deprecated(since = "2020.2", forRemoval = true)
+    @Deprecated
     @Transient
     public String fontFamily;
-    @Deprecated(since = "2020.2", forRemoval = true)
+    @Deprecated
     @Transient
     public int fontSize;
-    @Deprecated(since = "2020.2", forRemoval = true)
+    @Deprecated
     @Transient
     public double lineSpacing;
 
     public int textWidth = 500;
-    @Deprecated(since = "2020.2", forRemoval = true)
+    @Deprecated
     @Transient
     public boolean useAntialiasing;
 
@@ -432,7 +432,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     public boolean show = true;
 
     public boolean showContextAssistant = true;
-    @Deprecated(since = "2020.3", forRemoval = true)
+    @Deprecated
     @Transient
     public int caretBlinkPeriod;
     public boolean reflectiveEditorReadonly = false;

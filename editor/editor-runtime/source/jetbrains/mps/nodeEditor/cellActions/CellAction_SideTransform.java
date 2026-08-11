@@ -33,7 +33,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
   /**
    * use {@link #CellAction_SideTransform(Side)}
    */
-@Deprecated(since = "2017.2", forRemoval = true)
+@Deprecated
   public CellAction_SideTransform(CellSide side) {
     mySide = side == CellSide.RIGHT ? Side.RIGHT : Side.LEFT;
   }

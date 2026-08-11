@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
  * 
  * @deprecated not in use in MPS, not of a great value as an API anyway (LanguageRegistry.withAvailableAspects(,EditorAspectDescriptor.class,) does the trick
  */
-@Deprecated(forRemoval = true, since = "2023.2")
+@Deprecated
 @GeneratedClass(nodeId = "1182113674817469564", model = "r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)")
 public class LanguagesKeymapManager {
   private final LanguageRegistry myLanguageRegistry;
@@ -62,7 +62,7 @@ public class LanguagesKeymapManager {
    * 
    * @deprecated just instantiate the class directly, it's no longer a service/component
    */
-  @Deprecated(since = "2022.3", forRemoval = true)
+  @Deprecated
   public static LanguagesKeymapManager getInstance() {
     return new LanguagesKeymapManager();
   }

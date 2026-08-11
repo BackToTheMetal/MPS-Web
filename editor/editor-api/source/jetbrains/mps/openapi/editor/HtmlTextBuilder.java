@@ -23,4 +23,5 @@ public interface HtmlTextBuilder extends TextBuilder {
   String getHtmlText();
 
   HtmlTextBuilder appendToTheRightHtml(HtmlTextBuilder builder, boolean insertSpace);
+  HtmlTextBuilder appendToTheRightHtml(String html, boolean insertSpace);
 }

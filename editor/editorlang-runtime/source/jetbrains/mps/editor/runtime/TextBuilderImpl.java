@@ -82,6 +82,14 @@ public class TextBuilderImpl implements TextBuilder {
   }
 
   @Override
+  public TextBuilder appendToTheBottom(String text) {
+    myLines.add(new StringBuilder(text));
+    myWidth = Math.max(this.myWidth, text.length());
+    normalizeWidth();
+    return this;
+  }
+
+  @Override
   public TextBuilder appendToTheRight(TextBuilder builder, boolean insertSpace) {
     if (!insertSpace && (builder.getSize() == 0 || builder.getWidth() == 0)) {
       return this;

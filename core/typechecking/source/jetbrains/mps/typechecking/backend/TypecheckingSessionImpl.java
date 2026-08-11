@@ -129,7 +129,7 @@ public abstract class TypecheckingSessionImpl implements TypecheckingSession {
   
   @Override
   public String toString() {
-    return String.format("Session{%s, usages=%d, disposed=%b, orphaned=%b}", myFlags, myUsages, myDisposed, myOrphaned);
+    return "Session{" + myFlags + ", usages=" + myUsages + ", disposed=" + myDisposed + ", orphaned=" + myOrphaned + "}";
   }
 
   private static class InternalFlags extends Flags {

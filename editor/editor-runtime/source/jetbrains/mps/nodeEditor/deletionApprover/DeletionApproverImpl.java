@@ -56,7 +56,7 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
    *
    * @param anEditorComponent editor component
    */
-  @Deprecated(forRemoval = true, since = "2022.3")
+  @Deprecated
   public DeletionApproverImpl(@NotNull EditorComponent anEditorComponent) {
     this(anEditorComponent.getEditorContext(), anEditorComponent.getHighlightManager());
     // I don't expect any uses of this constructor, but doesn't hurt to keep it for 1 release.

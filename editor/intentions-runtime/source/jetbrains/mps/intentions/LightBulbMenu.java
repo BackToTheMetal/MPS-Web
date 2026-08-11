@@ -36,7 +36,7 @@ public class LightBulbMenu extends JLabel {
   /**
    * @deprecated use alternative that takes arguments
    */
-  @Deprecated(since = "2022.2", forRemoval = true)
+  @Deprecated
   public LightBulbMenu() {
     this(KeyStroke.getKeyStroke("alt ENTER"), () -> {});
     // empty runnable is ok, there's override of activate() method
@@ -77,7 +77,7 @@ public class LightBulbMenu extends JLabel {
   /**
    * pass runnable code in constructor, don't override
    */
-  @Deprecated(since = "2022.2",forRemoval = true)
+  @Deprecated
   public void activate() {
     assert myOnActivate != null : "legacy code has to override the method";
     myOnActivate.run();
