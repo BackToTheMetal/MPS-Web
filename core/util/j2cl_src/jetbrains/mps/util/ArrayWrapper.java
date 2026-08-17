@@ -41,12 +41,13 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
 
   @Override
   public void add(int index, @NotNull T element) {
-    throw new UnsupportedOperationException("Not supported by j2cl.");
+    myArray[index] = element;
   }
 
   @Override
   public T remove(int index) {
-    throw new UnsupportedOperationException("Not supported by j2cl.");
+    myArray[index] = null;
+    return myArray[index];
   }
 
   @Override

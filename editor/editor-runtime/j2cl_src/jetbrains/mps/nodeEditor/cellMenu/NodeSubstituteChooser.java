@@ -325,9 +325,36 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     setUserChoseItem(false);
   }
 
-  @NotNull
-  private ISubstituteChooserUi createNodeSubstituteChooserUi(boolean realUI) {
-    return realUI ? new NodeSubstituteChooserUi(this, myList, myPatternEditor) : new DummySubstituteChooserUi();
+  private ISubstituteChooserUi createNodeSubstituteChooserUi(
+      boolean realUI) {
+
+    return new WebNodeSubstituteChooserUi(
+        this,
+        myList,
+        myPatternEditor);
+  }
+
+  void selectIndexFromUi(int index) {
+    setSelectionIndex(index);
+
+    /*
+     * Same semantic effect as Swing's mousePressed listener.
+     */
+    setUserChoseItem(true);
+
+    /*
+     * Explicit interaction with the popup switches automatic
+     * completion into manual mode, just like keyboard navigation.
+     */
+    myAutoMode = false;
+  }
+
+  void substituteIndexFromUi(int index) {
+    selectIndexFromUi(index);
+
+    if (!myMenuEmpty) {
+      doSubstituteSelection();
+    }
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern) {
@@ -649,7 +676,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private int getPageSize() {
-    return myList.getLastVisibleIndex() - myList.getFirstVisibleIndex();
+    return Math.max(
+        1,
+        Math.min(
+            MAX_LOOKUP_LIST_HEIGHT,
+            mySubstituteActions.size()));
   }
 
   private void doSubstituteSelection() {

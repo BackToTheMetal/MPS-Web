@@ -21,7 +21,7 @@ class ReferenceUnderliner {
   ReferenceUnderliner(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
     myEditorComponent.addKeyListener(new KeyAdapter() {
-      private final int keyCode = System.getProperty("os.name").toLowerCase().contains("mac") ? KeyEvent.VK_META : KeyEvent.VK_CONTROL;
+      private final int keyCode = KeyEvent.VK_CONTROL;
 
       @Override
       public void keyPressed(KeyEvent e) {

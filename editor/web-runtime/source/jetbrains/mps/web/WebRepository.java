@@ -15,12 +15,15 @@ import java.util.Collections;
  */
 public class WebRepository implements SRepository {
   private final WebModelAccess modelAccess = new WebModelAccess();
+  private SModule module = null;
 
   @Override
   public SRepository getParent() { return null; }
 
   @Override
-  public SModule getModule(SModuleId moduleId) { return null; }
+  public SModule getModule(SModuleId moduleId) { return this.module; }
+
+  public void setModule(SModule module) { this.module = module;}
 
   @Override
   public Iterable<SModule> getModules() { return Collections.emptyList(); }

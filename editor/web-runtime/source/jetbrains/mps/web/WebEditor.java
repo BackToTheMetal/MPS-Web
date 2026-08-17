@@ -23,8 +23,8 @@ public class WebEditor {
   private final NodeEditorComponent editor;
   private final WebRepository repository;
 
-  public WebEditor() {
-    this.repository = new WebRepository();
+  public WebEditor(WebRepository repository) {
+    this.repository = repository;
     this.editor = new NodeEditorComponent(repository);
   }
 
@@ -34,6 +34,10 @@ public class WebEditor {
   @JsMethod(name = "getElement")
   public HTMLElement getElement() {
     return editor.getElement();
+  }
+
+  public void repaint() {
+    editor.repaint();
   }
 
   /**

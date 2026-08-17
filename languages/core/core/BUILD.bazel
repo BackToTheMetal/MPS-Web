@@ -1,0 +1,46 @@
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
+
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+j2cl_library(
+    name = "languages-core-j2cl",
+    srcs = glob([
+        "source_gen/jetbrains/mps/lang/core/behavior/*.java",
+        "source_gen/jetbrains/mps/lang/core/structure/*.java",
+        "source_gen/jetbrains/mps/lang/core/constraints/*.java",
+        "source_gen/jetbrains/mps/lang/core/editor/*.java",
+        ],
+        exclude = [
+        "**/SuppressErrorsAnnotation_InspectorBuilder_a.java"],
+    ) + glob([
+    "j2cl_src/**/*.java",]),
+    deps = [
+        "//editor/editor-api:editor-api-j2cl",
+        "//editor:editor-runtime-j2cl",
+        "//core/typesystemEngine:typesystemEngine-j2cl",
+        "//core/typechecking:typechecking-j2cl",
+        "//editor/editorlang-runtime:editorlang-runtime-j2cl",
+        "//core/aspects/behavior/behavior-api:behavior-api-j2cl",
+        "//core/aspects/behavior/behavior-runtime:behavior-runtime-j2cl",
+        "//core/smodel:smodel-j2cl",
+        "//core:kernel-j2cl",
+        "//core/openapi:mps-openapi-j2cl",
+
+        "//core/components:components-j2cl",
+        "//core/mps-messaging:mps-messaging-j2cl",
+        "//core/vfs:vfs-j2cl",
+
+        "//core/aspects/feedback/messages-for-legacy-constraints:messages-for-legacy-constraints-j2cl",
+        "//core/logging:logging-j2cl",
+        "//core/util:util-j2cl",
+
+        "//languages/baseLanguage/closures/runtime:closures-runtime-j2cl",
+        "//languages/baseLanguage/collections/runtime:collections-runtime-j2cl",
+        "//languages/baseLanguage/references/runtime:references-runtime-j2cl",
+        "//languages/baseLanguage/tuples/runtime:tuples-runtime-j2cl",
+        "//core/mps-annotations:mps-annotations-j2cl",
+        "@org_jetbrains_annotations-j2cl",
+    ],
+)

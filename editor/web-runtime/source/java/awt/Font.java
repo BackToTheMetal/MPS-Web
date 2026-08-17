@@ -46,6 +46,32 @@ public class Font {
     String styleStr = "";
     if ((style & ITALIC) != 0) styleStr += "italic ";
     String weightStr = (style & BOLD) != 0 ? "bold " : "";
-    return styleStr + weightStr + size + "px " + name;
+    return styleStr + weightStr + size + "px " + toCssFamily(name);
+  }
+
+  private String toCssFamily(String javaFamily) {
+    if (javaFamily == null) {
+      return "sans-serif";
+    }
+
+    switch (javaFamily) {
+      case "Monospaced":
+        return "monospace";
+
+      case "Serif":
+        return "serif";
+
+      case "SansSerif":
+        return "sans-serif";
+
+      case "Dialog":
+        return "sans-serif";
+
+      case "DialogInput":
+        return "monospace";
+
+      default:
+        return "\"" + javaFamily + "\", sans-serif";
+    }
   }
 }

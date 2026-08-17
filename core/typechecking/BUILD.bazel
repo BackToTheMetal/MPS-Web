@@ -23,6 +23,7 @@ j2cl_library(
             "**/MPSTypechecking.java",
             # depends on jetbrains.mps.util.SimpleLRUCache (excluded from util-j2cl); replaced by j2cl_src variant
             "**/LanguageScopeFactory.java",
+            "**/TypecheckingFacade.java",
         ],
     ) + glob(
         ["j2cl_src/**/*.java"],

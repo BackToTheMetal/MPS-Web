@@ -114,10 +114,10 @@ public class NodeEditorComponent extends EditorComponent {
     if (editedNode == null || !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(editedNode, getEditorContext().getRepository())) {
       return;
     }
-    Project project = getCurrentProject();
-    if (project == null || project.isDisposed()) {
-      return;
-    }
+    //Project project = getCurrentProject();
+    //if (project == null || project.isDisposed()) {
+    //      return;
+    //}
     super.rebuildEditorContent();
   }
 

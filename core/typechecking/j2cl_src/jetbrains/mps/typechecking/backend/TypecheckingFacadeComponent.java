@@ -36,7 +36,7 @@ public class TypecheckingFacadeComponent implements CoreComponent {
 
   /**
    * Created by {@link MPSTypechecking}.
-   */ 
+   */
   public TypecheckingFacadeComponent(@NotNull LanguageRegistry languageRegistry,
                                      @NotNull LanguageScopeFactory languageScopeFactory,
                                      @NotNull TypecheckingBackend typecheckingBackend) {
@@ -47,20 +47,26 @@ public class TypecheckingFacadeComponent implements CoreComponent {
 
   @Override
   public void init() {
-    ContextTypecheckingFacade.setFactoryInstance(
-        () -> createFacade(new TypecheckingControllerFactory() {
-          public TypecheckingController createContextController() {
-            return new DefaultTypecheckingController(myTypecheckingBackend, TypecheckingSession.Flags.basic());
-          }
+    ContextTypecheckingFacade.setFactoryInstance( () -> {
+      return createFacade(new TypecheckingControllerFactory() {
+        public TypecheckingController createContextController() {
+          return new WorkbenchTypecheckingController(myTypecheckingBackend);
+        }
 
-          public TypecheckingController createIsolatedController(Flags flags, ParametersDiscoverable discoverable) {
+        public TypecheckingController createIsolatedController(Flags flags, ParametersDiscoverable discoverable) {
+          if (flags.getRoot() != null && flags.isIncremental()) {
+            return new WorkbenchTypecheckingController(myTypecheckingBackend);
+
+          } else {
             return new IsolatedTypecheckingController(myTypecheckingBackend, flags, discoverable);
           }
+        }
 
-          public TypecheckingController createSharedController(@NotNull TypecheckingSessionImpl session, TypecheckingController contextController) {
-            return new SharedSessionTypecheckingController(myTypecheckingBackend, session, contextController);
-          }
-        }));
+        public TypecheckingController createSharedController(@NotNull TypecheckingSessionImpl session, TypecheckingController contextController) {
+          return new SharedSessionTypecheckingController(myTypecheckingBackend, session, contextController);
+        }
+      });
+    });
   }
 
   @Override

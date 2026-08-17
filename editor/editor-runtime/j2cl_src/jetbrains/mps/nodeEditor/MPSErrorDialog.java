@@ -114,7 +114,7 @@ public class MPSErrorDialog extends JDialog {
   }
 
   public void initializeUI() {
-    int textWidth = myField.getFontMetrics(myField.getFont()).stringWidth(myErrorString);
+    int textWidth = Math.round(myField.getFontMetrics(myField.getFont()).stringWidth(myErrorString));
     JPanel panel = new JPanel(new GridLayout(1, myButtons.size()));
     for (JButton jButton : myButtons) {
       panel.add(jButton);

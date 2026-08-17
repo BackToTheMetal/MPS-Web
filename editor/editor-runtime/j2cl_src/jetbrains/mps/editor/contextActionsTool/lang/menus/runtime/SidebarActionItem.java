@@ -1,0 +1,12 @@
+package jetbrains.mps.editor.contextActionsTool.lang.menus.runtime;
+
+import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.IconResource;
+
+public interface SidebarActionItem extends ActionItem {
+  @Nullable
+  String getTooltipText();
+  @Nullable
+  IconResource getIcon();
+}

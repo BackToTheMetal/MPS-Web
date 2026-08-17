@@ -140,7 +140,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       //     need to send out 'unloaded' event?). However, at the moment TransientModel does swap out on doUnload, and it's
       //     NOT what we want on model detach. Need a better contract for unload, detach and cleanup of instance fields.
       // OTOH, it's not apparent why detach of a model shall dispose its data. Perhaps, all we need to do here
-      //     is to clean fields to free references, and leave model data intact?
+      //     is to clean fields to free references, and leave model data intact?hh
       model.dispose();
       setLoadingState(ModelLoadingState.NOT_LOADED);
     }

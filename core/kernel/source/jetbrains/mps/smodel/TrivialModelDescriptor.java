@@ -55,6 +55,12 @@ public class TrivialModelDescriptor extends SModelBase {
     return getCurrentModelInternal();
   }
 
+  //TODO: J2CL
+  @Override
+  public boolean isReadOnly() {
+    return false;
+  }
+
   @Nullable
   @Override
   protected SModel getCurrentModelInternal() {

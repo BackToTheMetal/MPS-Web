@@ -492,7 +492,35 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
   }
 
   protected boolean isTextTypedEvent(KeyEvent e) {
-    throw new UnsupportedOperationException("Not supported due to J2CL");
+    return isReallyTypedEvent(e);
+  }
+
+  public static boolean isReallyTypedEvent(KeyEvent e) {
+    if (e == null) {
+      return false;
+    }
+
+    if (e.getID() != KeyEvent.KEY_TYPED) {
+      return false;
+    }
+
+    char c = e.getKeyChar();
+
+    if (c == KeyEvent.CHAR_UNDEFINED) {
+      return false;
+    }
+
+    // Control characters are not normal text input.
+    if (c < 0x20 || c == 0x7F) {
+      return false;
+    }
+
+    // Ctrl/Meta combinations are generally shortcuts rather than text.
+    if (e.isControlDown() || e.isMetaDown()) {
+      return false;
+    }
+
+    return true;
   }
 
   private SNode replaceWithDefault() {

@@ -203,7 +203,7 @@ public class TextLine {
         styleFontFamily = null;
       }
 
-      Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
+      Integer style = 1; //TODO CHANGED FOR J2CL
       String family = styleFontFamily != null ? styleFontFamily : settings.getFontFamily();
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
       fontSize = myEditorComponentSettings.getFontSizeScaled(fontSize);

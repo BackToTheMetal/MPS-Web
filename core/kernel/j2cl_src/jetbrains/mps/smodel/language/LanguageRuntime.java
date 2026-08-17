@@ -160,9 +160,24 @@ public abstract class LanguageRuntime {
    * @see jetbrains.mps.smodel.runtime.ILanguageAspect
    */
   public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> aspectClass) {
-    throw new UnsupportedOperationException("j2cl");
-  }
+    ILanguageAspect aspect = myAspectDescriptors.get(aspectClass);
 
+    if (aspect == null) {
+      aspect = createAspect(aspectClass);
+
+      if (aspect != null) {
+        if (aspect instanceof LanguageRuntimeAware) {
+          ((LanguageRuntimeAware) aspect).setLanguageRuntime(this);
+        }
+
+        myAspectDescriptors.put(aspectClass, aspect);
+      }
+    }
+
+    @SuppressWarnings("unchecked")
+    T result = (T) aspect;
+    return result;
+  }
   /**
    * Method every language shall implement to tell its capabilities.
    * Implementation doesn't need to keep state, {@link #getAspect(Class)} does that.

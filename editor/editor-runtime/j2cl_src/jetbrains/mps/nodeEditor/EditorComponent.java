@@ -139,6 +139,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.EditorComponentActionKeyHandler;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -1534,14 +1535,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!hasUI()) {
       return;
     }
-    getExternalComponent().repaint();
+
+    //TODO j2cl
+    this.repaint();
   }
 
   public void validateExternalComponent() {
     if (!hasUI()) {
       return;
     }
-    getExternalComponent().validate();
+    //TODO j2cl
+    this.validate();
   }
 
   @NotNull
@@ -1732,6 +1736,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private String getModelDisposedMessage() {
+    if (myModelDisposedStackTrace == null) {
+      return "";
+    }
+
     StringBuilder sb = new StringBuilder("Model was disposed through:");
     for (StackTraceElement element : myModelDisposedStackTrace) {
       sb.append("\nat ");
@@ -2590,6 +2598,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void processKeyPressed(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed() || isDisposed()) {
+      return;
+    }
+
+    if (EditorComponentActionKeyHandler.handle(EditorComponent.this, keyEvent)) {
+      keyEvent.consume();
+      repaintExternalComponent();
       return;
     }
 

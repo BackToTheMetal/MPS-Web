@@ -131,11 +131,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   protected AbstractModule(@Nullable IFile descriptorFile) {
     myDescriptorFile = descriptorFile;
-    if (descriptorFile != null) {
-      myFileSystem = descriptorFile.getFileSystem();
-    } else {
-      myFileSystem = getFSSingleton();
-    }
+    myFileSystem = null;
   }
 
   /**

@@ -44,7 +44,7 @@ public abstract class CancellableReadAction implements Runnable {
       return;
     }
     if (cancelState != CancelState.Clear) {
-      throw new IllegalStateException(String.format("State after execute: %s, present: %s", cancelState, myCancelState.get()));
+      throw new IllegalStateException("State after execute: %s, present: %s");
     }
   }
 

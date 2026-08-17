@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.openapi.editor.update.Updater;
+import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -384,12 +385,14 @@ public class EditorManager {
       try {
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
         nodeCell = getCellFactory().createEditorCell(node, isInspectorCell);
-
+        if (nodeCell == null) {
+          throw new IllegalModelAccessError("");
+        }
         if (!isAttributedCell(nodeCell, refContext)) {
           nodeCell = addSideTransformHintCell(nodeCell, node);
         }
       } catch (Throwable e) {
-        LOG.error("Failed to create cell for node " + SNodeOperations.getDebugText(node), e);
+        LOG.error("Failed to create cell for node CHECK " + SNodeOperations.getDebugText(node), e);
         nodeCell = new EditorCell_Error(getEditorContext(), node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
         nodeCell.setCellContext(getCellFactory().getCellContext());

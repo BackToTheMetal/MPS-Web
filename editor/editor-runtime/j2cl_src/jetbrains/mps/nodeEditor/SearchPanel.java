@@ -420,13 +420,13 @@ public class SearchPanel extends AbstractSearchPanel {
         if (editorCell.getRenderedText().length() >= endPosition) {
           FontMetrics metrics = g.getFontMetrics();
           String text = editorCell.getRenderedText().substring(startPosition, endPosition);
-          int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
-                                                              substring(0, startPosition));
+          int prevStringWidth = Math.round(metrics.stringWidth(editorCell.getRenderedText().
+                                                              substring(0, startPosition)));
           int x = editorCell.getX() + editorCell.getLeftInset()
                   + prevStringWidth;
           int y = editorCell.getY();
           int height = editorCell.getHeight();
-          int width = metrics.stringWidth(text);
+          int width = Math.round(metrics.stringWidth(text));
 
           g.setColor(getColor());
           // Filling smaller rectangle to not cover frames created by other nessages

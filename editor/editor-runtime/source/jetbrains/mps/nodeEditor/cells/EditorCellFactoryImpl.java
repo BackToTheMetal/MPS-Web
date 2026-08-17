@@ -35,6 +35,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -104,6 +106,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         reportSuccess(node);
       } catch (RuntimeException | Error e) {
         reportError(node, e);
+        LOG.warning(e.getMessage());
+          StringWriter sw = new StringWriter();
+          e.printStackTrace(new PrintWriter(sw));
+          LOG.warning(sw.toString());
         LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using default editor", e, node);
       }
     }
@@ -130,6 +136,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     message.setException(e);
     message.setHintObject(node.getReference());
     myEditorContext.getEditorComponent().getMessageHandler().handle(message);
+    LOG.warning(text);
   }
 
   private EditorCell createCell(SNode node, boolean isInspector, ConceptEditor editor) {

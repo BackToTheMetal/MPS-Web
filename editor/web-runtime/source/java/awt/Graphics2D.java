@@ -55,7 +55,7 @@ public class Graphics2D extends Graphics {
   public FontMetrics getFontMetrics(Font f) { return new FontMetrics(f); }
 
   @Override
-  public Rectangle getClipBounds() { return new Rectangle(translateX, translateY, 0, 0); }
+  public Rectangle getClipBounds() { return new Rectangle(translateX, translateY, 800, 800); }
   @Override
   public void setClip(int x, int y, int width, int height) {
     if (ctx != null) ctx.beginPath();

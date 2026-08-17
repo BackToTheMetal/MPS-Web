@@ -49,7 +49,123 @@ public class JComponent extends Container {
   public void unregisterKeyboardAction(KeyStroke keyStroke) { }
 
   public void scrollRectToVisible(Rectangle aRect) { }
-  public void paint(Graphics g) { }
+
+  protected Graphics getComponentGraphics(Graphics g) {
+    Graphics componentGraphics = g.create();
+
+    Font font = getFont();
+    if (font != null) {
+      componentGraphics.setFont(font);
+    }
+
+    Color foreground = getForeground();
+    if (foreground != null) {
+      componentGraphics.setColor(foreground);
+    }
+
+    return componentGraphics;
+  }
+
+  /**
+   * Swing uses this as an optimization to avoid painting areas that are
+   * completely covered by children.
+   *
+   * For the web implementation we don't currently calculate component
+   * obscuration, so assume that the area is visible.
+   */
+  boolean rectangleIsObscured(int x, int y, int width, int height) {
+    return false;
+  }
+
+  @Override
+  public void paint(Graphics g) {
+    if (g == null) {
+      return;
+    }
+
+    if (getWidth() <= 0 || getHeight() <= 0) {
+      return;
+    }
+
+    Graphics componentGraphics = getComponentGraphics(g);
+    Graphics co = componentGraphics.create();
+
+    try {
+      Rectangle clipRect = co.getClipBounds();
+
+      int clipX;
+      int clipY;
+      int clipW;
+      int clipH;
+
+      if (clipRect == null) {
+        clipX = 0;
+        clipY = 0;
+        clipW = getWidth();
+        clipH = getHeight();
+      } else {
+        clipX = clipRect.x;
+        clipY = clipRect.y;
+        clipW = clipRect.width;
+        clipH = clipRect.height;
+      }
+
+      /*
+       * Clip painting to the JComponent bounds.
+       */
+      if (clipX < 0) {
+        clipW += clipX;
+        clipX = 0;
+      }
+
+      if (clipY < 0) {
+        clipH += clipY;
+        clipY = 0;
+      }
+
+      if (clipX + clipW > getWidth()) {
+        clipW = getWidth() - clipX;
+      }
+
+      if (clipY + clipH > getHeight()) {
+        clipH = getHeight() - clipY;
+      }
+
+      if (clipW <= 0 || clipH <= 0) {
+        return;
+      }
+
+      /*
+       * Unlike desktop Swing, there is no RepaintManager-owned
+       * offscreen buffer here.
+       *
+       * Component.repaint() already paints into the component's
+       * HTMLCanvasElement and schedules the paint using the browser's
+       * animation frame.
+       */
+      co.setClip(
+          clipX,
+          clipY,
+          clipW,
+          clipH);
+
+      if (!rectangleIsObscured(
+          clipX,
+          clipY,
+          clipW,
+          clipH)) {
+
+        paintComponent(co);
+        paintBorder(co);
+      }
+
+      paintChildren(co);
+
+    } finally {
+      co.dispose();
+    }
+  }
+
   protected void paintComponent(Graphics g) { }
   protected void paintBorder(Graphics g) { }
   protected void paintChildren(Graphics g) { }

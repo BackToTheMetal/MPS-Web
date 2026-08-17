@@ -55,7 +55,7 @@ public final class EnumerationLiteralsIndex {
   }
 
   // Note that check for containment of given member to an appropriate enumeration should be done on call-site
-  public int index(long member) {
+  public int index(Long member) {
     return myIndex.get(member);
   }
 
@@ -69,7 +69,7 @@ public final class EnumerationLiteralsIndex {
   }
 
   private static final class IndexContainer extends HashMap<Long, Integer> {
-    public int get(long key) {
+    public int get(Long key) {
       return super.get(key);
     }
   }

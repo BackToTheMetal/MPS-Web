@@ -207,5 +207,6 @@ j2cl_library(
         "//core/util:util-j2cl",
         "@elemental2//:elemental2-dom-j2cl",
         "@elemental2//:elemental2-core-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
     ],
 )

@@ -56,8 +56,51 @@ public final class SLanguageId {
     return myHigh + " " + myLow;
   }
 
-  public static SLanguageId deserialize(String s){
-    throw new UnsupportedOperationException("Not supported in J2cl.");
+  public static SLanguageId deserialize(String s) {
+    if (s == null) {
+      throw new IllegalArgumentException("Language id must not be null");
+    }
+
+    String hex = s.replace("-", "");
+
+    if (hex.length() != 32) {
+      throw new IllegalArgumentException(
+          "Invalid language id: " + s);
+    }
+
+    long high = parseHexLong(hex, 0, 16);
+    long low = parseHexLong(hex, 16, 32);
+
+    return new SLanguageId(high, low);
+  }
+
+  private static long parseHexLong(
+      String value,
+      int start,
+      int end) {
+
+    long result = 0L;
+
+    for (int i = start; i < end; i++) {
+      char c = value.charAt(i);
+
+      int digit;
+
+      if (c >= '0' && c <= '9') {
+        digit = c - '0';
+      } else if (c >= 'a' && c <= 'f') {
+        digit = c - 'a' + 10;
+      } else if (c >= 'A' && c <= 'F') {
+        digit = c - 'A' + 10;
+      } else {
+        throw new IllegalArgumentException(
+            "Invalid hexadecimal character: " + c);
+      }
+
+      result = (result << 4) | digit;
+    }
+
+    return result;
   }
 
   @Override

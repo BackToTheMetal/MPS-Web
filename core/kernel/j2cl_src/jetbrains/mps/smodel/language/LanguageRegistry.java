@@ -170,6 +170,49 @@ public final class LanguageRegistry implements CoreComponent {
     }
   }
 
+  public void registerLanguageRuntimes(
+      @NotNull Collection<LanguageRuntime> runtimes) {
+
+    List<LanguageRuntime> registered = new ArrayList<>();
+
+    try {
+
+      for (LanguageRuntime runtime : runtimes) {
+        SLanguageId id = runtime.getId();
+
+        if (myLanguagesById.containsKey(id)) {
+          throw new IllegalStateException(
+              "Language already registered: "
+              + runtime.getNamespace());
+        }
+
+        myLanguagesById.put(id, runtime);
+        registered.add(runtime);
+      }
+
+      // Initialize all languages after all of them are visible.
+      reinitialize();
+
+      Set<SLanguageId> extensionTargets = new HashSet<>();
+
+      for (LanguageRuntime runtime : registered) {
+        LanguageExtensions extensions =
+            myExtensionRegistry.forContributor(
+                this,
+                runtime,
+                extensionTargets);
+
+        runtime.contributeExtensions(extensions);
+      }
+
+      notifyExtensionsChanged(extensionTargets);
+
+    } finally {
+    }
+
+    notifyLoad(registered);
+  }
+
   private static Flags[] deduceRuntimeFlags(AbstractModule am) {
     if (SModuleOperations.canSupplyExtensionsForMPS(am)) {
       return new Flags[] {Flags.WithExtensions};
